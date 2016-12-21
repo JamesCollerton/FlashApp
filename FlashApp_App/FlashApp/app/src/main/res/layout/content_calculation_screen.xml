@@ -12,6 +12,7 @@
     tools:context=".GNCalculationScreen"
     tools:showIn="@layout/activity_calculation_screen">
 
+    <!-- Guide Number Label -->
     <TextView
         android:id="@+id/guideNumberLabel"
         android:layout_width="match_parent"
@@ -19,6 +20,7 @@
         android:text="@string/label_guide_number"
         style="@style/style_input_label" />
 
+    <!-- Guide Number Input -->
     <EditText
         android:id="@+id/guideNumber"
         android:layout_width="fill_parent"
@@ -27,6 +29,7 @@
         android:layout_marginBottom="@dimen/input_field_vertical_spacing"
         android:inputType="number"/>
 
+    <!-- ISO Label -->
     <TextView
         android:id="@+id/ISOLabel"
         android:layout_width="match_parent"
@@ -35,13 +38,49 @@
         android:text="@string/label_ISO"
         style="@style/style_input_label" />
 
+    <!-- ISO Input -->
     <Spinner
         android:id="@+id/ISO"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ISOLabel"
         android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:entries="@array/arrays_ISO"
-        android:prompt="@string/prompt_ISO"/>
+        android:entries="@array/arrays_ISO"/>
+
+    <!-- Distance Label -->
+    <TextView
+        android:id="@+id/distanceLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ISO"
+        android:text="@string/label_distance"
+        style="@style/style_input_label" />
+
+    <!-- Distance Input -->
+    <EditText
+        android:id="@+id/distance"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/distanceLabel"
+        android:layout_marginBottom="@dimen/input_field_vertical_spacing"
+        android:inputType="number"/>
+
+    <!-- Aperture Label -->
+    <TextView
+        android:id="@+id/apertureLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/distance"
+        android:text="@string/label_aperture"
+        style="@style/style_input_label" />
+
+    <!-- Aperture Input -->
+    <Spinner
+        android:id="@+id/aperture"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/apertureLabel"
+        android:layout_marginBottom="@dimen/input_field_vertical_spacing"
+        android:entries="@array/arrays_aperture"/>
 
 </RelativeLayout>
