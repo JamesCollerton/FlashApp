@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">FlashApp</string>
     <string name="action_settings">Settings</string>
+
+    <string name="hint_guide_number">Guide Number</string>
+    <string name="hint_ISO">ISO</string>
 </resources>

@@ -12,8 +12,19 @@
     tools:context=".GNCalculationScreen"
     tools:showIn="@layout/activity_calculation_screen">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/guideNumber"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:hint="@string/hint_guide_number"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/ISO"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guideNumber"
+        android:hint="@string/hint_ISO"
+        android:inputType="textPassword"/>
+
 </RelativeLayout>
