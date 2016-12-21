@@ -17,14 +17,22 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_guide_number"
-        android:inputType="textPassword"/>
+        android:inputType="number"/>
 
-    <EditText
+    <TextView
+        android:id="@+id/ISOLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guideNumber"
+        android:text="Label"
+        style="@style/InputLabel" />
+
+    <Spinner
         android:id="@+id/ISO"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/guideNumber"
-        android:hint="@string/hint_ISO"
-        android:inputType="textPassword"/>
+        android:layout_below="@+id/ISOLabel"
+        android:entries="@array/arrays_ISO"
+        android:prompt="@string/prompt_ISO"/>
 
 </RelativeLayout>
