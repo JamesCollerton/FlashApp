@@ -12,11 +12,19 @@
     tools:context=".GNCalculationScreen"
     tools:showIn="@layout/activity_calculation_screen">
 
+    <TextView
+        android:id="@+id/guideNumberLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_guide_number"
+        style="@style/style_input_label" />
+
     <EditText
         android:id="@+id/guideNumber"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_guide_number"
+        android:layout_below="@+id/guideNumberLabel"
+        android:layout_marginBottom="@dimen/input_field_vertical_spacing"
         android:inputType="number"/>
 
     <TextView
@@ -24,14 +32,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/guideNumber"
-        android:text="Label"
-        style="@style/InputLabel" />
+        android:text="@string/label_ISO"
+        style="@style/style_input_label" />
 
     <Spinner
         android:id="@+id/ISO"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ISOLabel"
+        android:layout_marginBottom="@dimen/input_field_vertical_spacing"
         android:entries="@array/arrays_ISO"
         android:prompt="@string/prompt_ISO"/>
 

@@ -7,4 +7,8 @@
     <!-- Dimensions for spacing the input label -->
     <dimen name="input_label_vertical_spacing">8dp</dimen>
     <dimen name="input_label_horizontal_spacing">4dp</dimen>
+
+    <!-- Dimensions for spacing the text input -->
+    <dimen name="input_field_vertical_spacing">20dp</dimen>
+
 </resources>
