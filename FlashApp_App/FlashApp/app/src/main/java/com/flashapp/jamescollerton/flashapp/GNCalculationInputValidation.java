@@ -41,15 +41,38 @@ public class GNCalculationInputValidation {
 
     }
 
-    public boolean validate(){
+    public boolean validateForAperture(){
 
-        boolean integerTestResult   = parseIntegers();
-        boolean floatTestResult     = parseFloats();
+        boolean integerTestResult = parseApertureIntegers();
 
-        return integerTestResult && floatTestResult;
+        return integerTestResult;
+
     }
 
-    public boolean parseIntegers(){
+    public boolean validateForDistance(){
+
+        boolean integerTestResult   = parseDistanceIntegers();
+        boolean floatTestResult     = parseDistanceFloats();
+
+        return integerTestResult && floatTestResult;
+
+    }
+
+    public boolean parseApertureIntegers(){
+
+        try {
+            guideNumber = parseIntegerFromString(guideNumberInput);
+            distance = parseIntegerFromString(distanceInput);
+            ISO = parseIntegerFromString(ISOInput);
+        } catch(NumberFormatException e){
+            return false;
+        }
+
+        return true;
+
+    }
+
+    public boolean parseDistanceIntegers(){
 
         try {
             guideNumber = parseIntegerFromString(guideNumberInput);
@@ -69,7 +92,7 @@ public class GNCalculationInputValidation {
 
     }
 
-    public boolean parseFloats() {
+    public boolean parseDistanceFloats() {
 
         try{
             aperture = parseFloatFromString(apertureInput);

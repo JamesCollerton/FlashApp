@@ -83,4 +83,22 @@
         android:layout_marginBottom="@dimen/input_field_vertical_spacing"
         android:entries="@array/arrays_aperture"/>
 
+    <!-- Aperture Calculation Button -->
+    <Button
+        android:id="@+id/calculateAperture"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/aperture"
+        android:text="@string/button_aperture"
+        android:onClick="selfDestruct" />
+
+    <!-- Distance Calculation Button -->
+    <Button
+        android:id="@+id/calculateDistance"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/calculateAperture"
+        android:text="@string/button_distance"
+        android:onClick="selfDestruct" />
+
 </RelativeLayout>

@@ -1,8 +1,8 @@
 package com.flashapp.jamescollerton.flashapp;
 
 import android.app.Activity;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -27,6 +27,17 @@ public class GNCalculationLayout {
     Spinner aperture;
 
     /**
+     * These are the buttons used to start calculations
+     */
+    Button calculateAperture;
+    Button calculateDistance;
+
+    private enum CALCULATION_TYPES {
+        APERTURE,
+        DISTANCE
+    };
+
+    /**
      * Constructor that assigns the parent activity and then sets up the event listeners.
      *
      * @param parentActivity
@@ -36,6 +47,7 @@ public class GNCalculationLayout {
         this.parentActivity = parentActivity;
 
         setUpInputs();
+        setUpButtons();
         setUpEventListeners();
 
     }
@@ -54,49 +66,53 @@ public class GNCalculationLayout {
     }
 
     /**
-     * This is used to listen for changes in the input of the app in order to carry out the
-     * calculations
+     * Puts the buttons into variables to be accessed.
      */
-    public void setUpEventListeners(){
+    public void setUpButtons(){
 
-        guideNumber.addTextChangedListener(textWatcher);
-        distance.addTextChangedListener(textWatcher);
+        calculateAperture = (Button) parentActivity.findViewById(R.id.calculateAperture);
+        calculateDistance = (Button) parentActivity.findViewById(R.id.calculateDistance);
 
     }
 
     /**
-     * This is used to listen for changes in the text fields.
+     * This is used to listen for presses on the buttons and then validation.
      */
-    private TextWatcher textWatcher = new TextWatcher() {
+    public void setUpEventListeners(){
 
-        /**
-         * Listens for text being changed and then launches the calculation.
-         *
-         * @param s
-         */
-        public void afterTextChanged(Editable s) {
-            launchCalculation();
-        }
+        calculateAperture.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                launchCalculation(CALCULATION_TYPES.APERTURE);
+            }
+        });
 
-        /**
-         * Both of these need to be overriden for the class but aren't used.
-         */
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-        }
+        calculateDistance.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                launchCalculation(CALCULATION_TYPES.DISTANCE);
+            }
+        });
 
-        public void onTextChanged(CharSequence s, int start, int before,
-                                  int count) {
-
-        }
-    };
+    }
 
     /**
      * This is used to actually perform a calculation based on what information has been entered.
      */
-    private void launchCalculation(){
+    private void launchCalculation(CALCULATION_TYPES calculationType){
 
         GNCalculationInputValidation validation = new GNCalculationInputValidation(getInputs());
-        boolean validationResult = validation.validate();
+        boolean validationResult;
+
+        switch(calculationType){
+            case APERTURE:
+                validationResult = validation.validateForAperture();
+                break;
+            case DISTANCE:
+                validationResult = validation.validateForDistance();
+                break;
+            default:
+                validationResult = false;
+                break;
+        }
 
         if(validationResult){
             System.out.println("Passed");

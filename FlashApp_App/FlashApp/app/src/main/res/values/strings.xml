@@ -16,6 +16,11 @@
     <string name="label_distance">Distance</string>
     <string name="label_aperture">Aperture</string>
 
+    <!-- Button Text -->
+
+    <string name="button_aperture">Calculate Aperture</string>
+    <string name="button_distance">Calculate Distance</string>
+
     <!-- Arrays -->
 
     <string-array name="arrays_ISO">
