@@ -87,7 +87,7 @@
     <Button
         android:id="@+id/calculateAperture"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_below="@+id/aperture"
         android:text="@string/button_aperture"
         android:onClick="selfDestruct" />
@@ -96,7 +96,7 @@
     <Button
         android:id="@+id/calculateDistance"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_below="@+id/calculateAperture"
         android:text="@string/button_distance"
         android:onClick="selfDestruct" />
