@@ -115,7 +115,10 @@ public class GNCalculationLayout {
                         System.out.println("Passed");
                         return;
                     } else {
-                        new AlertBox(parentActivity, "Incomplete Data", "Please make sure distance, ISO and guide number are populated.", "OK");
+                        new AlertBox(parentActivity,
+                                     "Incomplete Data",
+                                     "Please make sure distance, ISO and guide number are populated.",
+                                     "OK");
                     }
                     break;
                 case DISTANCE:
@@ -124,13 +127,19 @@ public class GNCalculationLayout {
                         System.out.println("Passed");
                         return;
                     } else {
-                        new AlertBox(parentActivity, "Incomplete Data", "Please make sure aperture, ISO and guide number are populated.", "OK");
+                        new AlertBox(parentActivity,
+                                     "Incomplete Data",
+                                     "Please make sure aperture, ISO and guide number are populated.",
+                                     "OK");
                     }
                     break;
             }
 
         } catch (NoSuchElementException e){
-            new AlertBox(parentActivity, "Data Entry Error", "Error in the entered values, please try again.", "OK");
+            new AlertBox(parentActivity,
+                         "Data Entry Error",
+                         "Error in the entered values, please try again.",
+                         "OK");
         }
 
     }
