@@ -21,17 +21,13 @@ public class GNCalculationInputValidation {
     private String apertureInput;
 
     private int guideNumber;
-    private int distance;
     private int ISO;
+    private float distance;
     private float aperture;
-    private boolean apertureValidated;
-    private boolean distanceValidated;
 
     public GNCalculationInputValidation(ArrayList<String> inputs){
 
         this.inputs = inputs;
-        this.apertureValidated = false;
-        this.distanceValidated = false;
 
         setUpInputs();
 
@@ -48,9 +44,10 @@ public class GNCalculationInputValidation {
 
     public boolean validateForAperture(){
 
-        boolean integerTestResult = parseApertureIntegers();
+        boolean integerTestResult   = parseApertureIntegers();
+        boolean floatTestResult     = parseApertureFloats();
 
-        return integerTestResult;
+        return integerTestResult && floatTestResult;
 
     }
 
@@ -67,8 +64,7 @@ public class GNCalculationInputValidation {
 
         try {
             guideNumber = parseIntegerFromString(guideNumberInput);
-            distance = parseIntegerFromString(distanceInput);
-            ISO = parseIntegerFromString(ISOInput);
+            ISO         = parseIntegerFromString(ISOInput);
         } catch(NumberFormatException e){
             return false;
         }
@@ -81,7 +77,7 @@ public class GNCalculationInputValidation {
 
         try {
             guideNumber = parseIntegerFromString(guideNumberInput);
-            ISO = parseIntegerFromString(ISOInput);
+            ISO         = parseIntegerFromString(ISOInput);
         } catch(NumberFormatException e){
             return false;
         }
@@ -94,6 +90,17 @@ public class GNCalculationInputValidation {
 
         return Integer.parseInt(toParse);
 
+    }
+
+    public boolean parseApertureFloats() {
+
+        try{
+            distance = parseFloatFromString(distanceInput);
+        } catch (NumberFormatException e){
+            return false;
+        }
+
+        return true;
     }
 
     public boolean parseDistanceFloats() {
@@ -121,7 +128,7 @@ public class GNCalculationInputValidation {
         }
     }
 
-    public int getDistance() {
+    public float getDistance() {
         if(distance != 0) {
             return distance;
         } else {
