@@ -60,7 +60,7 @@ public class GNCalculationInputValidation {
 
     }
 
-    public boolean parseApertureIntegers(){
+    private boolean parseApertureIntegers(){
 
         try {
             guideNumber = parseIntegerFromString(guideNumberInput);
@@ -73,7 +73,7 @@ public class GNCalculationInputValidation {
 
     }
 
-    public boolean parseDistanceIntegers(){
+    private boolean parseDistanceIntegers(){
 
         try {
             guideNumber = parseIntegerFromString(guideNumberInput);
@@ -86,13 +86,13 @@ public class GNCalculationInputValidation {
 
     }
 
-    public int parseIntegerFromString(String toParse) throws NumberFormatException{
+    private int parseIntegerFromString(String toParse) throws NumberFormatException{
 
         return Integer.parseInt(toParse);
 
     }
 
-    public boolean parseApertureFloats() {
+    private boolean parseApertureFloats() {
 
         try{
             distance = parseFloatFromString(distanceInput);
@@ -103,7 +103,7 @@ public class GNCalculationInputValidation {
         return true;
     }
 
-    public boolean parseDistanceFloats() {
+    private boolean parseDistanceFloats() {
 
         try{
             aperture = parseFloatFromString(apertureInput);
@@ -114,7 +114,7 @@ public class GNCalculationInputValidation {
         return true;
     }
 
-    public float parseFloatFromString(String toParse) throws NumberFormatException{
+    private float parseFloatFromString(String toParse) throws NumberFormatException{
 
         return Float.parseFloat(toParse);
 

@@ -104,34 +104,15 @@ public class GNCalculationLayout {
     private void launchCalculation(CALCULATION_TYPES calculationType){
 
         GNCalculationInputValidation validation = new GNCalculationInputValidation(getInputs());
-        boolean validationResult;
 
         try {
 
             switch (calculationType) {
                 case APERTURE:
-                    validationResult = validation.validateForAperture();
-                    if (validationResult) {
-                        System.out.println("Passed");
-                        return;
-                    } else {
-                        new AlertBox(parentActivity,
-                                     "Incomplete Data",
-                                     "Please make sure distance, ISO and guide number are populated.",
-                                     "OK");
-                    }
+                    calculateAperture(validation);
                     break;
                 case DISTANCE:
-                    validationResult = validation.validateForDistance();
-                    if (validationResult) {
-                        System.out.println("Passed");
-                        return;
-                    } else {
-                        new AlertBox(parentActivity,
-                                     "Incomplete Data",
-                                     "Please make sure aperture, ISO and guide number are populated.",
-                                     "OK");
-                    }
+                    calculateDistance(validation);
                     break;
             }
 
@@ -142,6 +123,68 @@ public class GNCalculationLayout {
                          "OK");
         }
 
+    }
+
+    private void calculateAperture(GNCalculationInputValidation validation){
+
+        boolean validationResult = validation.validateForAperture();
+
+        if (validationResult) {
+
+            GNCalculationFormula calculation = new GNCalculationFormula(parentActivity,
+                                                                        validation.getISO(),
+                                                                        validation.getGuideNumber());
+
+            calculation.setDistance(validation.getDistance());
+
+            try {
+                int apertureIndex = calculation.calculateAperture();
+
+                setAperture(apertureIndex);
+            } catch(NumberFormatException e){
+                new AlertBox(parentActivity,
+                             "Could not find aperture",
+                             "Could not find an appropriate aperture from the list.",
+                             "OK");
+            }
+
+        } else {
+            new AlertBox(parentActivity,
+                         "Incomplete Data",
+                         "Please make sure distance, ISO and guide number are populated.",
+                         "OK");
+        }
+    }
+
+    private void setAperture(int apertureIndex){
+        aperture.setSelection(apertureIndex);
+    }
+
+    private void calculateDistance(GNCalculationInputValidation validation){
+
+        boolean validationResult = validation.validateForDistance();
+
+        if (validationResult) {
+            GNCalculationFormula calculation = new GNCalculationFormula(parentActivity,
+                                                                        validation.getISO(),
+                                                                        validation.getGuideNumber());
+
+            calculation.setAperture(validation.getAperture());
+
+            float distance = calculation.calculateDistance();
+
+            setDistance(distance);
+
+        } else {
+            new AlertBox(parentActivity,
+                         "Incomplete Data",
+                         "Please make sure aperture, ISO and guide number are populated.",
+                         "OK");
+        }
+    }
+
+    private void setDistance(float distanceFloat){
+        distance.setText(distanceFloat + "");
     }
 
     /**
