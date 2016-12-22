@@ -1,12 +1,16 @@
 package com.flashapp.jamescollerton.flashapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import android.app.AlertDialog.Builder;
+
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 /**
  * Created by JamesCollerton on 21/12/2016.
@@ -102,22 +106,31 @@ public class GNCalculationLayout {
         GNCalculationInputValidation validation = new GNCalculationInputValidation(getInputs());
         boolean validationResult;
 
-        switch(calculationType){
-            case APERTURE:
-                validationResult = validation.validateForAperture();
-                break;
-            case DISTANCE:
-                validationResult = validation.validateForDistance();
-                break;
-            default:
-                validationResult = false;
-                break;
-        }
+        try {
 
-        if(validationResult){
-            System.out.println("Passed");
-        } else {
-            System.out.println("Failed");
+            switch (calculationType) {
+                case APERTURE:
+                    validationResult = validation.validateForAperture();
+                    if (validationResult) {
+                        System.out.println("Passed");
+                        return;
+                    } else {
+                        new AlertBox(parentActivity, "Incomplete Data", "Please make sure distance, ISO and guide number are populated.", "OK");
+                    }
+                    break;
+                case DISTANCE:
+                    validationResult = validation.validateForDistance();
+                    if (validationResult) {
+                        System.out.println("Passed");
+                        return;
+                    } else {
+                        new AlertBox(parentActivity, "Incomplete Data", "Please make sure aperture, ISO and guide number are populated.", "OK");
+                    }
+                    break;
+            }
+
+        } catch (NoSuchElementException e){
+            new AlertBox(parentActivity, "Data Entry Error", "Error in the entered values, please try again.", "OK");
         }
 
     }

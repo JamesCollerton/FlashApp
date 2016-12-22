@@ -1,6 +1,7 @@
 package com.flashapp.jamescollerton.flashapp;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 /**
  * Created by JamesCollerton on 21/12/2016.
@@ -23,10 +24,14 @@ public class GNCalculationInputValidation {
     private int distance;
     private int ISO;
     private float aperture;
+    private boolean apertureValidated;
+    private boolean distanceValidated;
 
     public GNCalculationInputValidation(ArrayList<String> inputs){
 
         this.inputs = inputs;
+        this.apertureValidated = false;
+        this.distanceValidated = false;
 
         setUpInputs();
 
@@ -76,7 +81,6 @@ public class GNCalculationInputValidation {
 
         try {
             guideNumber = parseIntegerFromString(guideNumberInput);
-            distance = parseIntegerFromString(distanceInput);
             ISO = parseIntegerFromString(ISOInput);
         } catch(NumberFormatException e){
             return false;
@@ -107,6 +111,38 @@ public class GNCalculationInputValidation {
 
         return Float.parseFloat(toParse);
 
+    }
+
+    public int getGuideNumber() {
+        if(guideNumber != 0) {
+            return guideNumber;
+        } else {
+            throw new NoSuchElementException("Need to validate before returning guide number.");
+        }
+    }
+
+    public int getDistance() {
+        if(distance != 0) {
+            return distance;
+        } else {
+            throw new NoSuchElementException("Need to validate for aperture before returning distance.");
+        }
+    }
+
+    public int getISO() {
+        if(ISO != 0) {
+            return ISO;
+        } else {
+            throw new NoSuchElementException("Need to validate before returning ISO");
+        }
+    }
+
+    public float getAperture() {
+        if(aperture != 0) {
+            return aperture;
+        } else{
+            throw new NoSuchElementException("Need to validate for distance before returning aperture.");
+        }
     }
 
 }
