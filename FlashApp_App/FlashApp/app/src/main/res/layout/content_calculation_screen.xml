@@ -90,6 +90,8 @@
         android:layout_width="match_parent"
         android:layout_below="@+id/aperture"
         android:text="@string/button_aperture"
+        android:textColor="@color/buttonTextColor"
+        android:backgroundTint="@color/colorPrimary"
         android:onClick="selfDestruct" />
 
     <!-- Distance Calculation Button -->
@@ -99,6 +101,8 @@
         android:layout_width="match_parent"
         android:layout_below="@+id/calculateAperture"
         android:text="@string/button_distance"
+        android:textColor="@color/buttonTextColor"
+        android:backgroundTint="@color/colorPrimary"
         android:onClick="selfDestruct" />
 
 </RelativeLayout>
