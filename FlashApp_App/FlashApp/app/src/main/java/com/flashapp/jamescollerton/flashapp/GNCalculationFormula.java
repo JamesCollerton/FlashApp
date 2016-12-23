@@ -14,9 +14,6 @@ public class GNCalculationFormula {
     private float distance;
     private float aperture;
 
-    /**
-     * This is for calculating aperture
-     */
     public GNCalculationFormula(Activity parentActivity, int ISO, int guideNumber){
         this.parentActivity = parentActivity;
         this.guideNumber = guideNumber;

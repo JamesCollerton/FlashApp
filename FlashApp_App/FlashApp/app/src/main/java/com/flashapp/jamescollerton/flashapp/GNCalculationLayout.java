@@ -1,13 +1,10 @@
 package com.flashapp.jamescollerton.flashapp;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-
-import android.app.AlertDialog.Builder;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
