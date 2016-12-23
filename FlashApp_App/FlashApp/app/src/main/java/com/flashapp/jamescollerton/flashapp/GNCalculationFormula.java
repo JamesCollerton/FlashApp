@@ -14,6 +14,8 @@ public class GNCalculationFormula {
     private float distance;
     private float aperture;
 
+    private String[] aperturesStrings;
+
     public GNCalculationFormula(Activity parentActivity, int ISO, int guideNumber){
         this.parentActivity = parentActivity;
         this.guideNumber = guideNumber;
@@ -23,6 +25,7 @@ public class GNCalculationFormula {
     public int calculateAperture() throws NumberFormatException{
 
         float apertureRawValue = findRawAperture();
+        setApertureOptions(parentActivity.getResources().getStringArray(R.array.arrays_aperture));
         return findApertureFromOptions(apertureRawValue);
 
     }
@@ -33,9 +36,9 @@ public class GNCalculationFormula {
         return apertureRawValue;
     }
 
-    private int findApertureFromOptions(float apertureRawValue) throws NumberFormatException{
+    public int findApertureFromOptions(float apertureRawValue) throws NumberFormatException{
 
-        String[] aperturesStrings = parentActivity.getResources().getStringArray(R.array.arrays_aperture);
+//        String[] aperturesStrings = parentActivity.getResources().getStringArray(R.array.arrays_aperture);
         float[] aperturesFloats = new float[aperturesStrings.length];
 
         for(int i = 0; i < aperturesStrings.length; i++){
@@ -48,6 +51,7 @@ public class GNCalculationFormula {
         for(int i = 1; i < aperturesFloats.length; i++){
             if(Math.abs(aperturesFloats[i] - apertureRawValue) < distance){
                 lowestIndex = i;
+                distance = Math.abs(aperturesFloats[i] - apertureRawValue);
             }
         }
 
@@ -71,6 +75,10 @@ public class GNCalculationFormula {
 
     public void setAperture(float aperture){
         this.aperture = aperture;
+    }
+
+    public void setApertureOptions(String[] aperturesStrings){
+        this.aperturesStrings = aperturesStrings;
     }
 
 }
