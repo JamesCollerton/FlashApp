@@ -22,11 +22,15 @@ public class GNCalculationFormula {
 
     public int calculateAperture() throws NumberFormatException{
 
-        double ISOFactor = Math.sqrt((double) ISO / (double) 100);
-        float apertureRawValue = ((float) guideNumber * (float) ISOFactor) / distance;
-
+        float apertureRawValue = findRawAperture();
         return findApertureFromOptions(apertureRawValue);
 
+    }
+
+    public float findRawAperture() throws NumberFormatException {
+        double ISOFactor = Math.sqrt((double) ISO / (double) 100);
+        float apertureRawValue = ((float) guideNumber * (float) ISOFactor) / distance;
+        return apertureRawValue;
     }
 
     private int findApertureFromOptions(float apertureRawValue) throws NumberFormatException{
