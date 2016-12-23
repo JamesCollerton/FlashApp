@@ -66,7 +66,9 @@ public class GNCalculationFormula {
     }
 
     public float calculateDistance(){
-        return ((float) guideNumber * (float) ISO) / aperture;
+        double ISOFactor = Math.sqrt((double) ISO / (double) 100);
+        float distance = ((float) guideNumber * (float) ISOFactor) / aperture;
+        return distance;
     }
 
     public void setDistance(float distance){
