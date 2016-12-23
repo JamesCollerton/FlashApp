@@ -33,13 +33,17 @@ public class GNCalculationLayout {
     Button calculateAperture;
     Button calculateDistance;
 
+    /**
+     * Enumeration of the different calculation types we can do
+     */
     private enum CALCULATION_TYPES {
         APERTURE,
         DISTANCE
     };
 
     /**
-     * Constructor that assigns the parent activity and then sets up the event listeners.
+     * Constructor that assigns the parent activity and then sets up the input fields,
+     * event listeners and buttons to be pressed.
      *
      * @param parentActivity
      */
@@ -55,7 +59,7 @@ public class GNCalculationLayout {
 
     /**
      * This puts all of the inputs from the screen into variables so we can get their values
-     * later
+     * later.
      */
     public void setUpInputs(){
 
@@ -122,6 +126,13 @@ public class GNCalculationLayout {
 
     }
 
+    /**
+     * This method is used to calculate the aperture based on the in screen inputs. It creates a
+     * new formula object, adds the distance, then gets the index of the aperture option we need
+     * to set at.
+     *
+     * @param validation
+     */
     private void calculateAperture(GNCalculationInputValidation validation){
 
         boolean validationResult = validation.validateForAperture();
@@ -153,10 +164,21 @@ public class GNCalculationLayout {
         }
     }
 
+    /**
+     * Sets the aperture in the spinner according to the index.
+     *
+     * @param apertureIndex
+     */
     private void setAperture(int apertureIndex){
         aperture.setSelection(apertureIndex);
     }
 
+    /**
+     * This method is used to calculate the distance. Creates a new formula, sets the aperture,
+     * then carries out the distance calculation and sets the value in the app.
+     *
+     * @param validation
+     */
     private void calculateDistance(GNCalculationInputValidation validation){
 
         boolean validationResult = validation.validateForDistance();
@@ -180,6 +202,11 @@ public class GNCalculationLayout {
         }
     }
 
+    /**
+     * Sets the distance in the textbox.
+     *
+     * @param distanceFloat
+     */
     private void setDistance(float distanceFloat){
         distance.setText(distanceFloat + "");
     }

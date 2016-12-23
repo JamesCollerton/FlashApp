@@ -8,23 +8,40 @@ import java.util.NoSuchElementException;
  */
 public class GNCalculationInputValidation {
 
+    /**
+     * Indexes of where all of the information is stored in the input ArrayList.
+     */
     private static final int GUIDE_NUMBER_INDEX   = 0;
     private static final int DISTANCE_INDEX       = 1;
     private static final int ISO_INDEX            = 2;
     private static final int APERTURE_INDEX       = 3;
 
+    /**
+     * ArrayList of inputs to be validated
+     */
     private ArrayList<String> inputs;
 
+    /**
+     * Strings to be taken from input ArrayList
+     */
     private String guideNumberInput;
     private String distanceInput;
     private String ISOInput;
     private String apertureInput;
 
+    /**
+     * Data we want to take from the strings
+     */
     private int guideNumber;
     private int ISO;
     private float distance;
     private float aperture;
 
+    /**
+     * Assigns the array list and then puts all of the values into their strings in the object.
+     *
+     * @param inputs ArrayList of inputs to be validated
+     */
     public GNCalculationInputValidation(ArrayList<String> inputs){
 
         this.inputs = inputs;
@@ -33,6 +50,9 @@ public class GNCalculationInputValidation {
 
     }
 
+    /**
+     * Takes all of the information from the input ArrayList and assigns it to strings
+     */
     private void setUpInputs(){
 
         guideNumberInput = inputs.get(GUIDE_NUMBER_INDEX);
@@ -42,6 +62,13 @@ public class GNCalculationInputValidation {
 
     }
 
+    /**
+     * Called when we want to validate the inputs on the screen to make sure they are valid and
+     * we have enough information to calculate the aperture. Parses the integers and floats and
+     * then returns the results
+     *
+     * @return Boolean of if the test passed
+     */
     public boolean validateForAperture(){
 
         boolean integerTestResult   = parseApertureIntegers();
@@ -51,6 +78,11 @@ public class GNCalculationInputValidation {
 
     }
 
+    /**
+     * Same as the above for distance
+     *
+     * @return Boolean of if the test passed
+     */
     public boolean validateForDistance(){
 
         boolean integerTestResult   = parseDistanceIntegers();
@@ -60,6 +92,12 @@ public class GNCalculationInputValidation {
 
     }
 
+    /**
+     * Parses all of the integers we need to calculate the aperture. If we can't parse something
+     * return that it failed the test.
+     *
+     * @return Boolean of if the test passed
+     */
     private boolean parseApertureIntegers(){
 
         try {
@@ -73,6 +111,11 @@ public class GNCalculationInputValidation {
 
     }
 
+    /**
+     * Same as above but for distance
+     *
+     * @return Boolean of if the test passed
+     */
     private boolean parseDistanceIntegers(){
 
         try {
@@ -86,12 +129,26 @@ public class GNCalculationInputValidation {
 
     }
 
+    /**
+     * Wrapper for parsing strings into integers
+     *
+     * @param toParse String to parse into integer
+     *
+     * @return Integer parsed from string
+     *
+     * @throws NumberFormatException
+     */
     private int parseIntegerFromString(String toParse) throws NumberFormatException{
 
         return Integer.parseInt(toParse);
 
     }
 
+    /**
+     * Parses all floats for calculating aperture.
+     *
+     * @return Boolean of if the test passed
+     */
     private boolean parseApertureFloats() {
 
         try{
@@ -103,6 +160,11 @@ public class GNCalculationInputValidation {
         return true;
     }
 
+    /**
+     * Parses all floats for calculating distance.
+     *
+     * @return Boolean of if the test passed
+     */
     private boolean parseDistanceFloats() {
 
         try{
@@ -114,6 +176,15 @@ public class GNCalculationInputValidation {
         return true;
     }
 
+    /**
+     * Wrapper for parsing strings into float
+     *
+     * @param toParse String to parse into float
+     *
+     * @return Float parsed from string
+     *
+     * @throws NumberFormatException
+     */
     private float parseFloatFromString(String toParse) throws NumberFormatException{
 
         return Float.parseFloat(toParse);
