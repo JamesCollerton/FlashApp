@@ -6,6 +6,8 @@ This is an app used to calculate settings on your camera in order to get the cor
 
 It takes into account the ISO of the film you're using and the guide number of your flash and then can either calculate the distance you should stand from your subject to expose correctly given your camera aperture or vise versa.
 
+<br />
+
 App Screen                 |
 :-------------------------:|
 ![alt text](/README_Images/Main_Screen.png  "Main_Screen") |
