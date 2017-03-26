@@ -52,3 +52,5 @@ One box for ISO.
 
 One box for aperture.
 One box for distance (m).
+
+app/src/test/java
