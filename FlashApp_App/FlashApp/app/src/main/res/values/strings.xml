@@ -11,6 +11,7 @@
     <string name="label_ISO">ISO</string>
     <string name="label_distance">Distance</string>
     <string name="label_aperture">Aperture</string>
+    <string name="label_power">Power</string>
 
     <!-- Button Text -->
 
@@ -37,6 +38,17 @@
         <item>11</item>
         <item>16</item>
         <item>22</item>
+    </string-array>
+
+    <string-array name="arrays_power">
+        <item>1/1</item>
+        <item>1/2</item>
+        <item>1/4</item>
+        <item>1/8</item>
+        <item>1/16</item>
+        <item>1/32</item>
+        <item>1/64</item>
+        <item>1/128</item>
     </string-array>
 
 </resources>
