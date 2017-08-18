@@ -1,4 +1,4 @@
-package com.flashapp.jamescollerton.flashapp;
+package com.flashapp.jamescollerton.flashapp.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.flashapp.jamescollerton.flashapp.GNCalculationLayout;
+import com.flashapp.jamescollerton.flashapp.R;
 
 public class GNCalculationScreen extends AppCompatActivity {
 

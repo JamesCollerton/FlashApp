@@ -1,5 +1,7 @@
 package com.flashapp.jamescollerton.flashapp;
 
+import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
+
 import org.junit.Test;
 
 import java.util.Arrays;
