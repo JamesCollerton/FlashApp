@@ -1,24 +1,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context="com.flashapp.jamescollerton.flashapp.fragments.PowerFragment">
+    android:layout_height="match_parent"
+    tools:context="com.flashapp.jamescollerton.flashapp.fragments.DistanceFragment">
 
-    <!-- Power Label -->
+    <!-- Distance Label -->
     <TextView
-        android:id="@+id/powerLabel"
+        android:id="@+id/distanceLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_power"
+        android:text="@string/label_distance"
         style="@style/style_input_label" />
 
-    <!-- Power Input -->
-    <Spinner
-        android:id="@+id/power"
+    <!-- Distance Input -->
+    <EditText
+        android:id="@+id/distance"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/powerLabel"
+        android:layout_below="@+id/distanceLabel"
         android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:entries="@array/arrays_power"/>
+        android:inputType="numberDecimal"/>
 
 </RelativeLayout>

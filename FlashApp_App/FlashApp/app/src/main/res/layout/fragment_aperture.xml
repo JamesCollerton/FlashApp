@@ -1,24 +1,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context="com.flashapp.jamescollerton.flashapp.fragments.PowerFragment">
+    android:layout_height="match_parent"
+    tools:context="com.flashapp.jamescollerton.flashapp.fragments.ApertureFragment">
 
-    <!-- Power Label -->
+    <!-- Aperture Label -->
     <TextView
-        android:id="@+id/powerLabel"
+        android:id="@+id/apertureLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_power"
+        android:text="@string/label_aperture"
         style="@style/style_input_label" />
 
-    <!-- Power Input -->
+    <!-- Aperture Input -->
     <Spinner
-        android:id="@+id/power"
+        android:id="@+id/aperture"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/powerLabel"
+        android:layout_below="@+id/apertureLabel"
         android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:entries="@array/arrays_power"/>
+        android:entries="@array/arrays_aperture"/>
 
 </RelativeLayout>

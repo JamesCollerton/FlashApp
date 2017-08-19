@@ -59,80 +59,104 @@
              android:layout_below="@+id/guideNumberFragment"
              layout="@layout/fragment_iso" />
 
-    <!-- Power Label -->
-    <TextView
-        android:id="@+id/powerLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ISOFragment"
-        android:text="@string/label_power"
-        style="@style/style_input_label" />
+    <include android:id="@+id/powerFragment"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/ISOFragment"
+             layout="@layout/fragment_power" />
 
-    <!-- Power Input -->
-    <Spinner
-        android:id="@+id/power"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/powerLabel"
-        android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:entries="@array/arrays_power"/>
+    <include android:id="@+id/distanceFragment"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/powerFragment"
+             layout="@layout/fragment_distance" />
 
-    <!-- Distance Label -->
-    <TextView
-        android:id="@+id/distanceLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/power"
-        android:text="@string/label_distance"
-        style="@style/style_input_label" />
+    <include android:id="@+id/apertureFragment"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/distanceFragment"
+             layout="@layout/fragment_aperture" />
 
-    <!-- Distance Input -->
-    <EditText
-        android:id="@+id/distance"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/distanceLabel"
-        android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:inputType="numberDecimal"/>
+    <include android:id="@+id/calculationButtonsFragment"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/apertureFragment"
+             layout="@layout/fragment_calculation_buttons" />
 
-    <!-- Aperture Label -->
-    <TextView
-        android:id="@+id/apertureLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/distance"
-        android:text="@string/label_aperture"
-        style="@style/style_input_label" />
+    <!--&lt;!&ndash; Power Label &ndash;&gt;-->
+    <!--<TextView-->
+        <!--android:id="@+id/powerLabel"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/ISOFragment"-->
+        <!--android:text="@string/label_power"-->
+        <!--style="@style/style_input_label" />-->
 
-    <!-- Aperture Input -->
-    <Spinner
-        android:id="@+id/aperture"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/apertureLabel"
-        android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:entries="@array/arrays_aperture"/>
+    <!--&lt;!&ndash; Power Input &ndash;&gt;-->
+    <!--<Spinner-->
+        <!--android:id="@+id/power"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/powerLabel"-->
+        <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
+        <!--android:entries="@array/arrays_power"/>-->
 
-    <!-- Aperture Calculation Button -->
-    <Button
-        android:id="@+id/calculateAperture"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_below="@+id/aperture"
-        android:text="@string/button_aperture"
-        android:textColor="@color/buttonTextColor"
-        android:backgroundTint="@color/colorPrimary"
-        android:onClick="selfDestruct" />
+    <!--&lt;!&ndash; Distance Label &ndash;&gt;-->
+    <!--<TextView-->
+        <!--android:id="@+id/distanceLabel"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/powerFragment"-->
+        <!--android:text="@string/label_distance"-->
+        <!--style="@style/style_input_label" />-->
 
-    <!-- Distance Calculation Button -->
-    <Button
-        android:id="@+id/calculateDistance"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_below="@+id/calculateAperture"
-        android:text="@string/button_distance"
-        android:textColor="@color/buttonTextColor"
-        android:backgroundTint="@color/colorPrimary"
-        android:onClick="selfDestruct" />
+    <!--&lt;!&ndash; Distance Input &ndash;&gt;-->
+    <!--<EditText-->
+        <!--android:id="@+id/distance"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/distanceLabel"-->
+        <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
+        <!--android:inputType="numberDecimal"/>-->
+
+    <!--&lt;!&ndash; Aperture Label &ndash;&gt;-->
+    <!--<TextView-->
+        <!--android:id="@+id/apertureLabel"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/distanceFragment"-->
+        <!--android:text="@string/label_aperture"-->
+        <!--style="@style/style_input_label" />-->
+
+    <!--&lt;!&ndash; Aperture Input &ndash;&gt;-->
+    <!--<Spinner-->
+        <!--android:id="@+id/aperture"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/apertureLabel"-->
+        <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
+        <!--android:entries="@array/arrays_aperture"/>-->
+
+    <!--&lt;!&ndash; Aperture Calculation Button &ndash;&gt;-->
+    <!--<Button-->
+        <!--android:id="@+id/calculateAperture"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_below="@+id/apertureFragment"-->
+        <!--android:text="@string/button_aperture"-->
+        <!--android:textColor="@color/buttonTextColor"-->
+        <!--android:backgroundTint="@color/colorPrimary"-->
+        <!--android:onClick="selfDestruct" />-->
+
+    <!--&lt;!&ndash; Distance Calculation Button &ndash;&gt;-->
+    <!--<Button-->
+        <!--android:id="@+id/calculateDistance"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_below="@+id/calculateAperture"-->
+        <!--android:text="@string/button_distance"-->
+        <!--android:textColor="@color/buttonTextColor"-->
+        <!--android:backgroundTint="@color/colorPrimary"-->
+        <!--android:onClick="selfDestruct" />-->
 
 </RelativeLayout>

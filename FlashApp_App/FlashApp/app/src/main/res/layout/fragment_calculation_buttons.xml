@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.flashapp.jamescollerton.flashapp.fragments.CalculationButtonsFragment">
+
+    <!-- Aperture Calculation Button -->
+    <Button
+        android:id="@+id/calculateAperture"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/button_aperture"
+        android:textColor="@color/buttonTextColor"
+        android:backgroundTint="@color/colorPrimary"
+        android:onClick="selfDestruct" />
+
+    <!-- Distance Calculation Button -->
+    <Button
+        android:id="@+id/calculateDistance"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/calculateAperture"
+        android:text="@string/button_distance"
+        android:textColor="@color/buttonTextColor"
+        android:backgroundTint="@color/colorPrimary"
+        android:onClick="selfDestruct" />
+
+</RelativeLayout>
