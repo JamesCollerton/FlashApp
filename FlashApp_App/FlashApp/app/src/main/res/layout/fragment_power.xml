@@ -2,23 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="com.flashapp.jamescollerton.flashapp.fragments.ISOFragment">
+    tools:context="com.flashapp.jamescollerton.flashapp.fragments.PowerFragment">
 
-    <!-- ISO Label -->
+    <!-- Power Label -->
     <TextView
-        android:id="@+id/ISOLabel"
+        android:id="@+id/powerLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_ISO"
+        android:layout_below="@+id/ISOFragment"
+        android:text="@string/label_power"
         style="@style/style_input_label" />
 
-    <!-- ISO Input -->
+    <!-- Power Input -->
     <Spinner
-        android:id="@+id/ISO"
+        android:id="@+id/power"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ISOLabel"
+        android:layout_below="@+id/powerLabel"
         android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:entries="@array/arrays_ISO"/>
+        android:entries="@array/arrays_power"/>
 
 </RelativeLayout>

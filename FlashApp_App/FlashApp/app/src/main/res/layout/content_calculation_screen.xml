@@ -13,22 +13,22 @@
     tools:context=".activities.GNCalculationScreen"
     tools:showIn="@layout/activity_calculation_screen">
 
-    <!-- Guide Number Label -->
-    <TextView
-        android:id="@+id/guideNumberLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/label_guide_number"
-        style="@style/style_input_label" />
+    <!--&lt;!&ndash; Guide Number Label &ndash;&gt;-->
+    <!--<TextView-->
+        <!--android:id="@+id/guideNumberLabel"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/label_guide_number"-->
+        <!--style="@style/style_input_label" />-->
 
-    <!-- Guide Number Input -->
-    <EditText
-        android:id="@+id/guideNumber"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/guideNumberLabel"
-        android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:inputType="number"/>
+    <!--&lt;!&ndash; Guide Number Input &ndash;&gt;-->
+    <!--<EditText-->
+        <!--android:id="@+id/guideNumber"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/guideNumberLabel"-->
+        <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
+        <!--android:inputType="number"/>-->
 
     <!--&lt;!&ndash; ISO Label &ndash;&gt;-->
     <!--<TextView-->
@@ -48,10 +48,15 @@
         <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
         <!--android:entries="@array/arrays_ISO"/>-->
 
-    <include android:id="@+id/ISOfragment"
+    <include android:id="@+id/guideNumberFragment"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:layout_below="@+id/guideNumber"
+             layout="@layout/fragment_guide_number" />
+
+    <include android:id="@+id/ISOFragment"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/guideNumberFragment"
              layout="@layout/fragment_iso" />
 
     <!-- Power Label -->
@@ -59,7 +64,7 @@
         android:id="@+id/powerLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ISOfragment"
+        android:layout_below="@+id/ISOFragment"
         android:text="@string/label_power"
         style="@style/style_input_label" />
 

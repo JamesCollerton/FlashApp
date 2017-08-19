@@ -2,23 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="com.flashapp.jamescollerton.flashapp.fragments.ISOFragment">
+    tools:context="com.flashapp.jamescollerton.flashapp.fragments.GuideNumberFragment">
 
-    <!-- ISO Label -->
+    <!-- Guide Number Label -->
     <TextView
-        android:id="@+id/ISOLabel"
+        android:id="@+id/guideNumberLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_ISO"
+        android:text="@string/label_guide_number"
         style="@style/style_input_label" />
 
-    <!-- ISO Input -->
-    <Spinner
-        android:id="@+id/ISO"
+    <!-- Guide Number Input -->
+    <EditText
+        android:id="@+id/guideNumber"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ISOLabel"
+        android:layout_below="@+id/guideNumberLabel"
         android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:entries="@array/arrays_ISO"/>
+        android:inputType="number"/>
 
 </RelativeLayout>
