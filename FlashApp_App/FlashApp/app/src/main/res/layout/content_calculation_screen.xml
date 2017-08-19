@@ -13,10 +13,11 @@
     tools:context=".activities.GNCalculationScreen"
     tools:showIn="@layout/activity_calculation_screen">
 
-    <include android:id="@+id/guideNumberFragment"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             layout="@layout/fragment_guide_number" />
+    <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.GuideNumberFragment"
+              android:id="@+id/guideNumberFragment"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              layout="@layout/fragment_guide_number" />
 
     <include android:id="@+id/ISOFragment"
              android:layout_width="match_parent"
