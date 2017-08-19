@@ -30,32 +30,36 @@
         android:layout_marginBottom="@dimen/input_field_vertical_spacing"
         android:inputType="number"/>
 
-    <!-- ISO Label -->
-    <TextView
-        android:id="@+id/ISOLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/guideNumber"
-        android:text="@string/label_ISO"
-        style="@style/style_input_label" />
+    <!--&lt;!&ndash; ISO Label &ndash;&gt;-->
+    <!--<TextView-->
+        <!--android:id="@+id/ISOLabel"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/guideNumber"-->
+        <!--android:text="@string/label_ISO"-->
+        <!--style="@style/style_input_label" />-->
 
-    <!-- ISO Input -->
-    <Spinner
-        android:id="@+id/ISO"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ISOLabel"
-        android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:entries="@array/arrays_ISO"/>
+    <!--&lt;!&ndash; ISO Input &ndash;&gt;-->
+    <!--<Spinner-->
+        <!--android:id="@+id/ISO"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/ISOLabel"-->
+        <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
+        <!--android:entries="@array/arrays_ISO"/>-->
 
-    <include layout="@layout/fragment_iso" />
+    <include android:id="@+id/ISOfragment"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/guideNumber"
+             layout="@layout/fragment_iso" />
 
     <!-- Power Label -->
     <TextView
         android:id="@+id/powerLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ISO"
+        android:layout_below="@+id/ISOfragment"
         android:text="@string/label_power"
         style="@style/style_input_label" />
 
