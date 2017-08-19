@@ -7,10 +7,13 @@
     android:fitsSystemWindows="true"
     tools:context=".activities.GNCalculationScreen">
 
+    <!-- RelativeLayout so that we can fit the scroll section
+     under the top toolbar.-->
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent">
 
+        <!-- Top Toolbar -->
         <android.support.design.widget.AppBarLayout
             android:id="@+id/bar"
             android:layout_width="match_parent"
@@ -26,6 +29,7 @@
 
         </android.support.design.widget.AppBarLayout>
 
+        <!-- Scrolling section with the main page. -->
         <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

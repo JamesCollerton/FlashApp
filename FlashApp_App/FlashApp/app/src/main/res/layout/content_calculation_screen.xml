@@ -48,6 +48,8 @@
         android:layout_marginBottom="@dimen/input_field_vertical_spacing"
         android:entries="@array/arrays_ISO"/>
 
+    <include layout="@layout/fragment_iso" />
+
     <!-- Power Label -->
     <TextView
         android:id="@+id/powerLabel"
