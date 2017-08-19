@@ -13,41 +13,6 @@
     tools:context=".activities.GNCalculationScreen"
     tools:showIn="@layout/activity_calculation_screen">
 
-    <!--&lt;!&ndash; Guide Number Label &ndash;&gt;-->
-    <!--<TextView-->
-        <!--android:id="@+id/guideNumberLabel"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/label_guide_number"-->
-        <!--style="@style/style_input_label" />-->
-
-    <!--&lt;!&ndash; Guide Number Input &ndash;&gt;-->
-    <!--<EditText-->
-        <!--android:id="@+id/guideNumber"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/guideNumberLabel"-->
-        <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
-        <!--android:inputType="number"/>-->
-
-    <!--&lt;!&ndash; ISO Label &ndash;&gt;-->
-    <!--<TextView-->
-        <!--android:id="@+id/ISOLabel"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/guideNumber"-->
-        <!--android:text="@string/label_ISO"-->
-        <!--style="@style/style_input_label" />-->
-
-    <!--&lt;!&ndash; ISO Input &ndash;&gt;-->
-    <!--<Spinner-->
-        <!--android:id="@+id/ISO"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/ISOLabel"-->
-        <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
-        <!--android:entries="@array/arrays_ISO"/>-->
-
     <include android:id="@+id/guideNumberFragment"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
@@ -82,81 +47,5 @@
              android:layout_height="wrap_content"
              android:layout_below="@+id/apertureFragment"
              layout="@layout/fragment_calculation_buttons" />
-
-    <!--&lt;!&ndash; Power Label &ndash;&gt;-->
-    <!--<TextView-->
-        <!--android:id="@+id/powerLabel"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/ISOFragment"-->
-        <!--android:text="@string/label_power"-->
-        <!--style="@style/style_input_label" />-->
-
-    <!--&lt;!&ndash; Power Input &ndash;&gt;-->
-    <!--<Spinner-->
-        <!--android:id="@+id/power"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/powerLabel"-->
-        <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
-        <!--android:entries="@array/arrays_power"/>-->
-
-    <!--&lt;!&ndash; Distance Label &ndash;&gt;-->
-    <!--<TextView-->
-        <!--android:id="@+id/distanceLabel"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/powerFragment"-->
-        <!--android:text="@string/label_distance"-->
-        <!--style="@style/style_input_label" />-->
-
-    <!--&lt;!&ndash; Distance Input &ndash;&gt;-->
-    <!--<EditText-->
-        <!--android:id="@+id/distance"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/distanceLabel"-->
-        <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
-        <!--android:inputType="numberDecimal"/>-->
-
-    <!--&lt;!&ndash; Aperture Label &ndash;&gt;-->
-    <!--<TextView-->
-        <!--android:id="@+id/apertureLabel"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/distanceFragment"-->
-        <!--android:text="@string/label_aperture"-->
-        <!--style="@style/style_input_label" />-->
-
-    <!--&lt;!&ndash; Aperture Input &ndash;&gt;-->
-    <!--<Spinner-->
-        <!--android:id="@+id/aperture"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/apertureLabel"-->
-        <!--android:layout_marginBottom="@dimen/input_field_vertical_spacing"-->
-        <!--android:entries="@array/arrays_aperture"/>-->
-
-    <!--&lt;!&ndash; Aperture Calculation Button &ndash;&gt;-->
-    <!--<Button-->
-        <!--android:id="@+id/calculateAperture"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_below="@+id/apertureFragment"-->
-        <!--android:text="@string/button_aperture"-->
-        <!--android:textColor="@color/buttonTextColor"-->
-        <!--android:backgroundTint="@color/colorPrimary"-->
-        <!--android:onClick="selfDestruct" />-->
-
-    <!--&lt;!&ndash; Distance Calculation Button &ndash;&gt;-->
-    <!--<Button-->
-        <!--android:id="@+id/calculateDistance"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_below="@+id/calculateAperture"-->
-        <!--android:text="@string/button_distance"-->
-        <!--android:textColor="@color/buttonTextColor"-->
-        <!--android:backgroundTint="@color/colorPrimary"-->
-        <!--android:onClick="selfDestruct" />-->
 
 </RelativeLayout>
