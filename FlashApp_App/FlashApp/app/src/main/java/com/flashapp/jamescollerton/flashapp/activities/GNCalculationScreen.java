@@ -1,5 +1,6 @@
 package com.flashapp.jamescollerton.flashapp.activities;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,8 +12,11 @@ import android.view.MenuItem;
 
 import com.flashapp.jamescollerton.flashapp.GNCalculationLayout;
 import com.flashapp.jamescollerton.flashapp.R;
+import com.flashapp.jamescollerton.flashapp.fragments.ApertureFragment;
+import com.flashapp.jamescollerton.flashapp.fragments.GuideNumberFragment;
 
-public class GNCalculationScreen extends AppCompatActivity {
+public class GNCalculationScreen    extends     AppCompatActivity
+                                    implements  GuideNumberFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,5 +59,10 @@ public class GNCalculationScreen extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+        System.out.println("Here");
     }
 }
