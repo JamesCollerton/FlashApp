@@ -62,7 +62,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
     }
 
     @Override
-    public void onFragmentInteraction(Uri uri) {
+    public void onGuideNumberFragmentInteraction(Uri uri) {
         System.out.println("Here");
     }
 }
