@@ -19,34 +19,39 @@
               android:layout_height="wrap_content"
               layout="@layout/fragment_guide_number" />
 
-    <include android:id="@+id/ISOFragment"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_below="@+id/guideNumberFragment"
-             layout="@layout/fragment_iso" />
+    <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.ISOFragment"
+              android:id="@+id/ISOFragment"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/guideNumberFragment"
+              layout="@layout/fragment_iso" />
 
-    <include android:id="@+id/powerFragment"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_below="@+id/ISOFragment"
-             layout="@layout/fragment_power" />
+    <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.PowerFragment"
+              android:id="@+id/powerFragment"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/ISOFragment"
+              layout="@layout/fragment_power" />
 
-    <include android:id="@+id/distanceFragment"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_below="@+id/powerFragment"
-             layout="@layout/fragment_distance" />
+    <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.DistanceFragment"
+              android:id="@+id/distanceFragment"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/powerFragment"
+              layout="@layout/fragment_distance" />
 
-    <include android:id="@+id/apertureFragment"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_below="@+id/distanceFragment"
-             layout="@layout/fragment_aperture" />
+    <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.ApertureFragment"
+              android:id="@+id/apertureFragment"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/distanceFragment"
+              layout="@layout/fragment_aperture" />
 
-    <include android:id="@+id/calculationButtonsFragment"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_below="@+id/apertureFragment"
-             layout="@layout/fragment_calculation_buttons" />
+    <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.CalculationButtonsFragment"
+              android:id="@+id/calculationButtonsFragment"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/apertureFragment"
+              layout="@layout/fragment_calculation_buttons" />
 
 </RelativeLayout>

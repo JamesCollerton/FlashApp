@@ -13,10 +13,19 @@ import android.view.MenuItem;
 import com.flashapp.jamescollerton.flashapp.GNCalculationLayout;
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.fragments.ApertureFragment;
+import com.flashapp.jamescollerton.flashapp.fragments.CalculationButtonsFragment;
+import com.flashapp.jamescollerton.flashapp.fragments.DistanceFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.GuideNumberFragment;
+import com.flashapp.jamescollerton.flashapp.fragments.ISOFragment;
+import com.flashapp.jamescollerton.flashapp.fragments.PowerFragment;
 
 public class GNCalculationScreen    extends     AppCompatActivity
-                                    implements  GuideNumberFragment.OnFragmentInteractionListener {
+                                    implements  GuideNumberFragment.OnFragmentInteractionListener,
+                                                ISOFragment.OnFragmentInteractionListener,
+                                                PowerFragment.OnFragmentInteractionListener,
+                                                DistanceFragment.OnFragmentInteractionListener,
+                                                CalculationButtonsFragment.OnFragmentInteractionListener,
+                                                ApertureFragment.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +71,21 @@ public class GNCalculationScreen    extends     AppCompatActivity
     }
 
     @Override
-    public void onGuideNumberFragmentInteraction(Uri uri) {
-        System.out.println("Here");
-    }
+    public void onGuideNumberFragmentInteraction(Uri uri) {}
+
+    @Override
+    public void onISOFragmentInteraction(Uri uri) {}
+
+    @Override
+    public void onPowerFragmentInteraction(Uri uri){}
+
+    @Override
+    public void onDistanceFragmentInteraction(Uri uri){}
+
+    @Override
+    public void onCalculationButtonsFragmentInteraction(Uri uri){}
+
+    @Override
+    public void onApertureFragmentInteraction(Uri uri){}
+
 }
