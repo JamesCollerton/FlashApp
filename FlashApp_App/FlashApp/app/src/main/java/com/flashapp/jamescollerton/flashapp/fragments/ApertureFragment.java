@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.flashapp.jamescollerton.flashapp.R;
+import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +19,7 @@ import com.flashapp.jamescollerton.flashapp.R;
  * Use the {@link ApertureFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ApertureFragment extends Fragment {
+public class ApertureFragment extends Fragment implements GNButton<Float> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -80,5 +81,9 @@ public class ApertureFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onApertureFragmentInteraction(Uri uri);
+    }
+
+    public Float getSelectedValue(){
+        return new Float(0);
     }
 }

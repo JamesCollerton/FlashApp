@@ -19,13 +19,15 @@ import com.flashapp.jamescollerton.flashapp.fragments.GuideNumberFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.ISOFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.PowerFragment;
 
+import java.sql.SQLOutput;
+
 public class GNCalculationScreen    extends     AppCompatActivity
                                     implements  GuideNumberFragment.OnFragmentInteractionListener,
                                                 ISOFragment.OnFragmentInteractionListener,
                                                 PowerFragment.OnFragmentInteractionListener,
                                                 DistanceFragment.OnFragmentInteractionListener,
                                                 CalculationButtonsFragment.OnFragmentInteractionListener,
-                                                ApertureFragment.OnFragmentInteractionListener{
+                                                ApertureFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,9 +85,11 @@ public class GNCalculationScreen    extends     AppCompatActivity
     public void onDistanceFragmentInteraction(Uri uri){}
 
     @Override
-    public void onCalculationButtonsFragmentInteraction(Uri uri){}
+    public void onApertureFragmentInteraction(Uri uri){}
 
     @Override
-    public void onApertureFragmentInteraction(Uri uri){}
+    public void onCalculationButtonsFragmentInteraction(Uri uri){
+
+    }
 
 }
