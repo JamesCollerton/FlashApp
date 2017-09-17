@@ -83,6 +83,9 @@ public class ApertureFragment extends Fragment implements GNButton<Float> {
         void onApertureFragmentInteraction(Uri uri);
     }
 
+    /*
+    TODO: Come back to this when we decide how aperture will work.
+     */
     public Float getSelectedValue(){
         return new Float(0);
     }

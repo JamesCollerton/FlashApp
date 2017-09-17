@@ -8,7 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.flashapp.jamescollerton.flashapp.AlertBox;
 import com.flashapp.jamescollerton.flashapp.R;
+import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
+import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +21,7 @@ import com.flashapp.jamescollerton.flashapp.R;
  * Use the {@link GuideNumberFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GuideNumberFragment extends Fragment {
+public class GuideNumberFragment extends Fragment implements GNButton<String> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -80,5 +83,18 @@ public class GuideNumberFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onGuideNumberFragmentInteraction(Uri uri);
+    }
+
+    @Override
+    public String getSelectedValue(){
+        try {
+            int guideNumber = InputValidation.parseIntegerFromString("1");
+        } catch(NumberFormatException e){
+            new AlertBox(getActivity(),
+                    "Could not find Guide Number",
+                    "Could not find an appropriate guide number from the list.",
+                    "OK");
+        }
+        return "";
     }
 }
