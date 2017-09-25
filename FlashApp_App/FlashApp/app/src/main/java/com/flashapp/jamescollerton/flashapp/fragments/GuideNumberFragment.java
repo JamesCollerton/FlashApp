@@ -22,7 +22,7 @@ import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
  * Use the {@link GuideNumberFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GuideNumberFragment extends Fragment implements GNButton<String> {
+public class GuideNumberFragment extends Fragment implements GNButton<Integer, EditText, String> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -87,16 +87,33 @@ public class GuideNumberFragment extends Fragment implements GNButton<String> {
     }
 
     @Override
-    public String getSelectedValue(){
+    public EditText getFragmentView(){
+        return (EditText) getActivity().findViewById(R.id.guideNumber);
+    }
+
+    @Override
+    public String readViewValue(){
+        return getFragmentView().getText().toString();
+    }
+
+    public Integer validate(String input){
+        return InputValidation.parseIntegerFromString("1");
+    }
+
+//    TODO: Change this returning zero, maybe throw exception further up.
+    @Override
+    public Integer getValue(){
         try {
             EditText guideNumberText = (EditText) getActivity().findViewById(R.id.guideNumber);
+            String guideNumberInput = guideNumberText.getText().toString();
             int guideNumber = InputValidation.parseIntegerFromString("1");
+            return guideNumber;
         } catch(NumberFormatException e){
             new AlertBox(getActivity(),
                     "Could not find Guide Number",
                     "Could not find an appropriate guide number from the list.",
                     "OK");
         }
-        return "";
+        return 0;
     }
 }
