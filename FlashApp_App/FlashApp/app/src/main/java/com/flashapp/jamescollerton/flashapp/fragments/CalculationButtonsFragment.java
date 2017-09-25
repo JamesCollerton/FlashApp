@@ -22,19 +22,8 @@ public class CalculationButtonsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public CalculationButtonsFragment() {
-        // Required empty public constructor
-    }
+    public CalculationButtonsFragment() {}
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CalculationButtonsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static CalculationButtonsFragment newInstance(String param1, String param2) {
         CalculationButtonsFragment fragment = new CalculationButtonsFragment();
         return fragment;
@@ -83,4 +72,6 @@ public class CalculationButtonsFragment extends Fragment {
         // TODO: Update argument type and name
         void onCalculationButtonsFragmentInteraction(Uri uri);
     }
+
+    
 }

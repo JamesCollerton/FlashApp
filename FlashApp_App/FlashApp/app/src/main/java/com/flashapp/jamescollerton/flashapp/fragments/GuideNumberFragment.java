@@ -27,9 +27,7 @@ public class GuideNumberFragment extends GNFragment<Integer, EditText, String> {
 
     private OnFragmentInteractionListener mListener;
 
-    public GuideNumberFragment() {
-        // Required empty public constructor
-    }
+    public GuideNumberFragment() {}
 
     /**
      * Use this factory method to create a new instance of
