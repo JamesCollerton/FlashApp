@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.flashapp.jamescollerton.flashapp.AlertBox;
 import com.flashapp.jamescollerton.flashapp.R;
@@ -88,6 +89,7 @@ public class GuideNumberFragment extends Fragment implements GNButton<String> {
     @Override
     public String getSelectedValue(){
         try {
+            EditText guideNumberText = (EditText) getActivity().findViewById(R.id.guideNumber);
             int guideNumber = InputValidation.parseIntegerFromString("1");
         } catch(NumberFormatException e){
             new AlertBox(getActivity(),
