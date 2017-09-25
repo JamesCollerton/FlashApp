@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.flashapp.jamescollerton.flashapp.AlertBox;
+import com.flashapp.jamescollerton.flashapp.GNFragment;
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
 import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
@@ -22,7 +23,7 @@ import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
  * Use the {@link GuideNumberFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GuideNumberFragment extends Fragment implements GNButton<Integer, EditText, String> {
+public class GuideNumberFragment extends GNFragment<Integer, EditText, String> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -97,23 +98,20 @@ public class GuideNumberFragment extends Fragment implements GNButton<Integer, E
     }
 
     public Integer validate(String input){
-        return InputValidation.parseIntegerFromString("1");
+        return InputValidation.parseIntegerFromString(input);
     }
 
 //    TODO: Change this returning zero, maybe throw exception further up.
-    @Override
-    public Integer getValue(){
-        try {
-            EditText guideNumberText = (EditText) getActivity().findViewById(R.id.guideNumber);
-            String guideNumberInput = guideNumberText.getText().toString();
-            int guideNumber = InputValidation.parseIntegerFromString("1");
-            return guideNumber;
-        } catch(NumberFormatException e){
-            new AlertBox(getActivity(),
-                    "Could not find Guide Number",
-                    "Could not find an appropriate guide number from the list.",
-                    "OK");
-        }
-        return 0;
-    }
+//    @Override
+//    public Integer getValue() throws Exception{
+//        try {
+//            return validate(readViewValue());
+//        } catch(NumberFormatException e){
+//            throw new Exception();
+////            new AlertBox(getActivity(),
+////                    "Could not find Guide Number",
+////                    "Could not find an appropriate guide number from the list.",
+////                    "OK");
+//        }
+//    }
 }

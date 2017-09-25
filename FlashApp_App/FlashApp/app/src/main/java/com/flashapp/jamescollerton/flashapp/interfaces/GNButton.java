@@ -13,7 +13,7 @@ public interface GNButton<ValueType, ViewType, ViewValueType> {
      *
      * @return The value of the fragment.
      */
-    public ValueType getValue();
+    public ValueType getValue() throws Exception;
 
     /**
      * This needs to be overriden to return the main view in the
@@ -23,8 +23,22 @@ public interface GNButton<ValueType, ViewType, ViewValueType> {
      */
     public ViewType getFragmentView();
 
+    /**
+     * This needs to be overriden to take whatever value we would
+     * like from the fragment. For example we might read all of the
+     * text in from the EditText area.
+     *
+     * @return
+     */
     public ViewValueType readViewValue();
 
+    /**
+     * This needs to be overriden to take the value we want from
+     * the view and return the value we want from the whole fragment.
+     *
+     * @param viewValue
+     * @return
+     */
     public ValueType validate(ViewValueType viewValue);
 
 }
