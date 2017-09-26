@@ -37,6 +37,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
         setSupportActionBar(toolbar);
 
         setUpLayout();
+        setUpListeners();
 
     }
 
@@ -48,6 +49,10 @@ public class GNCalculationScreen    extends     AppCompatActivity
 
         GNCalculationLayout layout = new GNCalculationLayout(this);
 
+    }
+
+    public void setUpListeners(){
+        assignCalculationButtonsListeners();
     }
 
     @Override
@@ -88,8 +93,14 @@ public class GNCalculationScreen    extends     AppCompatActivity
     public void onApertureFragmentInteraction(Uri uri){}
 
     @Override
-    public void onCalculationButtonsFragmentInteraction(Uri uri){
+    public void onCalculationButtonsFragmentInteraction(Uri uri){}
 
+    public void assignCalculationButtonsListeners(){
+//        findViewById(R.id.calculateAperture).setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                System.out.println("Hello");
+//            }
+//        });
     }
 
 }
