@@ -1,14 +1,16 @@
 package com.flashapp.jamescollerton.flashapp;
 
 import android.support.v4.app.Fragment;
-import android.widget.EditText;
 
 import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
+import com.flashapp.jamescollerton.flashapp.interfaces.GNField;
 
 /**
  * Created by JamesCollerton on 25/09/2017.
  */
-public abstract class GNFragment<ValueType, ViewType, ViewValueType> extends Fragment implements GNButton<ValueType, ViewType, ViewValueType>{
+public abstract class GNFragment<ValueType, ViewType, ViewValueType> extends Fragment
+                                                                     implements GNField<ValueType, ViewValueType>,
+                                                                                GNButton<ViewType>{
 
     @Override
     public ValueType getValue() throws Exception{

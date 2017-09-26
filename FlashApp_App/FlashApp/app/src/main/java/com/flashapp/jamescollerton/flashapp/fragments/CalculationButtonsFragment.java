@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.flashapp.jamescollerton.flashapp.R;
 
+import java.sql.SQLOutput;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -73,5 +75,7 @@ public class CalculationButtonsFragment extends Fragment {
         void onCalculationButtonsFragmentInteraction(Uri uri);
     }
 
-    
+    public void onCalculationButtonsFragmentInteraction(){
+        System.out.println("Hello");
+    }
 }

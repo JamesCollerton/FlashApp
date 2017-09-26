@@ -9,11 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.flashapp.jamescollerton.flashapp.AlertBox;
 import com.flashapp.jamescollerton.flashapp.GNFragment;
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
-import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +21,7 @@ import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
  * Use the {@link GuideNumberFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GuideNumberFragment extends GNFragment<Integer, EditText, String> {
+public class GuideNumberFragment extends Fragment {//extends GNFragment<Integer, EditText, String> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -85,12 +83,12 @@ public class GuideNumberFragment extends GNFragment<Integer, EditText, String> {
         void onGuideNumberFragmentInteraction(Uri uri);
     }
 
-    @Override
+//    @Override
     public EditText getFragmentView(){
         return (EditText) getActivity().findViewById(R.id.guideNumber);
     }
 
-    @Override
+//    @Override
     public String readViewValue(){
         return getFragmentView().getText().toString();
     }
