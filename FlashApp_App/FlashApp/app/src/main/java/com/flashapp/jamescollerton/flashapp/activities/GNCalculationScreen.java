@@ -96,11 +96,11 @@ public class GNCalculationScreen    extends     AppCompatActivity
     public void onCalculationButtonsFragmentInteraction(Uri uri){}
 
     public void assignCalculationButtonsListeners(){
-//        findViewById(R.id.calculateAperture).setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                System.out.println("Hello");
-//            }
-//        });
+        findViewById(R.id.calculateAperture).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Hello");
+            }
+        });
     }
 
 }
