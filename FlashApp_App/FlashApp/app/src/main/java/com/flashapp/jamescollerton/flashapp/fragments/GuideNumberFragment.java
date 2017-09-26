@@ -21,7 +21,7 @@ import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
  * Use the {@link GuideNumberFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GuideNumberFragment extends Fragment {//extends GNFragment<Integer, EditText, String> {
+public class GuideNumberFragment extends GNFragment<Integer, EditText, String> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -33,7 +33,6 @@ public class GuideNumberFragment extends Fragment {//extends GNFragment<Integer,
 
      * @return A new instance of fragment GuideNumberFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static GuideNumberFragment newInstance() {
         GuideNumberFragment fragment = new GuideNumberFragment();
         return fragment;
@@ -83,31 +82,19 @@ public class GuideNumberFragment extends Fragment {//extends GNFragment<Integer,
         void onGuideNumberFragmentInteraction(Uri uri);
     }
 
-//    @Override
+    @Override
     public EditText getFragmentView(){
         return (EditText) getActivity().findViewById(R.id.guideNumber);
     }
 
-//    @Override
+    @Override
     public String readViewValue(){
         return getFragmentView().getText().toString();
     }
 
+    @Override
     public Integer validate(String input){
         return InputValidation.parseIntegerFromString(input);
     }
 
-//    TODO: Change this returning zero, maybe throw exception further up.
-//    @Override
-//    public Integer getValue() throws Exception{
-//        try {
-//            return validate(readViewValue());
-//        } catch(NumberFormatException e){
-//            throw new Exception();
-////            new AlertBox(getActivity(),
-////                    "Could not find Guide Number",
-////                    "Could not find an appropriate guide number from the list.",
-////                    "OK");
-//        }
-//    }
 }

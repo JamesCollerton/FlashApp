@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Created by JamesCollerton on 16/09/2017.
  */
-public interface GNField<ValueType, ViewValueType> {
+public interface GNField<ValueType, ViewType, ViewValueType> extends GNButton<ViewType> {
 
     /**
      * This needs to be overriden in order to return the value

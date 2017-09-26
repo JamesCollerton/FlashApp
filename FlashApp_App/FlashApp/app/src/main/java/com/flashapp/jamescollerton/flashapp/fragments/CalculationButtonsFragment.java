@@ -7,8 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.flashapp.jamescollerton.flashapp.R;
+import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
 
 import java.sql.SQLOutput;
 
@@ -20,7 +22,7 @@ import java.sql.SQLOutput;
  * Use the {@link CalculationButtonsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CalculationButtonsFragment extends Fragment {
+public class CalculationButtonsFragment extends Fragment implements GNButton<Button> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -73,6 +75,21 @@ public class CalculationButtonsFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onCalculationButtonsFragmentInteraction(Uri uri);
+    }
+
+    @Override
+    public Button getFragmentView(){
+        return (Button) getActivity().findViewById(R.id.calculateAperture);
+    }
+
+//    private
+
+    public void assignFragmentListener(final Runnable listenerFunction){
+        getFragmentView().setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                listenerFunction.run();
+            }
+        });
     }
 
     public void onCalculationButtonsFragmentInteraction(){
