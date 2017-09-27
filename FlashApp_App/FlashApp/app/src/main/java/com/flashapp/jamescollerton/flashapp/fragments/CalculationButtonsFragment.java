@@ -81,16 +81,5 @@ public class CalculationButtonsFragment extends Fragment implements GNButton<But
     public Button getFragmentView(){
         return (Button) getActivity().findViewById(R.id.calculateAperture);
     }
-//
-//    public void assignFragmentListener(){
-//        getFragmentView().setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                onCalculationButtonsFragmentInteraction();
-//            }
-//        });
-//    }
 
-    public void onCalculationButtonsFragmentInteraction(){
-        System.out.println("Hello");
-    }
 }
