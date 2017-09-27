@@ -1,4 +1,4 @@
-package com.flashapp.jamescollerton.flashapp;
+package com.flashapp.jamescollerton.flashapp.helpers;
 
 import android.app.Activity;
 import android.app.AlertDialog;

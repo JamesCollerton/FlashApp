@@ -77,6 +77,30 @@ public class GNCalculationScreen    extends     AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Listeners
+     */
+
+    public void assignCalculationButtonsListeners(){
+
+        findViewById(R.id.calculateAperture).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Hello");
+            }
+        });
+
+        findViewById(R.id.calculateDistance).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Hello");
+            }
+        });
+
+    }
+
+    /**
+     * Overriden Methods for Fragments
+     */
+
     @Override
     public void onGuideNumberFragmentInteraction(Uri uri) {}
 
@@ -94,13 +118,5 @@ public class GNCalculationScreen    extends     AppCompatActivity
 
     @Override
     public void onCalculationButtonsFragmentInteraction(Uri uri){}
-
-    public void assignCalculationButtonsListeners(){
-        findViewById(R.id.calculateAperture).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                System.out.println("Hello");
-            }
-        });
-    }
 
 }
