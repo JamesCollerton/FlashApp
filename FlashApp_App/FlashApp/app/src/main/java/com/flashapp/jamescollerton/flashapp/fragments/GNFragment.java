@@ -1,4 +1,4 @@
-package com.flashapp.jamescollerton.flashapp;
+package com.flashapp.jamescollerton.flashapp.fragments;
 
 import android.support.v4.app.Fragment;
 

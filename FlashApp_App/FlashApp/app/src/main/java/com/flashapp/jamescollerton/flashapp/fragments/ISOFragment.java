@@ -7,8 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.flashapp.jamescollerton.flashapp.R;
+import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +20,7 @@ import com.flashapp.jamescollerton.flashapp.R;
  * Use the {@link ISOFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ISOFragment extends Fragment {
+public class ISOFragment extends GNFragment<Integer, EditText, String>  {
 
     private OnFragmentInteractionListener mListener;
 
@@ -80,5 +82,20 @@ public class ISOFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onISOFragmentInteraction(Uri uri);
+    }
+
+    @Override
+    public EditText getFragmentView(){
+        return (EditText) getActivity().findViewById(R.id.ISOFragment);
+    }
+
+    @Override
+    public String readViewValue(){
+        return getFragmentView().getText().toString();
+    }
+
+    @Override
+    public Integer validate(String input){
+        return InputValidation.parseIntegerFromString(input);
     }
 }
