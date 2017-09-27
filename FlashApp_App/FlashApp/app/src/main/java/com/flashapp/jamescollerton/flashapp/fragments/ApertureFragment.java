@@ -7,8 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 
 import com.flashapp.jamescollerton.flashapp.R;
+import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
 import com.flashapp.jamescollerton.flashapp.interfaces.GNField;
 
 /**
@@ -19,7 +21,7 @@ import com.flashapp.jamescollerton.flashapp.interfaces.GNField;
  * Use the {@link ApertureFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ApertureFragment extends Fragment {
+public class ApertureFragment extends GNFragment<Integer, Spinner, String> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -83,4 +85,18 @@ public class ApertureFragment extends Fragment {
         void onApertureFragmentInteraction(Uri uri);
     }
 
+    @Override
+    public Spinner getFragmentView(){
+        return (Spinner) getActivity().findViewById(R.id.apertureFragment);
+    }
+
+    @Override
+    public String readViewValue(){
+        return getFragmentView().getSelectedItem().toString();
+    }
+
+    @Override
+    public Integer validate(String input){
+        return InputValidation.parseIntegerFromString(input);
+    }
 }

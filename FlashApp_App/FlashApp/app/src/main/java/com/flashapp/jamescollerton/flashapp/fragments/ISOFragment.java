@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
@@ -20,7 +21,7 @@ import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
  * Use the {@link ISOFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ISOFragment extends GNFragment<Integer, EditText, String>  {
+public class ISOFragment extends GNFragment<Integer, Spinner, String>  {
 
     private OnFragmentInteractionListener mListener;
 
@@ -85,13 +86,13 @@ public class ISOFragment extends GNFragment<Integer, EditText, String>  {
     }
 
     @Override
-    public EditText getFragmentView(){
-        return (EditText) getActivity().findViewById(R.id.ISOFragment);
+    public Spinner getFragmentView(){
+        return (Spinner) getActivity().findViewById(R.id.ISOFragment);
     }
 
     @Override
     public String readViewValue(){
-        return getFragmentView().getText().toString();
+        return getFragmentView().getSelectedItem().toString();
     }
 
     @Override
