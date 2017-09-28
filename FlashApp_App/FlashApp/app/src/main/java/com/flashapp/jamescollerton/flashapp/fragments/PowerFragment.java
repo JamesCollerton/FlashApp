@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.flashapp.jamescollerton.flashapp.R;
 
@@ -22,9 +24,7 @@ public class PowerFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public PowerFragment() {
-        // Required empty public constructor
-    }
+    public PowerFragment() { }
 
     /**
      * Use this factory method to create a new instance of
@@ -43,6 +43,7 @@ public class PowerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        addSpinnerItems();
     }
 
     @Override
@@ -82,5 +83,21 @@ public class PowerFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onPowerFragmentInteraction(Uri uri);
+    }
+
+    private void addSpinnerItems(){
+//        Spinner spinner = (Spinner)findViewById(R.id.power);
+//        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, android.R.id.text1);
+//        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner.setAdapter(spinnerAdapter);
+//        spinnerAdapter.add("value");
+//        spinnerAdapter.notifyDataSetChanged();
+
+        String[] array = {"A", "B", "C"};
+
+        Spinner spinner = (Spinner) getActivity().findViewById(R.id.power);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, array); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerArrayAdapter);
     }
 }

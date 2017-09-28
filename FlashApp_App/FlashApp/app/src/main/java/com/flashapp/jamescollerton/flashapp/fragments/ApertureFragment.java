@@ -21,7 +21,7 @@ import com.flashapp.jamescollerton.flashapp.interfaces.GNField;
  * Use the {@link ApertureFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ApertureFragment extends GNFragment<Integer, Spinner, String> {
+public class ApertureFragment extends GNFragment<Float, Spinner, String> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -96,7 +96,7 @@ public class ApertureFragment extends GNFragment<Integer, Spinner, String> {
     }
 
     @Override
-    public Integer validate(String input){
-        return InputValidation.parseIntegerFromString(input);
+    public Float validate(String input){
+        return InputValidation.parseFloatFromString(input);
     }
 }
