@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.flashapp.jamescollerton.flashapp.GNCalculationLayout;
 import com.flashapp.jamescollerton.flashapp.R;
@@ -38,6 +40,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
 
         setUpLayout();
         setUpListeners();
+        setUpFields();
 
     }
 
@@ -45,14 +48,23 @@ public class GNCalculationScreen    extends     AppCompatActivity
      * This is used to set up the layout class which is used for taking in the information from the
      * screen.
      */
-    public void setUpLayout(){
-
+    private void setUpLayout(){
         GNCalculationLayout layout = new GNCalculationLayout(this);
-
     }
 
-    public void setUpListeners(){
+    /**
+     * Adds all listeners to the fields on the page.
+     */
+    private void setUpListeners(){
         assignCalculationButtonsListeners();
+    }
+
+    /**
+     * Does all of the custom initialisation of fields in the activity.
+     */
+    private void setUpFields(){
+        PowerFragment powerFragment = (PowerFragment) getSupportFragmentManager().findFragmentById(R.id.powerFragment);
+        powerFragment.addSpinnerItems();
     }
 
     @Override

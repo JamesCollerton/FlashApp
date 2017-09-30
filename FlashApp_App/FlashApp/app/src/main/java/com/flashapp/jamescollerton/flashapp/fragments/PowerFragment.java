@@ -43,14 +43,16 @@ public class PowerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addSpinnerItems();
+//        addSpinnerItems();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_power, container, false);
+        View view = inflater.inflate(R.layout.fragment_power, container, false);
+//        addSpinnerItems();
+        return view;
     }
 
     @Override
@@ -85,7 +87,7 @@ public class PowerFragment extends Fragment {
         void onPowerFragmentInteraction(Uri uri);
     }
 
-    private void addSpinnerItems(){
+    public void addSpinnerItems(){
 //        Spinner spinner = (Spinner)findViewById(R.id.power);
 //        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, android.R.id.text1);
 //        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
