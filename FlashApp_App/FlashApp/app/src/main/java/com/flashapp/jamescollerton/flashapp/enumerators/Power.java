@@ -17,7 +17,12 @@ public enum Power {
     private final int value;
 
     Power(int power){
-        this.fraction = "1/" + (Math.pow(2, power));
+        this.fraction = "1/" + ((Double) (Math.pow(2, power))).intValue();
         this.value = -power;
+    }
+
+    @Override
+    public String toString(){
+        return fraction;
     }
 }

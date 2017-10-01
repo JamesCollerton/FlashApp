@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.flashapp.jamescollerton.flashapp.R;
+import com.flashapp.jamescollerton.flashapp.enumerators.Power;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -88,17 +89,9 @@ public class PowerFragment extends Fragment {
     }
 
     public void addSpinnerItems(){
-//        Spinner spinner = (Spinner)findViewById(R.id.power);
-//        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, android.R.id.text1);
-//        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner.setAdapter(spinnerAdapter);
-//        spinnerAdapter.add("value");
-//        spinnerAdapter.notifyDataSetChanged();
-
-        String[] array = {"A", "B", "C"};
-
+        Power[] spinnerArray = Power.values();
         Spinner spinner = (Spinner) getActivity().findViewById(R.id.power);
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, array); //selected item will look like a spinner set from XML
+        ArrayAdapter<Power> spinnerArrayAdapter = new ArrayAdapter<Power>(getContext(), android.R.layout.simple_spinner_item, spinnerArray); //selected item will look like a spinner set from XML
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerArrayAdapter);
     }
