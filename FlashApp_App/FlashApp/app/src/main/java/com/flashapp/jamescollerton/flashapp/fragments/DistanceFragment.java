@@ -84,7 +84,7 @@ public class DistanceFragment extends GNFragment<Float, EditText, String> {
 
     @Override
     public EditText getFragmentView(){
-        return (EditText) getActivity().findViewById(R.id.distanceFragment);
+        return (EditText) getActivity().findViewById(R.id.distance);
     }
 
     @Override

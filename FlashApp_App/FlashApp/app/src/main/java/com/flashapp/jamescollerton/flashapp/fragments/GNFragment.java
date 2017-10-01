@@ -12,11 +12,11 @@ public abstract class GNFragment<ValueType, ViewType, ViewValueType> extends Fra
                                                                      implements GNField<ValueType, ViewType, ViewValueType> {
 
     @Override
-    public ValueType getValue() throws Exception{
-        return validate(readViewValue());
-//            new AlertBox(getActivity(),
-//                    "Could not find Guide Number",
-//                    "Could not find an appropriate guide number from the list.",
-//                    "OK");
+    public ValueType getValue() {
+        try {
+            return validate(readViewValue());
+        } catch(NumberFormatException | NullPointerException e){
+            return null;
+        }
     }
 }

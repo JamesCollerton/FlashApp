@@ -40,18 +40,8 @@
         <item>22</item>
     </string-array>
 
+    <!-- Placeholder for Dynamic Allocation -->
     <string-array name="arrays_power">
-        <item>1/1</item>
-        <item>1/2</item>
-        <item>1/4</item>
-        <item>1/8</item>
-        <item>1/16</item>
-        <item>1/32</item>
-        <item>1/64</item>
-        <item>1/128</item>
     </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

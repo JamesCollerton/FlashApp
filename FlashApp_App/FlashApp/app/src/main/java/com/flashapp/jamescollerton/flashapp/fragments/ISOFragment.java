@@ -87,7 +87,7 @@ public class ISOFragment extends GNFragment<Integer, Spinner, String>  {
 
     @Override
     public Spinner getFragmentView(){
-        return (Spinner) getActivity().findViewById(R.id.ISOFragment);
+        return (Spinner) getActivity().findViewById(R.id.ISO);
     }
 
     @Override

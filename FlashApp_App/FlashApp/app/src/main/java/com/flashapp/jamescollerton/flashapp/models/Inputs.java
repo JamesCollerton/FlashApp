@@ -5,13 +5,13 @@ package com.flashapp.jamescollerton.flashapp.models;
  */
 public class Inputs {
 
-    int guideNumber;
-    int ISO;
-    int power;
-    float distance;
-    float aperture;
+    private Integer guideNumber;
+    private Integer ISO;
+    private Integer power;
+    private Float distance;
+    private Float aperture;
 
-    Inputs(int guideNumber, int ISO, int power, int distance, int aperture){
+    public Inputs(Integer guideNumber, Integer ISO, Integer power, Float distance, Float aperture){
         this.guideNumber = guideNumber;
         this.ISO = ISO;
         this.power = power;
@@ -19,43 +19,41 @@ public class Inputs {
         this.aperture = aperture;
     }
 
-    public int getGuideNumber() {
+    public Integer getGuideNumber() {
         return guideNumber;
     }
 
-    public int getISO() {
+    public Integer getISO() {
         return ISO;
     }
 
-    public int getPower() {
+    public Integer getPower() {
         return power;
     }
 
-    public float getDistance() {
+    public Float getDistance() {
         return distance;
     }
 
-    public float getAperture() {
+    public Float getAperture() {
         return aperture;
     }
 
-    public void setGuideNumber(int guideNumber) {
-        this.guideNumber = guideNumber;
-    }
+    public void setGuideNumber(Integer guideNumber) { this.guideNumber = guideNumber; }
 
-    public void setISO(int ISO) {
+    public void setISO(Integer ISO) {
         this.ISO = ISO;
     }
 
-    public void setPower(int power) {
+    public void setPower(Integer power) {
         this.power = power;
     }
 
-    public void setDistance(float distance) {
+    public void setDistance(Float distance) {
         this.distance = distance;
     }
 
-    public void setAperture(float aperture) {
+    public void setAperture(Float aperture) {
         this.aperture = aperture;
     }
 }

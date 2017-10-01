@@ -87,7 +87,7 @@ public class ApertureFragment extends GNFragment<Float, Spinner, String> {
 
     @Override
     public Spinner getFragmentView(){
-        return (Spinner) getActivity().findViewById(R.id.apertureFragment);
+        return (Spinner) getActivity().findViewById(R.id.aperture);
     }
 
     @Override

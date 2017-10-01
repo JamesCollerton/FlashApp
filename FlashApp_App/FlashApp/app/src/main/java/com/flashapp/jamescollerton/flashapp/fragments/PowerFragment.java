@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.enumerators.Power;
+import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +22,7 @@ import com.flashapp.jamescollerton.flashapp.enumerators.Power;
  * Use the {@link PowerFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PowerFragment extends Fragment {
+public class PowerFragment extends GNFragment<Integer, Spinner, Power> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -44,7 +45,6 @@ public class PowerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        addSpinnerItems();
     }
 
     @Override
@@ -52,7 +52,6 @@ public class PowerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_power, container, false);
-//        addSpinnerItems();
         return view;
     }
 
@@ -91,8 +90,23 @@ public class PowerFragment extends Fragment {
     public void addSpinnerItems(){
         Power[] spinnerArray = Power.values();
         Spinner spinner = (Spinner) getActivity().findViewById(R.id.power);
-        ArrayAdapter<Power> spinnerArrayAdapter = new ArrayAdapter<Power>(getContext(), android.R.layout.simple_spinner_item, spinnerArray); //selected item will look like a spinner set from XML
+        ArrayAdapter<Power> spinnerArrayAdapter = new ArrayAdapter<Power>(getContext(), android.R.layout.simple_spinner_item, spinnerArray);
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerArrayAdapter);
+    }
+
+    @Override
+    public Spinner getFragmentView(){
+        return (Spinner) getActivity().findViewById(R.id.power);
+    }
+
+    @Override
+    public Power readViewValue(){
+        return (Power) getFragmentView().getSelectedItem();
+    }
+
+    @Override
+    public Integer validate(Power input){
+        return input.getValue();
     }
 }

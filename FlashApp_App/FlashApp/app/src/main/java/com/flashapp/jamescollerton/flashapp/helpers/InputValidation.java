@@ -28,9 +28,7 @@ public class InputValidation {
      * @throws NumberFormatException
      */
     public static Float parseFloatFromString(String toParse) throws NumberFormatException{
-
         return Float.parseFloat(toParse);
-
     }
 
 }

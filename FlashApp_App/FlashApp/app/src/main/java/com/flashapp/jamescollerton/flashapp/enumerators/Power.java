@@ -21,6 +21,10 @@ public enum Power {
         this.value = -power;
     }
 
+    public int getValue(){
+        return this.value;
+    }
+
     @Override
     public String toString(){
         return fraction;

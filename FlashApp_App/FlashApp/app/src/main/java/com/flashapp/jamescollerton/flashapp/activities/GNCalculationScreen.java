@@ -2,15 +2,11 @@ package com.flashapp.jamescollerton.flashapp.activities;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.view.View;
 
 import com.flashapp.jamescollerton.flashapp.GNCalculationLayout;
 import com.flashapp.jamescollerton.flashapp.R;
@@ -20,8 +16,8 @@ import com.flashapp.jamescollerton.flashapp.fragments.DistanceFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.GuideNumberFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.ISOFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.PowerFragment;
-
-import java.sql.SQLOutput;
+import com.flashapp.jamescollerton.flashapp.helpers.AlertBox;
+import com.flashapp.jamescollerton.flashapp.models.Inputs;
 
 public class GNCalculationScreen    extends     AppCompatActivity
                                     implements  GuideNumberFragment.OnFragmentInteractionListener,
@@ -97,7 +93,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
 
         findViewById(R.id.calculateAperture).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                System.out.println("Hello");
+                calculateAperture();
             }
         });
 
@@ -107,6 +103,47 @@ public class GNCalculationScreen    extends     AppCompatActivity
             }
         });
 
+    }
+
+    private void calculateAperture(){
+        try {
+            Inputs inputs = new Inputs(
+                    getGuideNumberFragment().getValue(),
+                    getISOFragment().getValue(),
+                    getPowerFragment().getValue(),
+                    getDistanceFragment().getValue(),
+                    getApertureFragment().getValue()
+            );
+        } catch(Exception e){
+            new AlertBox(this,
+                    "Input Errors",
+                    "Please check inputted information and retry.",
+                    "OK");
+        }
+    }
+
+    private void calculateDistance(){
+
+    }
+
+    public PowerFragment getPowerFragment(){
+        return (PowerFragment) getSupportFragmentManager().findFragmentById(R.id.powerFragment);
+    }
+
+    public ISOFragment getISOFragment(){
+        return (ISOFragment) getSupportFragmentManager().findFragmentById(R.id.ISOFragment);
+    }
+
+    public GuideNumberFragment getGuideNumberFragment(){
+        return (GuideNumberFragment) getSupportFragmentManager().findFragmentById(R.id.guideNumberFragment);
+    }
+
+    public DistanceFragment getDistanceFragment(){
+        return (DistanceFragment) getSupportFragmentManager().findFragmentById(R.id.distanceFragment);
+    }
+
+    public ApertureFragment getApertureFragment(){
+        return (ApertureFragment) getSupportFragmentManager().findFragmentById(R.id.apertureFragment);
     }
 
     /**
