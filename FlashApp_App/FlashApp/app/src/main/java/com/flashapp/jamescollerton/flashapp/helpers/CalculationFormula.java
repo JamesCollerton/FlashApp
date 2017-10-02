@@ -7,24 +7,40 @@ import com.flashapp.jamescollerton.flashapp.models.Inputs;
  */
 public class CalculationFormula {
 
-    Inputs inputs;
+    public static Float calculateAperture(Inputs inputs) throws IllegalArgumentException {
 
-    CalculationFormula(Inputs inputs){
-        this.inputs = inputs;
+        checkApertureInputs(inputs);
+
+        Double ISOFactor = Math.sqrt(new Double(inputs.getISO()) / new Double(100));
+        Float apertureRawValue = (new Float(inputs.getGuideNumber()) * new Float(ISOFactor)) / inputs.getDistance();
+        return apertureRawValue;
     }
 
-    public Float calculateAperture(){
-        double ISOFactor = Math.sqrt((double) inputs.getISO() / (double) 100);
-        float apertureRawValue = ((float) inputs.getGuideNumber() * (float) ISOFactor) / inputs.getDistance();
-//        return apertureRawValue;
-        return null;
+    private static void checkApertureInputs(Inputs inputs) throws IllegalArgumentException {
+        if(inputs.getISO() == null ||
+           inputs.getGuideNumber() == null ||
+           inputs.getDistance() == null ||
+           inputs.getDistance() == 0){
+            throw new IllegalArgumentException();
+        }
     }
 
-    public Float calculateDistance(){
-        double ISOFactor = Math.sqrt((double) inputs.getISO() / (double) 100);
-        float distance = ((float) inputs.getGuideNumber() * (float) ISOFactor) / inputs.getAperture();
-//        return distance;
-        return null;
+    public static Float calculateDistance(Inputs inputs){
+
+        checkDistanceInputs(inputs);
+
+        double ISOFactor = Math.sqrt(new Double(inputs.getISO()) / new Double(100));
+        Float distance = (new Float(inputs.getGuideNumber()) * new Float(ISOFactor)) / inputs.getAperture();
+        return distance;
+    }
+
+    private static void checkDistanceInputs(Inputs inputs) throws IllegalArgumentException {
+        if(inputs.getISO() == null ||
+           inputs.getGuideNumber() == null ||
+           inputs.getAperture() == null ||
+           inputs.getAperture() == 0){
+            throw new IllegalArgumentException();
+        }
     }
 
 }

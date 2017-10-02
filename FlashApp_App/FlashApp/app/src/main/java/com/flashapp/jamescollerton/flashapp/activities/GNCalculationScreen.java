@@ -17,6 +17,7 @@ import com.flashapp.jamescollerton.flashapp.fragments.GuideNumberFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.ISOFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.PowerFragment;
 import com.flashapp.jamescollerton.flashapp.helpers.AlertBox;
+import com.flashapp.jamescollerton.flashapp.helpers.CalculationFormula;
 import com.flashapp.jamescollerton.flashapp.models.Inputs;
 
 public class GNCalculationScreen    extends     AppCompatActivity
@@ -99,7 +100,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
 
         findViewById(R.id.calculateDistance).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                System.out.println("Hello");
+                calculateDistance();
             }
         });
 
@@ -107,24 +108,39 @@ public class GNCalculationScreen    extends     AppCompatActivity
 
     private void calculateAperture(){
         try {
-            Inputs inputs = new Inputs(
-                    getGuideNumberFragment().getValue(),
-                    getISOFragment().getValue(),
-                    getPowerFragment().getValue(),
-                    getDistanceFragment().getValue(),
-                    getApertureFragment().getValue()
-            );
+            Float aperture = CalculationFormula.calculateAperture(readInputs());
         } catch(Exception e){
             new AlertBox(this,
-                    "Input Errors",
-                    "Please check inputted information and retry.",
+                    "Missing Information",
+                    "Please check ISO, guide number and distance are all populated.",
                     "OK");
         }
     }
 
     private void calculateDistance(){
-
+        try {
+            Float distance = CalculationFormula.calculateDistance(readInputs());
+        } catch(Exception e){
+            new AlertBox(this,
+                    "Missing Information",
+                    "Please check ISO, guide number and aperture are all populated.",
+                    "OK");
+        }
     }
+
+    private Inputs readInputs(){
+        return new Inputs(
+                getGuideNumberFragment().getValue(),
+                getISOFragment().getValue(),
+                getPowerFragment().getValue(),
+                getDistanceFragment().getValue(),
+                getApertureFragment().getValue()
+        );
+    }
+
+    /**
+     * Fragment getters
+     */
 
     public PowerFragment getPowerFragment(){
         return (PowerFragment) getSupportFragmentManager().findFragmentById(R.id.powerFragment);
