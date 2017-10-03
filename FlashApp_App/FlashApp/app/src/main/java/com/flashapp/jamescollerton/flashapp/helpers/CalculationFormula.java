@@ -11,13 +11,15 @@ public class CalculationFormula {
 
         checkApertureInputs(inputs);
 
+        Float apertureAdjustment = new Float(inputs.getPower());
         Double ISOFactor = Math.sqrt(new Double(inputs.getISO()) / new Double(100));
         Float apertureRawValue = (new Float(inputs.getGuideNumber()) * new Float(ISOFactor)) / inputs.getDistance();
-        return apertureRawValue;
+        return apertureRawValue + apertureAdjustment;
     }
 
     private static void checkApertureInputs(Inputs inputs) throws IllegalArgumentException {
-        if(inputs.getISO() == null ||
+        if(inputs.getPower() == null ||
+           inputs.getISO() == null ||
            inputs.getGuideNumber() == null ||
            inputs.getDistance() == null ||
            inputs.getDistance() == 0){
