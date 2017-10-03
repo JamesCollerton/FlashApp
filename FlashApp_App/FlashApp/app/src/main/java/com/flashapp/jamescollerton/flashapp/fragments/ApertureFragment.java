@@ -97,9 +97,9 @@ public class ApertureFragment extends GNFragment<Float, EditText, String> {
     }
 
 //    @Override
-//    public void setViewValue(){
-//
-//    }
+    public void setViewValue(String viewValue){
+        getFragmentView().setText(viewValue);
+    }
 
     @Override
     public Float validate(String input){
