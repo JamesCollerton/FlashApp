@@ -35,7 +35,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        setUpLayout();
+//        setUpLayout();
         setUpListeners();
         setUpFields();
 
@@ -45,9 +45,9 @@ public class GNCalculationScreen    extends     AppCompatActivity
      * This is used to set up the layout class which is used for taking in the information from the
      * screen.
      */
-    private void setUpLayout(){
-        GNCalculationLayout layout = new GNCalculationLayout(this);
-    }
+//    private void setUpLayout(){
+//        GNCalculationLayout layout = new GNCalculationLayout(this);
+//    }
 
     /**
      * Adds all listeners to the fields on the page.

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.flashapp.jamescollerton.flashapp.R;
@@ -21,7 +22,7 @@ import com.flashapp.jamescollerton.flashapp.interfaces.GNField;
  * Use the {@link ApertureFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ApertureFragment extends GNFragment<Float, Spinner, String> {
+public class ApertureFragment extends GNFragment<Float, EditText, String> {
 
     private OnFragmentInteractionListener mListener;
 
@@ -86,14 +87,19 @@ public class ApertureFragment extends GNFragment<Float, Spinner, String> {
     }
 
     @Override
-    public Spinner getFragmentView(){
-        return (Spinner) getActivity().findViewById(R.id.aperture);
+    public EditText getFragmentView(){
+        return (EditText) getActivity().findViewById(R.id.aperture);
     }
 
     @Override
     public String readViewValue(){
-        return getFragmentView().getSelectedItem().toString();
+        return getFragmentView().getText().toString();
     }
+
+//    @Override
+//    public void setViewValue(){
+//
+//    }
 
     @Override
     public Float validate(String input){

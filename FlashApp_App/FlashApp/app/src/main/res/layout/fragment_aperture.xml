@@ -13,12 +13,12 @@
         style="@style/style_input_label" />
 
     <!-- Aperture Input -->
-    <Spinner
+    <EditText
         android:id="@+id/aperture"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/apertureLabel"
         android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:entries="@array/arrays_aperture"/>
+        android:inputType="numberDecimal"/>
 
 </RelativeLayout>

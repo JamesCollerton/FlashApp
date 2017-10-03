@@ -21,9 +21,17 @@ public interface GNField<ValueType, ViewType, ViewValueType> extends GNButton<Vi
      * like from the fragment. For example we might read all of the
      * text in from the EditText area.
      *
-     * @return
+     * @return The value in the view
      */
     public ViewValueType readViewValue();
+
+    /**
+     * This needs to be overriden in order to set the value in
+     * the view.
+     *
+     * @param value
+     */
+//    public void setViewValue(ViewValueType value);
 
     /**
      * This needs to be overriden to take the value we want from
