@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.flashapp.jamescollerton.flashapp.GNCalculationLayout;
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.fragments.ApertureFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.CalculationButtonsFragment;
@@ -40,14 +39,6 @@ public class GNCalculationScreen    extends     AppCompatActivity
         setUpFields();
 
     }
-
-    /**
-     * This is used to set up the layout class which is used for taking in the information from the
-     * screen.
-     */
-//    private void setUpLayout(){
-//        GNCalculationLayout layout = new GNCalculationLayout(this);
-//    }
 
     /**
      * Adds all listeners to the fields on the page.
