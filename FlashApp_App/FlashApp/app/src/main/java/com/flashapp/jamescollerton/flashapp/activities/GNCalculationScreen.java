@@ -113,7 +113,8 @@ public class GNCalculationScreen    extends     AppCompatActivity
         } catch(Exception e){
             new AlertBox(this,
                     "Missing Information",
-                    "Please check ISO, guide number and distance are all populated.",
+                    "Please check ISO, guide number and distance are all populated " +
+                    "and have valid values.",
                     "OK");
         }
     }
@@ -125,7 +126,8 @@ public class GNCalculationScreen    extends     AppCompatActivity
         } catch(Exception e){
             new AlertBox(this,
                     "Missing Information",
-                    "Please check ISO, guide number and aperture are all populated.",
+                    "Please check ISO, guide number and aperture are all populated " +
+                    "and have valid values.",
                     "OK");
         }
     }

@@ -29,18 +29,20 @@ public class CalculationFormula {
 
     public static Float calculateDistance(Inputs inputs){
 
-        checkDistanceInputs(inputs);
+        Float apertureAdjustment = new Float(inputs.getPower());
+
+        checkDistanceInputs(inputs, apertureAdjustment);
 
         double ISOFactor = Math.sqrt(new Double(inputs.getISO()) / new Double(100));
-        Float distance = (new Float(inputs.getGuideNumber()) * new Float(ISOFactor)) / inputs.getAperture();
+        Float distance = (new Float(inputs.getGuideNumber()) * new Float(ISOFactor)) / (inputs.getAperture() + apertureAdjustment);
         return distance;
     }
 
-    private static void checkDistanceInputs(Inputs inputs) throws IllegalArgumentException {
+    private static void checkDistanceInputs(Inputs inputs, Float apertureAdjustment) throws IllegalArgumentException {
         if(inputs.getISO() == null ||
            inputs.getGuideNumber() == null ||
            inputs.getAperture() == null ||
-           inputs.getAperture() == 0){
+           inputs.getAperture() + apertureAdjustment == 0){
             throw new IllegalArgumentException();
         }
     }
