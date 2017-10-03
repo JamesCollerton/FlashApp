@@ -96,6 +96,9 @@ public class ISOFragment extends GNFragment<Integer, Spinner, String>  {
     }
 
     @Override
+    public void setViewValue(String value){ }
+
+    @Override
     public Integer validate(String input){
         return InputValidation.parseIntegerFromString(input);
     }

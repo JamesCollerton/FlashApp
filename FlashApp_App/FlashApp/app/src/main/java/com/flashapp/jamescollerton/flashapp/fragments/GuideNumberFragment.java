@@ -92,6 +92,9 @@ public class GuideNumberFragment extends GNFragment<Integer, EditText, String> {
     }
 
     @Override
+    public void setViewValue(String value){ }
+
+    @Override
     public Integer validate(String input){
         return InputValidation.parseIntegerFromString(input);
     }

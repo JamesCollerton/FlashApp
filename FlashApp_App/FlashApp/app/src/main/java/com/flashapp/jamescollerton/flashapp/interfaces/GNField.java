@@ -29,9 +29,9 @@ public interface GNField<ValueType, ViewType, ViewValueType> extends GNButton<Vi
      * This needs to be overriden in order to set the value in
      * the view.
      *
-     * @param value
+     * @param value What we would like to set in the view
      */
-//    public void setViewValue(ViewValueType value);
+    public void setViewValue(ViewValueType value);
 
     /**
      * This needs to be overriden to take the value we want from

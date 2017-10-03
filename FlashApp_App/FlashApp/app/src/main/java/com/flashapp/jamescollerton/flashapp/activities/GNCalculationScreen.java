@@ -121,6 +121,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
     private void calculateDistance(){
         try {
             Float distance = CalculationFormula.calculateDistance(readInputs());
+            getDistanceFragment().setViewValue(distance.toString());
         } catch(Exception e){
             new AlertBox(this,
                     "Missing Information",

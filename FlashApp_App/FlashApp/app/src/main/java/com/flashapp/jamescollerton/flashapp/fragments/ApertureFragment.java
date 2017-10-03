@@ -96,7 +96,7 @@ public class ApertureFragment extends GNFragment<Float, EditText, String> {
         return getFragmentView().getText().toString();
     }
 
-//    @Override
+    @Override
     public void setViewValue(String viewValue){
         getFragmentView().setText(viewValue);
     }
