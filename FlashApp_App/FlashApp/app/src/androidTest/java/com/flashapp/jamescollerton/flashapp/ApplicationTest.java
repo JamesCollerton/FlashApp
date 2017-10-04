@@ -1,21 +1,31 @@
 package com.flashapp.jamescollerton.flashapp;
 
-import android.app.Application;
-import android.test.ApplicationTestCase;
+import android.support.test.espresso.Espresso;
+import android.support.test.espresso.assertion.ViewAssertions;
+import android.support.test.espresso.matcher.ViewMatchers;
+import android.support.test.rule.ActivityTestRule;
+import android.support.test.runner.AndroidJUnit4;
+import android.test.suitebuilder.annotation.LargeTest;
+
+import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class HelloWorldEspressoTest {
+public class ApplicationTest {
 
     @Rule
-    public ActivityTestRule<MainActivity> mActivityRule =
-            new ActivityTestRule(MainActivity.class);
+    public ActivityTestRule<GNCalculationScreen> mActivityRule =
+            new ActivityTestRule(GNCalculationScreen.class);
 
     @Test
     public void listGoesOverTheFold() {
-        onView(withText("Hello world!")).check(matches(isDisplayed()));
+        Espresso.onView(ViewMatchers.withText("Hello world!")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
     }
 }
