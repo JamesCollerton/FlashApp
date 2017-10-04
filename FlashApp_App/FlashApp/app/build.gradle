@@ -1,5 +1,14 @@
 apply plugin: 'com.android.application'
 
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
+    }
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -27,7 +36,10 @@ dependencies {
     compile 'com.android.support:design:23.2.0'
     compile 'com.android.support:support-v4:23.2.0'
 
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2') {
-        exclude group: 'com.android.support'
+    androidTestCompile ('com.android.support.test.espresso:espresso-core:3.0.1') {
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile ('com.android.support.test:runner:1.0.1') {
+        exclude module: 'support-annotations'
     }
 }
