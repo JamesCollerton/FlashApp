@@ -28,6 +28,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/services/org.xmlpull.v1.XmlPullParserFactory'
+    }
 }
 
 dependencies {
