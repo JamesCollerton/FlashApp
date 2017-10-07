@@ -10,6 +10,8 @@ import android.test.suitebuilder.annotation.LargeTest;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.typeText;
+import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -43,7 +45,9 @@ public class ApplicationTest {
 //                .perform(ViewActions.typeText(distanceTest)); //, ViewActions.closeSoftKeyboard());
 //        onView(withId(R.id.changeTextBt)).perform(click());
 
-        onView(withId(R.id.distance)).check(matches(isDisplayed()));
+        closeSoftKeyboard();
+        onView(withId(R.id.guideNumber)).check(matches(isDisplayed()));
+        onView(withId(R.id.guideNumber)).perform(click()).perform(typeText("Engineer"));
 
         // Check that the text was changed.
 //        onView(withId(R.id.textToBeChanged))
