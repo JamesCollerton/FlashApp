@@ -41,10 +41,26 @@ public class ApplicationTest {
         Espresso.closeSoftKeyboard();
     }
 
-    private void setGuideNumber(String guideNumber, String expectedResult){
-        onView(withId(R.id.guideNumber)).perform(click()).perform(clearText()).perform(typeText(guideNumber));
-        onView(withId(R.id.guideNumber)).check(matches(withText(expectedResult)));
+    private void setEditText(String input, String expectedOutput, int editTextId){
+        onView(withId(editTextId)).perform(click()).perform(clearText()).perform(typeText(input));
+        onView(withId(editTextId)).check(matches(withText(expectedOutput)));
     }
+
+    private void setGuideNumber(String guideNumber, String expectedResult){
+        setEditText(guideNumber, expectedResult, R.id.guideNumber);
+    }
+
+    private void setDistance(String distance, String expectedResult){
+        setEditText(distance, expectedResult, R.id.distance);
+    }
+
+    private void setAperture(String aperture, String expectedResult){
+        setEditText(aperture, expectedResult, R.id.aperture);
+    }
+
+    /*
+    Guide Number Tests
+     */
 
     @Test
     public void setGuideNumberInt() {
@@ -74,5 +90,73 @@ public class ApplicationTest {
     @Test
     public void setGuideNumberCharSymbolInt() {
         setGuideNumber("!1!0!!", "111011");
+    }
+
+    /*
+    Distance Tests
+     */
+
+    @Test
+    public void setDistanceInt() {
+        setDistance("10", "10");
+    }
+
+    @Test
+    public void setDistanceChar() {
+        setDistance("abcd", "");
+    }
+
+    @Test
+    public void setDistanceCharIntMixedOne() {
+        setDistance("abcd10", "10");
+    }
+
+    @Test
+    public void setDistanceCharIntMixedTwo() {
+        setDistance("ab1cd0", "10");
+    }
+
+    @Test
+    public void setDistanceCharSymbol() {
+        setDistance("!!!!", "1111");
+    }
+
+    @Test
+    public void setDistanceCharSymbolInt() {
+        setDistance("!1!0!!", "111011");
+    }
+
+    /*
+    Aperture Tests
+     */
+
+    @Test
+    public void setApertureInt() {
+        setAperture("10", "10");
+    }
+
+    @Test
+    public void setApertureChar() {
+        setAperture("abcd", "");
+    }
+
+    @Test
+    public void setApertureCharIntMixedOne() {
+        setAperture("abcd10", "10");
+    }
+
+    @Test
+    public void setApertureCharIntMixedTwo() {
+        setAperture("ab1cd0", "10");
+    }
+
+    @Test
+    public void setApertureCharSymbol() {
+        setAperture("!!!!", "1111");
+    }
+
+    @Test
+    public void setApertureCharSymbolInt() {
+        setAperture("!1!0!!", "111011");
     }
 }
