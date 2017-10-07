@@ -62,11 +62,11 @@ public class ApplicationTest {
 
     @Test
     public void setGuideNumberCharSymbol() {
-        setGuideNumber("!!!!", "");
+        setGuideNumber("!!!!", "1111");
     }
-//
-//    @Test
-//    public void setGuideNumberCharSymbolInt() {
-//        setGuideNumber("!1!0!!", "10");
-//    }
+
+    @Test
+    public void setGuideNumberCharSymbolInt() {
+        setGuideNumber("!1!0!!", "111011");
+    }
 }
