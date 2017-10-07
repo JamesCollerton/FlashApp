@@ -9,6 +9,7 @@ import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
@@ -35,29 +36,37 @@ public class ApplicationTest {
             new ActivityTestRule(GNCalculationScreen.class);
 
     private void setGuideNumber(String guideNumber, String expectedResult){
-        onView(withId(R.id.guideNumber)).perform(click()).perform(typeText(guideNumber));
+        onView(withId(R.id.guideNumber)).perform(click()).perform(clearText()).perform(typeText(guideNumber));
         onView(withId(R.id.guideNumber)).check(matches(withText(expectedResult)));
     }
 
     @Test
-    public void listGoesOverTheFold() {
-//        Espresso.onView(ViewMatchers.withText("Hello world!")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
-
+    public void setGuideNumberInt() {
         setGuideNumber("10", "10");
-
-        String distanceTest = "10";
-
-        // Type text and then press the button.
-//        Espresso.onView(ViewMatchers.withId(R.id.distance))
-//                .perform(ViewActions.typeText(distanceTest)); //, ViewActions.closeSoftKeyboard());
-//        onView(withId(R.id.changeTextBt)).perform(click());
-
-//        closeSoftKeyboard();
-//        onView(withId(R.id.guideNumber)).check(matches(isDisplayed()));
-//        onView(withId(R.id.guideNumber)).perform(click()).perform(typeText(distanceTest));
-
-        // Check that the text was changed.
-//        onView(withId(R.id.textToBeChanged))
-//                .check(matches(withText(mStringToBetyped)));
     }
+
+    @Test
+    public void setGuideNumberChar() {
+        setGuideNumber("abcd", "");
+    }
+
+    @Test
+    public void setGuideNumberCharIntMixedOne() {
+        setGuideNumber("abcd10", "10");
+    }
+
+    @Test
+    public void setGuideNumberCharIntMixedTwo() {
+        setGuideNumber("ab1cd0", "10");
+    }
+
+    @Test
+    public void setGuideNumberCharSymbol() {
+        setGuideNumber("!!!!", "");
+    }
+//
+//    @Test
+//    public void setGuideNumberCharSymbolInt() {
+//        setGuideNumber("!1!0!!", "10");
+//    }
 }
