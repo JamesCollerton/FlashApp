@@ -20,6 +20,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,6 +35,11 @@ public class ApplicationTest {
     @Rule
     public ActivityTestRule<GNCalculationScreen> mActivityRule =
             new ActivityTestRule(GNCalculationScreen.class);
+
+    @Before
+    public void closeKeyboard(){
+        Espresso.closeSoftKeyboard();
+    }
 
     private void setGuideNumber(String guideNumber, String expectedResult){
         onView(withId(R.id.guideNumber)).perform(click()).perform(clearText()).perform(typeText(guideNumber));
