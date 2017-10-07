@@ -34,9 +34,16 @@ public class ApplicationTest {
     public ActivityTestRule<GNCalculationScreen> mActivityRule =
             new ActivityTestRule(GNCalculationScreen.class);
 
+    private void setGuideNumber(String guideNumber, String expectedResult){
+        onView(withId(R.id.guideNumber)).perform(click()).perform(typeText(guideNumber));
+        onView(withId(R.id.guideNumber)).check(matches(withText(expectedResult)));
+    }
+
     @Test
     public void listGoesOverTheFold() {
 //        Espresso.onView(ViewMatchers.withText("Hello world!")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
+
+        setGuideNumber("10", "10");
 
         String distanceTest = "10";
 
@@ -45,9 +52,9 @@ public class ApplicationTest {
 //                .perform(ViewActions.typeText(distanceTest)); //, ViewActions.closeSoftKeyboard());
 //        onView(withId(R.id.changeTextBt)).perform(click());
 
-        closeSoftKeyboard();
-        onView(withId(R.id.guideNumber)).check(matches(isDisplayed()));
-        onView(withId(R.id.guideNumber)).perform(click()).perform(typeText("Engineer"));
+//        closeSoftKeyboard();
+//        onView(withId(R.id.guideNumber)).check(matches(isDisplayed()));
+//        onView(withId(R.id.guideNumber)).perform(click()).perform(typeText(distanceTest));
 
         // Check that the text was changed.
 //        onView(withId(R.id.textToBeChanged))
