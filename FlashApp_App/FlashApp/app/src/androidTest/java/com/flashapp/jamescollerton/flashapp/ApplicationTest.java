@@ -8,15 +8,28 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.clearText;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.typeText;
+//import static android.support.test.espresso.Espresso.onView;
+//import static android.support.test.espresso.Espresso.onData;
+
+import static android.support.test.espresso.Espresso.*;
+import static android.support.test.espresso.action.ViewActions.*;
+import static android.support.test.espresso.assertion.ViewAssertions.*;
+import static android.support.test.espresso.matcher.ViewMatchers.*;
+
+import static org.hamcrest.core.AllOf.allOf;
+
+//import static android.support.test.espresso.action.ViewActions.clearText;
+//import static android.support.test.espresso.action.ViewActions.click;
+//import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
+
+//import static android.support.test.espresso.assertion.ViewAssertions.matches;
+//import static android.support.test.espresso.assertion.ViewAssertions.con;
+
+//import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
+//import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static android.support.test.espresso.matcher.ViewMatchers.withSpinnerText;
 
 import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
 
@@ -40,6 +53,10 @@ public class ApplicationTest {
     public void closeKeyboard(){
         Espresso.closeSoftKeyboard();
     }
+
+    /*
+    EditText Tests
+     */
 
     private void setEditText(String input, String expectedOutput, int editTextId){
         onView(withId(editTextId)).perform(click()).perform(clearText()).perform(typeText(input));
@@ -158,5 +175,18 @@ public class ApplicationTest {
     @Test
     public void setApertureCharSymbolInt() {
         setAperture("!1!0!!", "111011");
+    }
+
+    /*
+    Spinner Tests
+     */
+
+    private void setSpinner(String input, String expectedOutput, int spinnerId){
+//        onView(withId(spinnerId)).perform(click());
+//        onData(allOf(is(instanceOf(String.class)))).atPosition(0).perform(click());
+
+        onView(withId(spinnerId)).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is(input))).perform(click());
+        onView(withId(spinnerId)).check(matches(withSpinnerText(containsString(expectedOutput))));
     }
 }
