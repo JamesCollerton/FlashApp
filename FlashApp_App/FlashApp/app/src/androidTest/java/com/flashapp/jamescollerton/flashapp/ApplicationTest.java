@@ -1,11 +1,19 @@
 package com.flashapp.jamescollerton.flashapp;
 
 import android.support.test.espresso.Espresso;
+import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
+
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
 
@@ -26,6 +34,19 @@ public class ApplicationTest {
 
     @Test
     public void listGoesOverTheFold() {
-        Espresso.onView(ViewMatchers.withText("Hello world!")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
+//        Espresso.onView(ViewMatchers.withText("Hello world!")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
+
+        String distanceTest = "10";
+
+        // Type text and then press the button.
+//        Espresso.onView(ViewMatchers.withId(R.id.distance))
+//                .perform(ViewActions.typeText(distanceTest)); //, ViewActions.closeSoftKeyboard());
+//        onView(withId(R.id.changeTextBt)).perform(click());
+
+        onView(withId(R.id.distance)).check(matches(isDisplayed()));
+
+        // Check that the text was changed.
+//        onView(withId(R.id.textToBeChanged))
+//                .check(matches(withText(mStringToBetyped)));
     }
 }

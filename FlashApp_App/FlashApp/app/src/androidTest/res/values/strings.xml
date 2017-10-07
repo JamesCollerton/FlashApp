@@ -1,6 +1,7 @@
 <resources>
 
-    <!-- Core Layout Strings -->
+    <!-- This is included as it needs at least
+     one resource file to compile.-->
 
     <string name="app_name">FlashApp</string>
 
