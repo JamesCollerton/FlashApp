@@ -10,7 +10,7 @@ import static android.support.test.espresso.action.ViewActions.*;
 import static android.support.test.espresso.assertion.ViewAssertions.*;
 import static android.support.test.espresso.matcher.ViewMatchers.*;
 
-import static org.hamcrest.core.AllOf.*;
+import static org.hamcrest.core.AllOf.allOf;
 import static org.hamcrest.Matchers.*;
 
 import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
@@ -61,114 +61,121 @@ public class ApplicationTest {
     Guide Number Tests
      */
 
-    @Test
-    public void setGuideNumberInt() {
-        setGuideNumber("10", "10");
-    }
-
-    @Test
-    public void setGuideNumberChar() {
-        setGuideNumber("abcd", "");
-    }
-
-    @Test
-    public void setGuideNumberCharIntMixedOne() {
-        setGuideNumber("abcd10", "10");
-    }
-
-    @Test
-    public void setGuideNumberCharIntMixedTwo() {
-        setGuideNumber("ab1cd0", "10");
-    }
-
-    @Test
-    public void setGuideNumberCharSymbol() {
-        setGuideNumber("!!!!", "1111");
-    }
-
-    @Test
-    public void setGuideNumberCharSymbolInt() {
-        setGuideNumber("!1!0!!", "111011");
-    }
+//    @Test
+//    public void setGuideNumberInt() {
+//        setGuideNumber("10", "10");
+//    }
+//
+//    @Test
+//    public void setGuideNumberChar() {
+//        setGuideNumber("abcd", "");
+//    }
+//
+//    @Test
+//    public void setGuideNumberCharIntMixedOne() {
+//        setGuideNumber("abcd10", "10");
+//    }
+//
+//    @Test
+//    public void setGuideNumberCharIntMixedTwo() {
+//        setGuideNumber("ab1cd0", "10");
+//    }
+//
+//    @Test
+//    public void setGuideNumberCharSymbol() {
+//        setGuideNumber("!!!!", "1111");
+//    }
+//
+//    @Test
+//    public void setGuideNumberCharSymbolInt() {
+//        setGuideNumber("!1!0!!", "111011");
+//    }
 
     /*
     Distance Tests
      */
 
-    @Test
-    public void setDistanceInt() {
-        setDistance("10", "10");
-    }
-
-    @Test
-    public void setDistanceChar() {
-        setDistance("abcd", "");
-    }
-
-    @Test
-    public void setDistanceCharIntMixedOne() {
-        setDistance("abcd10", "10");
-    }
-
-    @Test
-    public void setDistanceCharIntMixedTwo() {
-        setDistance("ab1cd0", "10");
-    }
-
-    @Test
-    public void setDistanceCharSymbol() {
-        setDistance("!!!!", "1111");
-    }
-
-    @Test
-    public void setDistanceCharSymbolInt() {
-        setDistance("!1!0!!", "111011");
-    }
+//    @Test
+//    public void setDistanceInt() {
+//        setDistance("10", "10");
+//    }
+//
+//    @Test
+//    public void setDistanceChar() {
+//        setDistance("abcd", "");
+//    }
+//
+//    @Test
+//    public void setDistanceCharIntMixedOne() {
+//        setDistance("abcd10", "10");
+//    }
+//
+//    @Test
+//    public void setDistanceCharIntMixedTwo() {
+//        setDistance("ab1cd0", "10");
+//    }
+//
+//    @Test
+//    public void setDistanceCharSymbol() {
+//        setDistance("!!!!", "1111");
+//    }
+//
+//    @Test
+//    public void setDistanceCharSymbolInt() {
+//        setDistance("!1!0!!", "111011");
+//    }
 
     /*
     Aperture Tests
      */
 
-    @Test
-    public void setApertureInt() {
-        setAperture("10", "10");
-    }
-
-    @Test
-    public void setApertureChar() {
-        setAperture("abcd", "");
-    }
-
-    @Test
-    public void setApertureCharIntMixedOne() {
-        setAperture("abcd10", "10");
-    }
-
-    @Test
-    public void setApertureCharIntMixedTwo() {
-        setAperture("ab1cd0", "10");
-    }
-
-    @Test
-    public void setApertureCharSymbol() {
-        setAperture("!!!!", "1111");
-    }
-
-    @Test
-    public void setApertureCharSymbolInt() {
-        setAperture("!1!0!!", "111011");
-    }
+//    @Test
+//    public void setApertureInt() {
+//        setAperture("10", "10");
+//    }
+//
+//    @Test
+//    public void setApertureChar() {
+//        setAperture("abcd", "");
+//    }
+//
+//    @Test
+//    public void setApertureCharIntMixedOne() {
+//        setAperture("abcd10", "10");
+//    }
+//
+//    @Test
+//    public void setApertureCharIntMixedTwo() {
+//        setAperture("ab1cd0", "10");
+//    }
+//
+//    @Test
+//    public void setApertureCharSymbol() {
+//        setAperture("!!!!", "1111");
+//    }
+//
+//    @Test
+//    public void setApertureCharSymbolInt() {
+//        setAperture("!1!0!!", "111011");
+//    }
 
     /*
     Spinner Tests
      */
 
     private void setSpinner(String input, String expectedOutput, int spinnerId){
-//        onView(withId(spinnerId)).perform(click());
-//        onData(allOf(is(instanceOf(String.class)))).atPosition(0).perform(click());
-
         onView(withId(spinnerId)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is(input))).perform(click());
         onView(withId(spinnerId)).check(matches(withSpinnerText(containsString(expectedOutput))));
     }
+
+    private void setISO(String input, String expectedOutput){
+        setSpinner(input, expectedOutput, R.id.ISO);
+    }
+
+    @Test
+    public void setISO100() {
+        setISO("100", "100");
+    }
+
 }
