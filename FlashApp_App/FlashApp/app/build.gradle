@@ -31,6 +31,16 @@ android {
     packagingOptions {
         exclude 'META-INF/services/org.xmlpull.v1.XmlPullParserFactory'
     }
+
+    sourceSets {
+        test {
+            java.srcDirs += "$projectDir/src/sharedTest"
+        }
+
+        androidTest {
+            java.srcDirs += "$projectDir/src/sharedTest"
+        }
+    }
 }
 
 dependencies {

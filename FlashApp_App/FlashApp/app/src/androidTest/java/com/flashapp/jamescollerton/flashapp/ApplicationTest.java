@@ -21,6 +21,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import testUtils.TestResults;
+
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
@@ -223,6 +225,11 @@ public class ApplicationTest {
     }
 
 //    @Test
+//    public void setPowerZero() {
+//        setPower(Power.ZERO, Power.ZERO);
+//    }
+
+//    @Test
 //    public void setPowerMinusOne() {
 //        setPower(Power.MINUS_ONE, Power.MINUS_ONE);
 //    }
@@ -256,5 +263,37 @@ public class ApplicationTest {
 //    public void setPowerMinusSeven() {
 //        setPower(Power.MINUS_SEVEN, Power.MINUS_SEVEN);
 //    }
+
+    /*
+    Integration Tests
+     */
+
+    private void clickButton(int buttonId){
+        onView(withId(buttonId)).perform(click());
+    }
+
+    private void clickApertureButton(){
+        clickButton(R.id.calculateAperture);
+    }
+
+    private void clickDistanceButton(){
+        clickButton(R.id.calculateDistance);
+    }
+
+    private void setUpApertureIntegrationTest(String guideNumber, String ISO, Power power, String distance, String expectedAperture) {
+        new TestResults();
+        setGuideNumber(guideNumber, guideNumber);
+        closeKeyboard();
+        setDistance(distance, distance);
+        closeKeyboard();
+        setISO(ISO, ISO);
+        setPower(power, power);
+        clickApertureButton();
+    }
+
+    @Test
+    public void setGN33ISO100PowerZeroDistance10(){
+        setUpApertureIntegrationTest("33", "100", Power.ZERO, "10", "0");
+    }
 
 }
