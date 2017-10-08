@@ -170,6 +170,12 @@ public class ApplicationTest {
         onView(withId(spinnerId)).check(matches(withSpinnerText(containsString(expectedOutput))));
     }
 
+    private <T> void setCustomSpinner(T input, T expectedOutput, Class customClass, int spinnerId){
+        onView(withId(spinnerId)).perform(click());
+        onData(allOf(is(instanceOf(customClass)), is(input))).perform(click());
+        onView(withId(spinnerId)).check(matches(withSpinnerText(containsString(expectedOutput.toString()))));
+    }
+
     /*
     ISO
      */
@@ -212,49 +218,43 @@ public class ApplicationTest {
     Power
      */
 
-    private void setCustomSpinner(Power input, Power expectedOutput, Class customClass, int spinnerId){
-        onView(withId(spinnerId)).perform(click());
-        onData(allOf(is(instanceOf(customClass)), is(input))).perform(click());
-        onView(withId(spinnerId)).check(matches(withSpinnerText(containsString(expectedOutput.toString()))));
-    }
-
     private void setPower(Power input, Power expectedOutput){
         setCustomSpinner(input, expectedOutput, Power.class, R.id.power);
     }
 
-    @Test
-    public void setPowerMinusOne() {
-        setPower(Power.MINUS_ONE, Power.MINUS_ONE);
-    }
-
-    @Test
-    public void setPowerMinusTwo() {
-        setPower(Power.MINUS_TWO, Power.MINUS_TWO);
-    }
-
-    @Test
-    public void setPowerMinusThree() {
-        setPower(Power.MINUS_THREE, Power.MINUS_THREE);
-    }
-
-    @Test
-    public void setPowerMinusFour() {
-        setPower(Power.MINUS_FOUR, Power.MINUS_FOUR);
-    }
-
-    @Test
-    public void setPowerMinusFive() {
-        setPower(Power.MINUS_FIVE, Power.MINUS_FIVE);
-    }
-
-    @Test
-    public void setPowerMinusSix() {
-        setPower(Power.MINUS_SIX, Power.MINUS_SIX);
-    }
-
-    @Test
-    public void setPowerMinusSeven() {
-        setPower(Power.MINUS_SEVEN, Power.MINUS_SEVEN);
-    }
+//    @Test
+//    public void setPowerMinusOne() {
+//        setPower(Power.MINUS_ONE, Power.MINUS_ONE);
+//    }
+//
+//    @Test
+//    public void setPowerMinusTwo() {
+//        setPower(Power.MINUS_TWO, Power.MINUS_TWO);
+//    }
+//
+//    @Test
+//    public void setPowerMinusThree() {
+//        setPower(Power.MINUS_THREE, Power.MINUS_THREE);
+//    }
+//
+//    @Test
+//    public void setPowerMinusFour() {
+//        setPower(Power.MINUS_FOUR, Power.MINUS_FOUR);
+//    }
+//
+//    @Test
+//    public void setPowerMinusFive() {
+//        setPower(Power.MINUS_FIVE, Power.MINUS_FIVE);
+//    }
+//
+//    @Test
+//    public void setPowerMinusSix() {
+//        setPower(Power.MINUS_SIX, Power.MINUS_SIX);
+//    }
+//
+//    @Test
+//    public void setPowerMinusSeven() {
+//        setPower(Power.MINUS_SEVEN, Power.MINUS_SEVEN);
+//    }
 
 }
