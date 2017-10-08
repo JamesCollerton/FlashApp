@@ -14,6 +14,7 @@ import static org.hamcrest.core.AllOf.allOf;
 import static org.hamcrest.Matchers.*;
 
 import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
+import com.flashapp.jamescollerton.flashapp.enumerators.Power;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -169,13 +170,61 @@ public class ApplicationTest {
         onView(withId(spinnerId)).check(matches(withSpinnerText(containsString(expectedOutput))));
     }
 
+    /*
+    ISO
+     */
+
     private void setISO(String input, String expectedOutput){
         setSpinner(input, expectedOutput, R.id.ISO);
     }
 
+//    @Test
+//    public void setISO100() {
+//        setISO("100", "100");
+//    }
+//
+//    @Test
+//    public void setISO200() {
+//        setISO("200", "200");
+//    }
+//
+//    @Test
+//    public void setISO400() {
+//        setISO("400", "400");
+//    }
+//
+//    @Test
+//    public void setISO800() {
+//        setISO("800", "800");
+//    }
+//
+//    @Test
+//    public void setISO1600() {
+//        setISO("1600", "1600");
+//    }
+//
+//    @Test
+//    public void setISO3200() {
+//        setISO("3200", "3200");
+//    }
+
+    /*
+    Power
+     */
+
+    private void setCustomSpinner(Power input, Power expectedOutput, int spinnerId){
+        onView(withId(spinnerId)).perform(click());
+        onData(allOf(is(instanceOf(Power.class)), is(input))).perform(click());
+        onView(withId(spinnerId)).check(matches(withSpinnerText(containsString(expectedOutput.toString()))));
+    }
+
+    private void setPower(Power input, Power expectedOutput){
+        setCustomSpinner(input, expectedOutput, R.id.power);
+    }
+
     @Test
-    public void setISO100() {
-        setISO("100", "100");
+    public void setPower() {
+        setPower(Power.MINUS_ONE, Power.MINUS_ONE);
     }
 
 }
