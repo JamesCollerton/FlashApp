@@ -42,10 +42,13 @@ public class ApplicationTest {
     /*
     EditText Tests
      */
+    private void checkEditText(String expectedOutput, int editTextId){
+        onView(withId(editTextId)).check(matches(withText(expectedOutput)));
+    }
 
     private void setEditText(String input, String expectedOutput, int editTextId){
         onView(withId(editTextId)).perform(click()).perform(clearText()).perform(typeText(input));
-        onView(withId(editTextId)).check(matches(withText(expectedOutput)));
+        checkEditText(expectedOutput, editTextId);
     }
 
     private void setGuideNumber(String guideNumber, String expectedResult){
@@ -280,20 +283,20 @@ public class ApplicationTest {
         clickButton(R.id.calculateDistance);
     }
 
-    private void setUpApertureIntegrationTest(String guideNumber, String ISO, Power power, String distance, String expectedAperture) {
-        new TestResults();
-        setGuideNumber(guideNumber, guideNumber);
+    private void setUpApertureIntegrationTest(TestResults testResult) {
+        setGuideNumber(testResult.getGuideNumber(), testResult.getGuideNumber());
         closeKeyboard();
-        setDistance(distance, distance);
+        setDistance(testResult.getDistance(), testResult.getDistance());
         closeKeyboard();
-        setISO(ISO, ISO);
-        setPower(power, power);
+        setISO(testResult.getISO(), testResult.getISO());
+        setPower(testResult.getPower(), testResult.getPower());
         clickApertureButton();
+        checkEditText(testResult.getAperture(), R.id.aperture);
     }
 
     @Test
     public void setGN33ISO100PowerZeroDistance10(){
-        setUpApertureIntegrationTest("33", "100", Power.ZERO, "10", "0");
+        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance10Aperture3);
     }
 
 }
