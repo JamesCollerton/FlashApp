@@ -294,19 +294,50 @@ public class ApplicationTest {
         checkEditText(testResult.getAperture(), R.id.aperture);
     }
 
-    @Test
-    public void setGN33ISO100Power0Distance5Aperture3(){
-        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance5Aperture3);
-    }
+//    @Test
+//    public void setGN33ISO100Power0Distance5Aperture6(){
+//        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance5Aperture6);
+//    }
+
+//    @Test
+//    public void setGN33ISO100Power0Distance10Aperture3(){
+//        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance10Aperture3);
+//    }
+//
+//    @Test
+//    public void setGN33ISO100Power0Distance15Aperture2(){
+//        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance15Aperture2);
+//    }
+//
+//    @Test
+//    public void setGN66ISO100Power0Distance10Aperture6(){
+//        setUpApertureIntegrationTest(TestResults.GN66ISO100Power0Distance10Aperture6);
+//    }
+//
+//    @Test
+//    public void setGN99ISO100Power0Distance10Aperture9(){
+//        setUpApertureIntegrationTest(TestResults.GN99ISO100Power0Distance10Aperture9);
+//    }
+//
+//    @Test
+//    public void setGN122ISO100Power0Distance10Aperture12(){
+//        setUpApertureIntegrationTest(TestResults.GN122ISO100Power0Distance10Aperture12);
+//    }
 
     @Test
-    public void setGN33ISO100Power0Distance10Aperture3(){
-        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance10Aperture3);
+    public void setGN33ISO200Power0Distance10Aperture4(){
+        setUpApertureIntegrationTest(TestResults.GN33ISO200Power0Distance10Aperture4);
     }
 
-    @Test
-    public void setGN33ISO100Power0Distance15Aperture3(){
-        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance15Aperture3);
-    }
+//    @Test
+//    public void setGN33ISO400Power0Distance10Aperture1(){
+//        setUpApertureIntegrationTest(TestResults.GN33ISO400Power0Distance10Aperture1);
+//    }
+//
+//    @Test
+//    public void setGN33ISO1600Power0Distance10Aperture0(){
+//        setUpApertureIntegrationTest(TestResults.GN33ISO1600Power0Distance10Aperture0);
+//    }
+
 
 }
