@@ -4,7 +4,9 @@ import com.flashapp.jamescollerton.flashapp.enumerators.Power;
 
 public enum TestResults {
 
-    GN33ISO100Power0Distance10Aperture3("33", "100", Power.ZERO, "10", "3.3");
+    GN33ISO100Power0Distance5Aperture3("33", "100", Power.ZERO, "5", "6.6"),
+    GN33ISO100Power0Distance10Aperture3("33", "100", Power.ZERO, "10", "3.3"),
+    GN33ISO100Power0Distance15Aperture3("33", "100", Power.ZERO, "15", "2.2");
 
     private final String guideNumber;
     private final String ISO;

@@ -295,8 +295,18 @@ public class ApplicationTest {
     }
 
     @Test
-    public void setGN33ISO100PowerZeroDistance10(){
+    public void setGN33ISO100Power0Distance5Aperture3(){
+        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance5Aperture3);
+    }
+
+    @Test
+    public void setGN33ISO100Power0Distance10Aperture3(){
         setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance10Aperture3);
+    }
+
+    @Test
+    public void setGN33ISO100Power0Distance15Aperture3(){
+        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance15Aperture3);
     }
 
 }
