@@ -11,8 +11,8 @@ public enum TestResults {
     GN99ISO100Power0Distance10Aperture9("99", "100", Power.ZERO, "10", "9.9"),
     GN122ISO100Power0Distance10Aperture12("122", "100", Power.ZERO, "10", "12.2"),
     GN33ISO200Power0Distance10Aperture4("33", "200", Power.ZERO, "10", "4.666905"),
-    GN33ISO400Power0Distance10Aperture1("33", "400", Power.ZERO, "10", "1.65"),
-    GN33ISO1600Power0Distance10Aperture0("33", "1600", Power.ZERO, "10", "0.83");
+    GN33ISO400Power0Distance10Aperture6("33", "400", Power.ZERO, "10", "6.6"),
+    GN33ISO1600Power0Distance10Aperture13("33", "1600", Power.ZERO, "10", "13.2");
 
     private final String guideNumber;
     private final String ISO;
