@@ -306,10 +306,10 @@ public class ApplicationTest {
         checkEditText(testResult.getDistance(), R.id.distance);
     }
 
-//    @Test
-//    public void setGN33ISO100Power0Distance5Aperture6ApertureTest(){
-//        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance5Aperture6);
-//    }
+    @Test
+    public void setGN33ISO100Power0Distance5Aperture6ApertureTest(){
+        setUpApertureIntegrationTest(TestResults.GN33ISO100Power0Distance5Aperture6);
+    }
 //
 //    @Test
 //    public void setGN33ISO100Power0Distance10Aperture3ApertureTest(){
@@ -341,15 +341,59 @@ public class ApplicationTest {
 //        setUpApertureIntegrationTest(TestResults.GN33ISO200Power0Distance10Aperture4);
 //    }
 
-    @Test
-    public void setGN33ISO400Power0Distance10Aperture6ApertureTest(){
-        setUpApertureIntegrationTest(TestResults.GN33ISO400Power0Distance10Aperture6);
-    }
+//    @Test
+//    public void setGN33ISO400Power0Distance10Aperture6ApertureTest(){
+//        setUpApertureIntegrationTest(TestResults.GN33ISO400Power0Distance10Aperture6);
+//    }
+//
+//    @Test
+//    public void setGN33ISO1600Power0Distance10Aperture13ApertureTest(){
+//        setUpApertureIntegrationTest(TestResults.GN33ISO1600Power0Distance10Aperture13);
+//    }
 
     @Test
-    public void setGN33ISO1600Power0Distance10Aperture13ApertureTest(){
-        setUpApertureIntegrationTest(TestResults.GN33ISO1600Power0Distance10Aperture13);
+    public void setGN33ISO100Power0Distance5Aperture6DistanceTest(){
+        setUpDistanceIntegrationTest(TestResults.GN33ISO100Power0Distance5Aperture6);
     }
 
+//    @Test
+//    public void setGN33ISO100Power0Distance10Aperture3DistanceTest(){
+//        setUpDistanceIntegrationTest(TestResults.GN33ISO100Power0Distance10Aperture3);
+//    }
+//
+//    @Test
+//    public void setGN33ISO100Power0Distance15Aperture2DistanceTest(){
+//        setUpDistanceIntegrationTest(TestResults.GN33ISO100Power0Distance15Aperture2);
+//    }
+//
+//    @Test
+//    public void setGN66ISO100Power0Distance10Aperture6DistanceTest(){
+//        setUpDistanceIntegrationTest(TestResults.GN66ISO100Power0Distance10Aperture6);
+//    }
+//
+//    @Test
+//    public void setGN99ISO100Power0Distance10Aperture9DistanceTest(){
+//        setUpDistanceIntegrationTest(TestResults.GN99ISO100Power0Distance10Aperture9);
+//    }
+//
+//    @Test
+//    public void setGN122ISO100Power0Distance10Aperture12DistanceTest(){
+//        setUpDistanceIntegrationTest(TestResults.GN122ISO100Power0Distance10Aperture12);
+//    }
+//
+//    @Test
+//    public void setGN33ISO200Power0Distance10Aperture4DistanceTest(){
+//        setUpDistanceIntegrationTest(TestResults.GN33ISO200Power0Distance10Aperture4);
+//    }
+//
+//    @Test
+//    public void setGN33ISO400Power0Distance10Aperture6DistanceTest(){
+//        setUpDistanceIntegrationTest(TestResults.GN33ISO400Power0Distance10Aperture6);
+//    }
+//
+//    @Test
+//    public void setGN33ISO1600Power0Distance10Aperture13DistanceTest(){
+//        setUpDistanceIntegrationTest(TestResults.GN33ISO1600Power0Distance10Aperture13);
+//    }
 
 }
