@@ -14,14 +14,14 @@ public enum Power {
     MINUS_SEVEN(7);
 
     private final String fraction;
-    private final int value;
+    private final Integer value;
 
     Power(int power){
         this.fraction = "1/" + ((Double) (Math.pow(2, power))).intValue();
         this.value = -power;
     }
 
-    public int getValue(){
+    public Integer getValue(){
         return this.value;
     }
 
