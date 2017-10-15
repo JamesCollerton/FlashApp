@@ -1,6 +1,7 @@
 package com.flashapp.jamescollerton.flashapp.interfaces;
 
 import com.flashapp.jamescollerton.flashapp.fragments.ApertureFragment;
+import com.flashapp.jamescollerton.flashapp.fragments.CalculationButtonsFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.DistanceFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.GuideNumberFragment;
 import com.flashapp.jamescollerton.flashapp.fragments.ISOFragment;
@@ -59,7 +60,7 @@ public class InterfaceTest<ImplementedInterface> {
 
         @Test
         public final void testImplementsInterfaceMethods() {
-            for (Method method : GNField.class.getDeclaredMethods()) {
+            for (Method method : implementedClass.getDeclaredMethods()) {
                 try {
                     implementedInterface.getClass().getMethod(method.getName(), method.getParameterTypes());
                 } catch (NoSuchMethodException e){
@@ -70,14 +71,13 @@ public class InterfaceTest<ImplementedInterface> {
 
         @Parameterized.Parameters
         public static Collection<Object[]> instancesToTest(){
-//            fail("Did not override instances to test");
-//            return Arrays.asList();
             return Arrays.asList(
-                    new Object[]{new ApertureFragment(), GNField.class},
-                    new Object[]{new DistanceFragment(), GNField.class},
-                    new Object[]{new GuideNumberFragment(), GNField.class},
-                    new Object[]{new ISOFragment(), GNField.class},
-                    new Object[]{new PowerFragment(), GNField.class}
+                    new Object[]{new ApertureFragment(),            GNField.class},
+                    new Object[]{new DistanceFragment(),            GNField.class},
+                    new Object[]{new GuideNumberFragment(),         GNField.class},
+                    new Object[]{new ISOFragment(),                 GNField.class},
+                    new Object[]{new PowerFragment(),               GNField.class},
+                    new Object[]{new CalculationButtonsFragment(),  GNButton.class}
             );
         }
 
