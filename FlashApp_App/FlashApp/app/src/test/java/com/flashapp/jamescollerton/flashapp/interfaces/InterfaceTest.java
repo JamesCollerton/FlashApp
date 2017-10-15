@@ -14,6 +14,7 @@ import org.junit.runners.Parameterized;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.*;
 
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.fail;
@@ -24,36 +25,47 @@ import static junit.framework.Assert.fail;
 @RunWith(Enclosed.class)
 public class InterfaceTest<ImplementedInterface> {
 
-    @Test
-    public void tesy(){
-        
-    }
-
     @RunWith(Parameterized.class)
     public static class InterfaceTesting<ImplementedInterface> {
 
-//        public ImplementedInterface implementedInterface;
-//        public Class<?> implementedClass;
+        public ImplementedInterface implementedInterface;
+        public Class<?> implementedClass;
 
         public InterfaceTesting(ImplementedInterface implementedInterface, Class<?> implementedClass) {
-//            this.implementedInterface = implementedInterface;
-//            this.implementedClass = implementedClass;
+            this.implementedInterface = implementedInterface;
+            this.implementedClass = implementedClass;
+        }
+
+        private ArrayList<Class<?>> getAllInterfaces(Class<?> currentClass, ArrayList<Class<?>> interfaces){
+
+            for(Class<?> classInterface: currentClass.getInterfaces()){
+                interfaces.add(classInterface);
+            }
+
+            Class<?> superClass = currentClass.getSuperclass();
+
+            if(superClass != null){
+                getAllInterfaces(superClass, interfaces);
+            }
+
+            return interfaces;
         }
 
         @Test
         public final void testImplementsInterface() {
-//            assertTrue(implementedInterface.getClass().isAssignableFrom(implementedClass));
+            ArrayList<Class<?>> implementedInterfaces = getAllInterfaces(implementedInterface.getClass(), new ArrayList<Class<?>>());
+            assertTrue(implementedInterfaces.contains(implementedClass));
         }
 
         @Test
         public final void testImplementsInterfaceMethods() {
-//            for (Method method : GNField.class.getDeclaredMethods()) {
-//                try {
-//                    implementedInterface.getClass().getMethod(method.getName(), method.getParameterTypes());
-//                } catch (NoSuchMethodException e){
-//                    fail();
-//                }
-//            }
+            for (Method method : GNField.class.getDeclaredMethods()) {
+                try {
+                    implementedInterface.getClass().getMethod(method.getName(), method.getParameterTypes());
+                } catch (NoSuchMethodException e){
+                    fail();
+                }
+            }
         }
 
         @Parameterized.Parameters
@@ -61,11 +73,11 @@ public class InterfaceTest<ImplementedInterface> {
 //            fail("Did not override instances to test");
 //            return Arrays.asList();
             return Arrays.asList(
-                    new Object[]{new ApertureFragment(), ApertureFragment.class},
-                    new Object[]{new DistanceFragment(), DistanceFragment.class}
-//                    new Object[]{new GuideNumberFragment(), GuideNumberFragment.class},
-//                    new Object[]{new ISOFragment(), ISOFragment.class},
-//                    new Object[]{new PowerFragment(), PowerFragment.class}
+                    new Object[]{new ApertureFragment(), GNField.class},
+                    new Object[]{new DistanceFragment(), GNField.class},
+                    new Object[]{new GuideNumberFragment(), GNField.class},
+                    new Object[]{new ISOFragment(), GNField.class},
+                    new Object[]{new PowerFragment(), GNField.class}
             );
         }
 
