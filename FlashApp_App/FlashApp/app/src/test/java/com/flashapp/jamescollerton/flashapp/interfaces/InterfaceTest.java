@@ -24,17 +24,17 @@ import static junit.framework.Assert.fail;
  * Created by JamesCollerton on 15/10/2017.
  */
 @RunWith(Enclosed.class)
-public class InterfaceTest<ImplementedInterface> {
+public class InterfaceTest{
 
     @RunWith(Parameterized.class)
-    public static class InterfaceTesting<ImplementedInterface> {
+    public static class InterfaceTesting {
 
-        public ImplementedInterface implementedInterface;
-        public Class<?> implementedClass;
+        public Object implementedClass;
+        public Class<?> implementedInterface;
 
-        public InterfaceTesting(ImplementedInterface implementedInterface, Class<?> implementedClass) {
-            this.implementedInterface = implementedInterface;
+        public InterfaceTesting(Object implementedClass, Class<?> implementedInterface) {
             this.implementedClass = implementedClass;
+            this.implementedInterface = implementedInterface;
         }
 
         private ArrayList<Class<?>> getAllInterfaces(Class<?> currentClass, ArrayList<Class<?>> interfaces){
@@ -54,15 +54,15 @@ public class InterfaceTest<ImplementedInterface> {
 
         @Test
         public final void testImplementsInterface() {
-            ArrayList<Class<?>> implementedInterfaces = getAllInterfaces(implementedInterface.getClass(), new ArrayList<Class<?>>());
-            assertTrue(implementedInterfaces.contains(implementedClass));
+            ArrayList<Class<?>> implementedClasss = getAllInterfaces(implementedClass.getClass(), new ArrayList<Class<?>>());
+            assertTrue(implementedClasss.contains(implementedInterface));
         }
 
         @Test
         public final void testImplementsInterfaceMethods() {
-            for (Method method : implementedClass.getDeclaredMethods()) {
+            for (Method method : implementedInterface.getDeclaredMethods()) {
                 try {
-                    implementedInterface.getClass().getMethod(method.getName(), method.getParameterTypes());
+                    implementedClass.getClass().getMethod(method.getName(), method.getParameterTypes());
                 } catch (NoSuchMethodException e){
                     fail();
                 }
