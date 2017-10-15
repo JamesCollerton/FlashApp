@@ -36,7 +36,7 @@ public class ISOFragment extends GNFragment<Integer, Spinner, String>  {
      * @return A new instance of fragment ISOFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ISOFragment newInstance(String param1, String param2) {
+    public static ISOFragment newInstance() {
         ISOFragment fragment = new ISOFragment();
         return fragment;
     }

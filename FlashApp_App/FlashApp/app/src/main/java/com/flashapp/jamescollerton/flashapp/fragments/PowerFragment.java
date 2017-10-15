@@ -37,7 +37,7 @@ public class PowerFragment extends GNFragment<Integer, Spinner, Power> {
      * @return A new instance of fragment PowerFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PowerFragment newInstance(String param1, String param2) {
+    public static PowerFragment newInstance() {
         PowerFragment fragment = new PowerFragment();
         return fragment;
     }

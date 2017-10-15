@@ -37,7 +37,7 @@ public class ApertureFragment extends GNFragment<Float, EditText, String> {
      * @return A new instance of fragment ApertureFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ApertureFragment newInstance(String param1, String param2) {
+    public static ApertureFragment newInstance() {
         ApertureFragment fragment = new ApertureFragment();
         return fragment;
     }

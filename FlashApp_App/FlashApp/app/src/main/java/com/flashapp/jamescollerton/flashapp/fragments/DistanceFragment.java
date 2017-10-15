@@ -33,7 +33,7 @@ public class DistanceFragment extends GNFragment<Float, EditText, String> {
      * @return A new instance of fragment DistanceFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DistanceFragment newInstance(String param1, String param2) {
+    public static DistanceFragment newInstance() {
         DistanceFragment fragment = new DistanceFragment();
         return fragment;
     }
