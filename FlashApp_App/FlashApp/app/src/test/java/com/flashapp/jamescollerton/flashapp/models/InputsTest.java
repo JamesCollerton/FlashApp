@@ -30,7 +30,7 @@ public class InputsTest {
         inputs.setISO(power);
         inputs.setPower(guideNumber);
         inputs.setDistance(aperture);
-        inputs.setAperture(aperture);
+        inputs.setAperture(distance);
 
         assertEquals(inputs.getGuideNumber(), ISO);
         assertEquals(inputs.getISO(), power);
@@ -40,8 +40,18 @@ public class InputsTest {
     }
 
     @Test
-    public void inputTestValid(){
+    public void inputTestValidGN33ISO100Power1Aperture0Distance0(){
         setUpInputTest(33, 100, 1, new Float(0.1), new Float(0.1));
+    }
+
+    @Test
+    public void inputTestValidGN33ISO10PowerNeg1Aperture0Distance0(){
+        setUpInputTest(0, 10, -1, new Float(0.11111111111111111), new Float(0.111111111111111));
+    }
+
+    @Test
+    public void inputTestValidGNNeg1ISONeg10PowerNeg1Aperture1Distance2(){
+        setUpInputTest(-1, -10, -1, new Float(1), new Float(2));
     }
 
 }
