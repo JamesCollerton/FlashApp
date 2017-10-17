@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
@@ -80,6 +81,10 @@ public class DistanceFragment extends GNFragment<Float, EditText, String> {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onDistanceFragmentInteraction(Uri uri);
+    }
+
+    private void getDistanceUnit(){
+        String unit = ((Spinner) getActivity().findViewById(R.id.distanceUnit)).getSelectedItem().toString();
     }
 
     @Override
