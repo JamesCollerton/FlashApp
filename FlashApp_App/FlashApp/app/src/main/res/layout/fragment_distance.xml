@@ -12,13 +12,31 @@
         android:text="@string/label_distance"
         style="@style/style_input_label" />
 
-    <!-- Distance Input -->
-    <EditText
-        android:id="@+id/distance"
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
         android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_below="@+id/distanceLabel"
-        android:layout_marginBottom="@dimen/input_field_vertical_spacing"
-        android:inputType="numberDecimal"/>
+        android:layout_alignParentBottom="true">
+
+        <!-- Distance Input -->
+        <EditText
+            android:id="@+id/distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="@dimen/input_field_vertical_spacing"
+            android:inputType="numberDecimal"/>
+
+        <!-- ISO Input -->
+        <Spinner
+            android:id="@+id/distanceUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_marginBottom="@dimen/input_field_vertical_spacing"
+            android:entries="@array/arrays_distance_unit"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

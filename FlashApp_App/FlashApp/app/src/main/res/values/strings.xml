@@ -29,6 +29,12 @@
         <item>3200</item>
     </string-array>
 
+    <!-- Placeholder for Dynamic Allocation -->
+    <string-array name="arrays_distance_unit">
+        <item>metres</item>
+        <item>feet</item>
+    </string-array>
+
     <!--<string-array name="arrays_aperture">-->
         <!--<item>1.7</item>-->
         <!--<item>2.8</item>-->
