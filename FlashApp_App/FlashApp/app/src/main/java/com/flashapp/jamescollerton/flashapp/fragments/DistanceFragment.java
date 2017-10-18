@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.flashapp.jamescollerton.flashapp.R;
+import com.flashapp.jamescollerton.flashapp.enumerators.DistanceUnit;
+import com.flashapp.jamescollerton.flashapp.enumerators.Power;
 import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
 
 /**
@@ -83,12 +85,18 @@ public class DistanceFragment extends GNFragment<Float, EditText, String> {
         void onDistanceFragmentInteraction(Uri uri);
     }
 
-    private void distanceConversion() {
-
+    private float distanceConversion(String input) {
+        Float distance = InputValidation.parseFloatFromString(input);
+        return distance * getDistanceUnit().getConversionUnit();
     }
 
-    private String getDistanceUnit(){
-        return ((Spinner) getActivity().findViewById(R.id.distanceUnit)).getSelectedItem().toString();
+    private DistanceUnit getDistanceUnit(){
+        return (DistanceUnit) ((Spinner) getActivity().findViewById(R.id.distanceUnit)).getSelectedItem();
+    }
+
+    public void addSpinnerItems(){
+        DistanceUnit[] spinnerArray = DistanceUnit.values();
+        addSpinnerItems(spinnerArray, R.id.distanceUnit);
     }
 
     @Override

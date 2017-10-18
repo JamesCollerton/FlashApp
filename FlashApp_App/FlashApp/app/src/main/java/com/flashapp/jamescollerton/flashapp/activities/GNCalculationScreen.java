@@ -53,6 +53,9 @@ public class GNCalculationScreen    extends     AppCompatActivity
     private void setUpFields(){
         PowerFragment powerFragment = (PowerFragment) getSupportFragmentManager().findFragmentById(R.id.powerFragment);
         powerFragment.addSpinnerItems();
+
+        DistanceFragment distanceFragment = (DistanceFragment) getSupportFragmentManager().findFragmentById(R.id.distanceFragment);
+        distanceFragment.addSpinnerItems();
     }
 
     @Override

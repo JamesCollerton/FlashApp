@@ -89,10 +89,11 @@ public class PowerFragment extends GNFragment<Integer, Spinner, Power> {
 
     public void addSpinnerItems(){
         Power[] spinnerArray = Power.values();
-        Spinner spinner = (Spinner) getActivity().findViewById(R.id.power);
-        ArrayAdapter<Power> spinnerArrayAdapter = new ArrayAdapter<Power>(getContext(), android.R.layout.simple_spinner_item, spinnerArray);
-        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(spinnerArrayAdapter);
+        addSpinnerItems(spinnerArray, R.id.power);
+//        Spinner spinner = (Spinner) getActivity().findViewById(R.id.power);
+//        ArrayAdapter<Power> spinnerArrayAdapter = new ArrayAdapter<Power>(getContext(), android.R.layout.simple_spinner_item, spinnerArray);
+//        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner.setAdapter(spinnerArrayAdapter);
     }
 
     @Override

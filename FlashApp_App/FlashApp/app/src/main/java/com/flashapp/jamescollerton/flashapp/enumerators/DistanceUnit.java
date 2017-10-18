@@ -5,13 +5,19 @@ package com.flashapp.jamescollerton.flashapp.enumerators;
  */
 public enum DistanceUnit {
 
-    METRES("metres"),
-    FEET("feet");
+    METRES("metres", new Float(1)),
+    FEET("feet", new Float(3.28084));
 
     private final String unit;
+    private final Float conversionUnit;
 
-    DistanceUnit(String unit){
+    DistanceUnit(String unit, Float conversionUnit){
         this.unit = unit;
+        this.conversionUnit = conversionUnit;
+    }
+
+    public Float getConversionUnit(){
+        return conversionUnit;
     }
 
     public String toString(){
