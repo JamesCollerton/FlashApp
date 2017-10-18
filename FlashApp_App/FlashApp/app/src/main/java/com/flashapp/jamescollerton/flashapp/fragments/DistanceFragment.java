@@ -83,8 +83,12 @@ public class DistanceFragment extends GNFragment<Float, EditText, String> {
         void onDistanceFragmentInteraction(Uri uri);
     }
 
-    private void getDistanceUnit(){
-        String unit = ((Spinner) getActivity().findViewById(R.id.distanceUnit)).getSelectedItem().toString();
+    private void distanceConversion() {
+     
+    }
+
+    private String getDistanceUnit(){
+        return ((Spinner) getActivity().findViewById(R.id.distanceUnit)).getSelectedItem().toString();
     }
 
     @Override
