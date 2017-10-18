@@ -84,7 +84,7 @@ public class DistanceFragment extends GNFragment<Float, EditText, String> {
     }
 
     private void distanceConversion() {
-     
+
     }
 
     private String getDistanceUnit(){
