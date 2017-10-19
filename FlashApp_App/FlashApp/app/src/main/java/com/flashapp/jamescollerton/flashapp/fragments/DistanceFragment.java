@@ -85,7 +85,7 @@ public class DistanceFragment extends GNFragment<Float, EditText, String> {
         void onDistanceFragmentInteraction(Uri uri);
     }
 
-    private float distanceConversion(String input) {
+    private float parseAndConvertDistance(String input) {
         Float distance = InputValidation.parseFloatFromString(input);
         return distance * getDistanceUnit().getConversionUnit();
     }
@@ -116,6 +116,6 @@ public class DistanceFragment extends GNFragment<Float, EditText, String> {
 
     @Override
     public Float validate(String input){
-        return InputValidation.parseFloatFromString(input);
+        return parseAndConvertDistance(input);
     }
 }
