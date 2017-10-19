@@ -14,6 +14,7 @@ import static org.hamcrest.core.AllOf.allOf;
 import static org.hamcrest.Matchers.*;
 
 import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
+import com.flashapp.jamescollerton.flashapp.enumerators.DistanceUnit;
 import com.flashapp.jamescollerton.flashapp.enumerators.Power;
 
 import org.junit.Before;
@@ -265,6 +266,24 @@ public class ApplicationTest {
     @Test
     public void setPowerMinusSeven() {
         setPower(Power.MINUS_SEVEN, Power.MINUS_SEVEN);
+    }
+
+    /*
+    Distance Units
+     */
+    private void setDistanceUnits(DistanceUnit input, DistanceUnit expectedOutput){
+        setCustomSpinner(input, expectedOutput, DistanceUnit.class, R.id.distanceUnit);
+    }
+
+
+    @Test
+    public void setDistanceUnitsMetres(){
+        setDistanceUnits(DistanceUnit.METRES, DistanceUnit.METRES);
+    }
+
+    @Test
+    public void setDistanceUnitFeet(){
+        setDistanceUnits(DistanceUnit.FEET, DistanceUnit.FEET);
     }
 
     /*
