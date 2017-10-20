@@ -9,19 +9,26 @@ public class CalculationFormula {
 
     public static Float calculateAperture(Inputs inputs) throws IllegalArgumentException {
 
+        Float apertureAdjustment = new Float(inputs.getPower());
+
         checkApertureInputs(inputs);
 
-        Float apertureAdjustment = new Float(inputs.getPower());
         Double ISOFactor = Math.sqrt(new Double(inputs.getISO()) / new Double(100));
         Float apertureRawValue = (new Float(inputs.getGuideNumber()) * new Float(ISOFactor)) / inputs.getDistance();
         return apertureRawValue + apertureAdjustment;
     }
 
-    private static void checkApertureInputs(Inputs inputs) throws IllegalArgumentException {
+    private static void checkSharedInputs(Inputs inputs) throws IllegalArgumentException {
         if(inputs.getPower() == null ||
            inputs.getISO() == null ||
-           inputs.getGuideNumber() == null ||
-           inputs.getDistance() == null ||
+           inputs.getGuideNumber() == null){
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private static void checkApertureInputs(Inputs inputs) throws IllegalArgumentException {
+        checkSharedInputs(inputs);
+        if(inputs.getDistance() == null ||
            inputs.getDistance() == 0){
             throw new IllegalArgumentException();
         }
@@ -39,9 +46,8 @@ public class CalculationFormula {
     }
 
     private static void checkDistanceInputs(Inputs inputs, Float apertureAdjustment) throws IllegalArgumentException {
-        if(inputs.getISO() == null ||
-           inputs.getGuideNumber() == null ||
-           inputs.getAperture() == null ||
+        checkSharedInputs(inputs);
+        if(inputs.getAperture() == null ||
            inputs.getAperture() + apertureAdjustment == 0){
             throw new IllegalArgumentException();
         }
