@@ -107,7 +107,7 @@ public class PowerFragment extends GNFragment<Integer, Spinner, Power> {
     }
 
     @Override
-    public void setViewValue(Power value){ }
+    public void setViewValue(Integer value){ }
 
     @Override
     public Integer validate(Power input){
