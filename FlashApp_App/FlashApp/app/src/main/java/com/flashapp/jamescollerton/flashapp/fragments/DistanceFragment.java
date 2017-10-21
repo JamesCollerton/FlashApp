@@ -111,11 +111,16 @@ public class DistanceFragment extends GNFragment<Float, EditText, String> {
 
     @Override
     public void setViewValue(Float viewValue){
-        getFragmentView().setText(viewValue.toString());
+        getFragmentView().setText(validateOutput(viewValue).toString());
     }
 
     @Override
-    public Float validate(String input){
+    public Float validateOutput(Float viewValue){
+        return viewValue * getDistanceUnit().getConversionUnit();
+    }
+
+    @Override
+    public Float validateInput(String input){
         return parseAndConvertDistance(input);
     }
 }

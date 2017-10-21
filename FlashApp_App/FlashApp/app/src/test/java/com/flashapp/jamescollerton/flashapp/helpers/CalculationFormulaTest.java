@@ -24,7 +24,7 @@ public class CalculationFormulaTest {
 
         DistanceFragment distanceFragment = Mockito.mock(DistanceFragment.class);
         Mockito.when(distanceFragment.getDistanceUnit()).thenReturn(testResults.getDistanceUnit());
-        Mockito.when(distanceFragment.validate(testResults.getDistance())).thenCallRealMethod();
+        Mockito.when(distanceFragment.validateInput(testResults.getDistance())).thenCallRealMethod();
 
         return distanceFragment;
     }
@@ -34,11 +34,11 @@ public class CalculationFormulaTest {
         DistanceFragment distanceFragment = setUpDistanceMock(testResults);
 
         Inputs input = new Inputs(
-                GuideNumberFragment.newInstance().validate(testResults.getGuideNumber()),
-                ISOFragment.newInstance().validate(testResults.getISO()),
-                PowerFragment.newInstance().validate(testResults.getPower()),
-                distanceFragment.validate(testResults.getDistance()),
-                ApertureFragment.newInstance().validate(testResults.getAperture())
+                GuideNumberFragment.newInstance().validateInput(testResults.getGuideNumber()),
+                ISOFragment.newInstance().validateInput(testResults.getISO()),
+                PowerFragment.newInstance().validateInput(testResults.getPower()),
+                distanceFragment.validateInput(testResults.getDistance()),
+                ApertureFragment.newInstance().validateInput(testResults.getAperture())
                 );
         Float rawAperture = CalculationFormula.calculateAperture(input);
         assertEquals(rawAperture.toString(), testResults.getAperture());
@@ -49,11 +49,11 @@ public class CalculationFormulaTest {
         DistanceFragment distanceFragment = setUpDistanceMock(testResults);
 
         Inputs input = new Inputs(
-                GuideNumberFragment.newInstance().validate(testResults.getGuideNumber()),
-                ISOFragment.newInstance().validate(testResults.getISO()),
-                PowerFragment.newInstance().validate(testResults.getPower()),
-                distanceFragment.validate(testResults.getDistance()),
-                ApertureFragment.newInstance().validate(testResults.getAperture())
+                GuideNumberFragment.newInstance().validateInput(testResults.getGuideNumber()),
+                ISOFragment.newInstance().validateInput(testResults.getISO()),
+                PowerFragment.newInstance().validateInput(testResults.getPower()),
+                distanceFragment.validateInput(testResults.getDistance()),
+                ApertureFragment.newInstance().validateInput(testResults.getAperture())
         );
         Float rawDistance = CalculationFormula.calculateDistance(input);
         assertEquals(rawDistance.toString(), testResults.getDistance());

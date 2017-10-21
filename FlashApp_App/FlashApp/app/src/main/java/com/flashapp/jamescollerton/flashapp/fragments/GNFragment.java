@@ -4,9 +4,6 @@ import android.support.v4.app.Fragment;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.flashapp.jamescollerton.flashapp.R;
-import com.flashapp.jamescollerton.flashapp.enumerators.Power;
-import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
 import com.flashapp.jamescollerton.flashapp.interfaces.GNField;
 
 /**
@@ -18,10 +15,31 @@ public abstract class GNFragment<ValueType, ViewType, ViewValueType> extends Fra
     @Override
     public ValueType getValue() {
         try {
-            return validate(readViewValue());
+            return validateInput(readViewValue());
         } catch(NumberFormatException | NullPointerException e){
             return null;
         }
+    }
+
+    /**
+     * Overriden from the GNField interface. Not all fragments will let you set the output, so not
+     * all methods will need this.
+     *
+     * @param value What we would like to set in the view
+     */
+    @Override
+    public void setViewValue(ValueType value){};
+
+    /**
+     * Overriden from the GNField interface. Not all fragments will let you set the output, so not
+     * all methods will need this.
+     *
+     * @param output What we want to display in the fragment
+     * @return The validated output
+     */
+    @Override
+    public ValueType validateOutput(ValueType output){
+        return output;
     }
 
     public <SpinnerType> void addSpinnerItems(SpinnerType[] spinnerArray, int spinnerId){

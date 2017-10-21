@@ -102,7 +102,7 @@ public class ApertureFragment extends GNFragment<Float, EditText, String> {
     }
 
     @Override
-    public Float validate(String input){
+    public Float validateInput(String input){
         return InputValidation.parseFloatFromString(input);
     }
 }

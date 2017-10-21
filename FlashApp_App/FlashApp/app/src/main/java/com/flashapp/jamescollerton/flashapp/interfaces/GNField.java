@@ -40,6 +40,14 @@ public interface GNField<ValueType, ViewType, ViewValueType> extends GNButton<Vi
      * @param viewValue
      * @return
      */
-    public ValueType validate(ViewValueType viewValue);
+    public ValueType validateInput(ViewValueType viewValue);
 
+    /**
+     * This needs to be overriden to take the value we want to
+     * put in the fragment and validate it before putting it in.
+     *
+     * @param viewValue
+     * @return
+     */
+    public ValueType validateOutput(ValueType viewValue);
 }
