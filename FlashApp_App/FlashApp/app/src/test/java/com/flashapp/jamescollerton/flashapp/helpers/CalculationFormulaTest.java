@@ -45,11 +45,14 @@ public class CalculationFormulaTest {
     }
 
     private void calculationFormulaDistanceTest(TestResults testResults){
+
+        DistanceFragment distanceFragment = setUpDistanceMock(testResults);
+
         Inputs input = new Inputs(
                 GuideNumberFragment.newInstance().validate(testResults.getGuideNumber()),
                 ISOFragment.newInstance().validate(testResults.getISO()),
                 PowerFragment.newInstance().validate(testResults.getPower()),
-                DistanceFragment.newInstance().validate(testResults.getDistance()),
+                distanceFragment.validate(testResults.getDistance()),
                 ApertureFragment.newInstance().validate(testResults.getAperture())
         );
         Float rawDistance = CalculationFormula.calculateDistance(input);
