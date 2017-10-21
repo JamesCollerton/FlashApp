@@ -7,7 +7,7 @@
 
     <!-- Label Text -->
 
-    <string name="label_guide_number">Guide Number</string>
+    <string name="label_guide_number">Guide Number (m)</string>
     <string name="label_ISO">ISO</string>
     <string name="label_distance">Distance</string>
     <string name="label_aperture">Raw Aperture</string>
