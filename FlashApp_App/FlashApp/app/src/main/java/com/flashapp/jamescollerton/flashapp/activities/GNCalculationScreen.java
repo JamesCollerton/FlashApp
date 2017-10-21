@@ -103,7 +103,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
     private void calculateAperture(){
         try {
             Float aperture = CalculationFormula.calculateAperture(readInputs());
-            getApertureFragment().setViewValue(aperture.toString());
+            getApertureFragment().setViewValue(aperture);
         } catch(Exception e){
             new AlertBox(this,
                     "Missing Information",

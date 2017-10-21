@@ -90,7 +90,7 @@ public class DistanceFragment extends GNFragment<Float, EditText, String> {
         return distance / getDistanceUnit().getConversionUnit();
     }
 
-    private DistanceUnit getDistanceUnit(){
+    public DistanceUnit getDistanceUnit(){
         return (DistanceUnit) ((Spinner) getActivity().findViewById(R.id.distanceUnit)).getSelectedItem();
     }
 
