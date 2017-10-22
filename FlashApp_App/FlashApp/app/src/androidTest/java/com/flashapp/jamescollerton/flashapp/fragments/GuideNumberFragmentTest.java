@@ -1,4 +1,4 @@
-package com.flashapp.jamescollerton.flashapp;
+package com.flashapp.jamescollerton.flashapp.fragments;
 
 import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
@@ -13,9 +13,13 @@ import static android.support.test.espresso.matcher.ViewMatchers.*;
 import static org.hamcrest.core.AllOf.allOf;
 import static org.hamcrest.Matchers.*;
 
+import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
+import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreenTest;
 import com.flashapp.jamescollerton.flashapp.enumerators.DistanceUnit;
 import com.flashapp.jamescollerton.flashapp.enumerators.Power;
+import com.flashapp.jamescollerton.flashapp.helpers.AndroidTestUtils;
+import com.flashapp.jamescollerton.flashapp.helpers.GNAndroidTest;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -29,31 +33,10 @@ import testUtils.TestResults;
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class GuideNumberTest {
+public class GuideNumberFragmentTest extends GNAndroidTest {
 
-    @Rule
-    public ActivityTestRule<GNCalculationScreen> mActivityRule =
-            new ActivityTestRule(GNCalculationScreen.class);
-
-    @Before
-    public void closeKeyboard(){
-        Espresso.closeSoftKeyboard();
-    }
-
-    /*
-    EditText Tests
-     */
-    private void checkEditText(String expectedOutput, int editTextId){
-        onView(withId(editTextId)).check(matches(withText(expectedOutput)));
-    }
-
-    private void setEditText(String input, String expectedOutput, int editTextId){
-        onView(withId(editTextId)).perform(click()).perform(clearText()).perform(typeText(input));
-        checkEditText(expectedOutput, editTextId);
-    }
-
-    private void setGuideNumber(String guideNumber, String expectedResult){
-        setEditText(guideNumber, expectedResult, R.id.guideNumber);
+    public static void setGuideNumber(String guideNumber, String expectedResult){
+        AndroidTestUtils.setEditText(guideNumber, expectedResult, R.id.guideNumber);
     }
 
     /*
