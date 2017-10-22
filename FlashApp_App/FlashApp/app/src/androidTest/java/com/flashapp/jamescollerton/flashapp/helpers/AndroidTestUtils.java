@@ -21,14 +21,6 @@ import static org.hamcrest.core.AllOf.allOf;
  */
 public class AndroidTestUtils {
 
-    public static void closeKeyboard(){
-        Espresso.closeSoftKeyboard();
-    }
-
-    public static void androidTestSetup(){
-        closeKeyboard();
-    }
-
     /*
     Edit Text
      */
