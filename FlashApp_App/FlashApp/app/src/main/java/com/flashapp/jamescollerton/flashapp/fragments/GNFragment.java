@@ -6,9 +6,6 @@ import android.widget.Spinner;
 
 import com.flashapp.jamescollerton.flashapp.interfaces.GNField;
 
-/**
- * Created by JamesCollerton on 25/09/2017.
- */
 public abstract class GNFragment<ValueType, ViewType, ViewValueType> extends Fragment
                                                                      implements GNField<ValueType, ViewType, ViewValueType> {
 

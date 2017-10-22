@@ -1,10 +1,8 @@
 package com.flashapp.jamescollerton.flashapp.models;
 
-import android.renderscript.ScriptGroup;
-
-import static junit.framework.Assert.*;
-
 import org.junit.Test;
+
+import static junit.framework.Assert.assertEquals;
 
 /**
  * Created by JamesCollerton on 15/10/2017.

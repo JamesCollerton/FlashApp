@@ -20,9 +20,6 @@ import java.util.*;
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.fail;
 
-/**
- * Created by JamesCollerton on 15/10/2017.
- */
 @RunWith(Enclosed.class)
 public class InterfaceTest{
 

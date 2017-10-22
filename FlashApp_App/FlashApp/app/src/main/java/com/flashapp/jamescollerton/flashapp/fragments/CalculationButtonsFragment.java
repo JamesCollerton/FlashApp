@@ -12,16 +12,6 @@ import android.widget.Button;
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
 
-import java.sql.SQLOutput;
-
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link CalculationButtonsFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link CalculationButtonsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class CalculationButtonsFragment extends Fragment implements GNButton<Button> {
 
     private OnFragmentInteractionListener mListener;
@@ -67,10 +57,6 @@ public class CalculationButtonsFragment extends Fragment implements GNButton<But
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name

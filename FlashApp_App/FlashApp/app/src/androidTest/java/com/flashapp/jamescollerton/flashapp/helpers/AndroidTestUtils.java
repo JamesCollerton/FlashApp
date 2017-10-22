@@ -16,10 +16,14 @@ import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.core.AllOf.allOf;
 
-/**
- * Created by JamesCollerton on 22/10/2017.
- */
 public class AndroidTestUtils {
+
+    /*
+    General
+     */
+    public static void closeKeyboard(){
+        Espresso.closeSoftKeyboard();
+    }
 
     /*
     Edit Text

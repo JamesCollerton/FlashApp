@@ -8,9 +8,6 @@ import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
 import org.junit.Before;
 import org.junit.Rule;
 
-/**
- * Created by JamesCollerton on 22/10/2017.
- */
 public abstract class GNAndroidTest {
 
     @Rule

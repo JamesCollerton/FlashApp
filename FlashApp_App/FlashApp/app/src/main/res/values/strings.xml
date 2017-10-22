@@ -34,7 +34,7 @@
         <item>feet</item>
     </string-array>
 
-    <!-- Placeholder for Dynamic Allocation -->
+    <!-- Placeholder for dynamic allocation -->
     <string-array name="arrays_power">
     </string-array>
 

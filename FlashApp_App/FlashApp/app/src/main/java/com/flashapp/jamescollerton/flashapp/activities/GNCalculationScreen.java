@@ -34,7 +34,6 @@ public class GNCalculationScreen    extends     AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        setUpLayout();
         setUpListeners();
         setUpFields();
 
@@ -83,7 +82,6 @@ public class GNCalculationScreen    extends     AppCompatActivity
     /**
      * Listeners
      */
-
     public void assignCalculationButtonsListeners(){
 
         findViewById(R.id.calculateAperture).setOnClickListener(new View.OnClickListener() {

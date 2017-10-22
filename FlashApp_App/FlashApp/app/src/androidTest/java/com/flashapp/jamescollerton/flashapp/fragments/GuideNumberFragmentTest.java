@@ -1,36 +1,16 @@
 package com.flashapp.jamescollerton.flashapp.fragments;
 
-import android.support.test.espresso.Espresso;
-import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
-import static android.support.test.espresso.Espresso.*;
-import static android.support.test.espresso.action.ViewActions.*;
-import static android.support.test.espresso.assertion.ViewAssertions.*;
-import static android.support.test.espresso.matcher.ViewMatchers.*;
-
-import static org.hamcrest.core.AllOf.allOf;
-import static org.hamcrest.Matchers.*;
-
 import com.flashapp.jamescollerton.flashapp.R;
-import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreen;
-import com.flashapp.jamescollerton.flashapp.activities.GNCalculationScreenTest;
-import com.flashapp.jamescollerton.flashapp.enumerators.DistanceUnit;
-import com.flashapp.jamescollerton.flashapp.enumerators.Power;
 import com.flashapp.jamescollerton.flashapp.helpers.AndroidTestUtils;
 import com.flashapp.jamescollerton.flashapp.helpers.GNAndroidTest;
 
-import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import testUtils.TestResults;
 
-/**
- * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
- */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class GuideNumberFragmentTest extends GNAndroidTest {
@@ -38,10 +18,6 @@ public class GuideNumberFragmentTest extends GNAndroidTest {
     public static void setGuideNumber(String guideNumber, String expectedResult){
         AndroidTestUtils.setEditText(guideNumber, expectedResult, R.id.guideNumber);
     }
-
-    /*
-    Guide Number Tests
-     */
 
     @Test
     public void setGuideNumberInt() {

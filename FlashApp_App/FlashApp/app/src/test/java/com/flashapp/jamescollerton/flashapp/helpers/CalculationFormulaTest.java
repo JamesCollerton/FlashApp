@@ -14,9 +14,6 @@ import testUtils.TestResults;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by JamesCollerton on 14/10/2017.
- */
 public class CalculationFormulaTest {
 
 

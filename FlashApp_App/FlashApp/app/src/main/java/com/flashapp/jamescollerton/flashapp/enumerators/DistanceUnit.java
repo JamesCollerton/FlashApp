@@ -1,8 +1,5 @@
 package com.flashapp.jamescollerton.flashapp.enumerators;
 
-/**
- * Created by JamesCollerton on 18/10/2017.
- */
 public enum DistanceUnit {
 
     METRES("metres", new Float(1)),

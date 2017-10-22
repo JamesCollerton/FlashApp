@@ -1,8 +1,5 @@
 package com.flashapp.jamescollerton.flashapp.models;
 
-/**
- * Created by JamesCollerton on 27/09/2017.
- */
 public class Inputs {
 
     private Integer guideNumber;

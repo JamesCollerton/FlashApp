@@ -1,8 +1,5 @@
 package com.flashapp.jamescollerton.flashapp.enumerators;
 
-/**
- * Created by JamesCollerton on 30/09/2017.
- */
 public enum Power {
     ZERO(0),
     MINUS_ONE(1),

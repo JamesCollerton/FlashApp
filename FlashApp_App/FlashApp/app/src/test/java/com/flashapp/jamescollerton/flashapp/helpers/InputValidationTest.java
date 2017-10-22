@@ -4,9 +4,6 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-/**
- * Created by JamesCollerton on 14/10/2017.
- */
 public class InputValidationTest {
 
     private static final String ERROR_MESSAGE = "Didn't throw exception";
