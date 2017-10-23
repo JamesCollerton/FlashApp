@@ -2,10 +2,13 @@ package com.flashapp.jamescollerton.flashapp.helpers;
 
 import android.support.test.espresso.Espresso;
 
+import com.flashapp.jamescollerton.flashapp.R;
+
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.scrollTo;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -56,7 +59,7 @@ public class AndroidTestUtils {
     Buttons
      */
     public static void clickButton(int buttonId){
-        onView(withId(buttonId)).perform(click());
+        onView(withId(buttonId)).perform(scrollTo(), click());
     }
 
 }

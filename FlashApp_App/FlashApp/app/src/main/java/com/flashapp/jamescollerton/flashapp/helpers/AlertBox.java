@@ -6,8 +6,6 @@ import android.content.DialogInterface;
 
 /**
  * This class is used as a wrapper for creating alerts to the user.
- *
- * Created by JamesCollerton on 22/12/2016.
  */
 public class AlertBox {
 
