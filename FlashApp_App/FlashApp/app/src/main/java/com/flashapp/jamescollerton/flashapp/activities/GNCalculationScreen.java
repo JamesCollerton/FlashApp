@@ -19,6 +19,10 @@ import com.flashapp.jamescollerton.flashapp.helpers.AlertBox;
 import com.flashapp.jamescollerton.flashapp.helpers.CalculationFormula;
 import com.flashapp.jamescollerton.flashapp.models.Inputs;
 
+/**
+ * This is the main activity class for the app. It is responsible for doing things like setting
+ * up listeners, fields and reading inputs.
+ */
 public class GNCalculationScreen    extends     AppCompatActivity
                                     implements  GuideNumberFragment.OnFragmentInteractionListener,
                                                 ISOFragment.OnFragmentInteractionListener,
@@ -27,6 +31,11 @@ public class GNCalculationScreen    extends     AppCompatActivity
                                                 CalculationButtonsFragment.OnFragmentInteractionListener,
                                                 ApertureFragment.OnFragmentInteractionListener {
 
+    /**
+     * This sets up the toolbar and calls functions for setting up listeners and fields.
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +56,8 @@ public class GNCalculationScreen    extends     AppCompatActivity
     }
 
     /**
-     * Does all of the custom initialisation of fields in the activity.
+     * Does all of the custom initialisation of fields in the activity. This is mainly setting up
+     * spinners with custom types that need to be dynamically populated.
      */
     private void setUpFields(){
         PowerFragment powerFragment = (PowerFragment) getSupportFragmentManager().findFragmentById(R.id.powerFragment);
@@ -58,7 +68,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
     }
 
     /**
-     * Listeners
+     * This assigns the event listeners to the buttons on the page.
      */
     public void assignCalculationButtonsListeners(){
 
@@ -76,6 +86,10 @@ public class GNCalculationScreen    extends     AppCompatActivity
 
     }
 
+    /**
+     * When the aperture button is clicked we read all of the inputs and then try to calculate the
+     * aperture. If we encounter any exceptions we catch them and display an error.
+     */
     private void calculateAperture(){
         try {
             Float aperture = CalculationFormula.calculateAperture(readInputs());
@@ -89,19 +103,29 @@ public class GNCalculationScreen    extends     AppCompatActivity
         }
     }
 
+    /**
+     * When the distance button is clicked we read all of the inputs and then try to calculate the
+     * distance. If we encounter any exceptions we catch them and display an error.
+     */
     private void calculateDistance(){
         try {
             Float distance = CalculationFormula.calculateDistance(readInputs());
             getDistanceFragment().setViewValue(distance);
         } catch(Exception e){
             new AlertBox(this,
-                    "Missing Information",
-                    "Please check ISO, guide number and aperture are all populated " +
-                    "and have valid values.",
-                    "OK");
+                    getResources().getString(R.string.alert_box_missing_info_title),
+                    getResources().getString(R.string.alert_box_missing_info_text),
+                    getResources().getString(R.string.alert_box_missing_info_ok)
+            );
         }
     }
 
+    /**
+     * This gets all of the inputted information from the fragments and creates a new input object
+     * to be passed around, containing this information.
+     *
+     * @return The new input object.
+     */
     private Inputs readInputs(){
         return new Inputs(
                 getGuideNumberFragment().getValue(),
@@ -112,8 +136,8 @@ public class GNCalculationScreen    extends     AppCompatActivity
         );
     }
 
-    /**
-     * Fragment getters
+    /*
+    Fragment getters
      */
 
     public PowerFragment getPowerFragment(){
@@ -136,8 +160,8 @@ public class GNCalculationScreen    extends     AppCompatActivity
         return (ApertureFragment) getSupportFragmentManager().findFragmentById(R.id.apertureFragment);
     }
 
-    /**
-     * Overriden Methods for Fragments
+    /*
+    Overriden Methods for Fragments
      */
 
     @Override
