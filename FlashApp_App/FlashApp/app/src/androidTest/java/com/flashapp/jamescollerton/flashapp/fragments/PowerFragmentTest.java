@@ -12,12 +12,19 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 /**
- * Created by JamesCollerton on 22/10/2017.
+ * This is used to test the power spinner on the main page. It contains methods for setting and
+ * checking the result
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class PowerFragmentTest extends GNAndroidTest {
 
+    /**
+     * This is used to set and then check what has been set in the power spinner.
+     *
+     * @param input This is what we entered in the spinner
+     * @param expectedOutput What we expect to receive out of it
+     */
     public static void setPower(Power input, Power expectedOutput){
         AndroidTestUtils.setCustomSpinner(input, expectedOutput, Power.class, R.id.power);
     }

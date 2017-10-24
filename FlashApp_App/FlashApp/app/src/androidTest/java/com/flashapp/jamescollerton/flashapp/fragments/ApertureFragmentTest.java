@@ -10,10 +10,21 @@ import com.flashapp.jamescollerton.flashapp.helpers.GNAndroidTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+/**
+ * This is used to test the aperture fragment and holds all of the methods for testing entering
+ * different amounts into the aperture field.
+ */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class ApertureFragmentTest extends GNAndroidTest {
 
+    /**
+     * This is the method for actually setting the aperture. It is static so it can be accessed from
+     * outside the class for other tests.
+     *
+     * @param aperture The aperture we want to set.
+     * @param expectedResult What we expect to receive in the text box.
+     */
     public static void setAperture(String aperture, String expectedResult){
         AndroidTestUtils.setEditText(aperture, expectedResult, R.id.aperture);
     }

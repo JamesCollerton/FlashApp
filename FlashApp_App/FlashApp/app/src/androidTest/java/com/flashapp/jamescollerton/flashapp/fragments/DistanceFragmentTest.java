@@ -11,14 +11,29 @@ import com.flashapp.jamescollerton.flashapp.helpers.GNAndroidTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+/**
+ * This is used to hold all of the test for the distance fragment. It includes methods for setting
+ * and checking the distance and the distance units.
+ */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class DistanceFragmentTest extends GNAndroidTest {
 
+    /**
+     * Used for setting the distance. It is static so it can be accessed from outside the class by
+     * other methods.
+     *
+     * @param distance What we are entering in the distance box
+     * @param expectedResult What we expect to be populated in the distance box
+     */
     public static void setDistance(String distance, String expectedResult){
         AndroidTestUtils.setEditText(distance, expectedResult, R.id.distance);
     }
 
+    /**
+     * @param input What we are entering in the distance units.
+     * @param expectedOutput What we expect to be in the distance unit spinner.
+     */
     public static void setDistanceUnits(DistanceUnit input, DistanceUnit expectedOutput){
         AndroidTestUtils.setCustomSpinner(input, expectedOutput, DistanceUnit.class, R.id.distanceUnit);
     }

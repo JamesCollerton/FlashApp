@@ -11,12 +11,18 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 /**
- * Created by JamesCollerton on 22/10/2017.
+ * This holds all the methods for testing the ISO spinner on the page.
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class ISOFragmentTest extends GNAndroidTest {
 
+    /**
+     * This is used to set and check the ISO spinner
+     *
+     * @param input What we want to select in the spinner
+     * @param expectedOutput What we expect to have selected in the spinner
+     */
     public static void setISO(String input, String expectedOutput){
         AndroidTestUtils.setSpinner(input, expectedOutput, R.id.ISO);
     }
