@@ -14,6 +14,9 @@ import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.enumerators.Power;
 import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
 
+/**
+ * This is used to control selecting powers in the UI
+ */
 public class PowerFragment extends GNFragment<Integer, Spinner, Power> {
 
     private OnFragmentInteractionListener mListener;
@@ -66,21 +69,34 @@ public class PowerFragment extends GNFragment<Integer, Spinner, Power> {
         void onPowerFragmentInteraction(Uri uri);
     }
 
+    /**
+     * This is used to add all the power options to the spinner array.
+     */
     public void addSpinnerItems(){
         Power[] spinnerArray = Power.values();
         addSpinnerItems(spinnerArray, R.id.power);
     }
 
+    /**
+     * @return The spinner representing the powers
+     */
     @Override
     public Spinner getFragmentView(){
         return (Spinner) getActivity().findViewById(R.id.power);
     }
 
+    /**
+     * @return The value currently selected in the spinner
+     */
     @Override
     public Power readViewValue(){
         return (Power) getFragmentView().getSelectedItem();
     }
 
+    /**
+     * @param input The power selected in the spinner
+     * @return The value corresponding to that power
+     */
     @Override
     public Integer validateInput(Power input){
         return input.getValue();

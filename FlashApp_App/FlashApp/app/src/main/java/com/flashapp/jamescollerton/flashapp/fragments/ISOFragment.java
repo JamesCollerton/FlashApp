@@ -13,6 +13,9 @@ import android.widget.Spinner;
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
 
+/**
+ * This fragment is used to take from and put values into the ISO spinner
+ */
 public class ISOFragment extends GNFragment<Integer, Spinner, String>  {
 
     private OnFragmentInteractionListener mListener;
@@ -66,16 +69,28 @@ public class ISOFragment extends GNFragment<Integer, Spinner, String>  {
         void onISOFragmentInteraction(Uri uri);
     }
 
+    /**
+     * @return The spinner from the UI
+     */
     @Override
     public Spinner getFragmentView(){
         return (Spinner) getActivity().findViewById(R.id.ISO);
     }
 
+    /**
+     * @return The value currently selected in the UI spinner
+     */
     @Override
     public String readViewValue(){
         return getFragmentView().getSelectedItem().toString();
     }
 
+    /**
+     * This validates the input by parsing the string to a float
+     *
+     * @param input String taken from the UI
+     * @return The float taken from the string inputted in the field
+     */
     @Override
     public Integer validateInput(String input){
         return InputValidation.parseIntegerFromString(input);
