@@ -1,7 +1,7 @@
 package com.flashapp.jamescollerton.flashapp.helpers;
 
 /**
- * Created by JamesCollerton on 17/09/2017.
+ * Used to house any validation of inputs taken from the UI
  */
 public class InputValidation {
 
