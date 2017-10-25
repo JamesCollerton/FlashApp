@@ -12,7 +12,11 @@ import android.widget.Button;
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.interfaces.GNButton;
 
-public class CalculationButtonsFragment extends Fragment implements GNButton<Button> {
+/**
+ * This is used to hold all of the functionality used to deal with pressing either of the calculation
+ * buttons (pressing calculate aperture or distance)
+ */
+public class CalculationButtonsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
@@ -61,11 +65,6 @@ public class CalculationButtonsFragment extends Fragment implements GNButton<But
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onCalculationButtonsFragmentInteraction(Uri uri);
-    }
-
-    @Override
-    public Button getFragmentView(){
-        return (Button) getActivity().findViewById(R.id.calculateAperture);
     }
 
 }

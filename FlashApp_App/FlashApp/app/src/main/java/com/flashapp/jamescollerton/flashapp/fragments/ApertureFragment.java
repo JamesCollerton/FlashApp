@@ -11,6 +11,10 @@ import android.widget.EditText;
 import com.flashapp.jamescollerton.flashapp.R;
 import com.flashapp.jamescollerton.flashapp.helpers.InputValidation;
 
+/**
+ * This contains the UI component for the aperture. It is used to take data from and put data into
+ * the aperture field in the UI.
+ */
 public class ApertureFragment extends GNFragment<Float, EditText, String> {
 
     private OnFragmentInteractionListener mListener;
@@ -63,21 +67,38 @@ public class ApertureFragment extends GNFragment<Float, EditText, String> {
         void onApertureFragmentInteraction(Uri uri);
     }
 
+    /**
+     * @return The EditText corresponding to the aperture fragment
+     */
     @Override
     public EditText getFragmentView(){
         return (EditText) getActivity().findViewById(R.id.aperture);
     }
 
+    /**
+     * @return The string taken from the view
+     */
     @Override
     public String readViewValue(){
         return getFragmentView().getText().toString();
     }
 
+    /**
+     * Sets the value in the UI from an input value
+     *
+     * @param viewValue The value we want to set in the UI
+     */
     @Override
     public void setViewValue(Float viewValue){
         getFragmentView().setText(viewValue.toString());
     }
 
+    /**
+     * We need to make sure that when we take a string from the UI that it parses as a float
+     *
+     * @param input String from the UI
+     * @return The string in the UI but as a float object
+     */
     @Override
     public Float validateInput(String input){
         return InputValidation.parseFloatFromString(input);
