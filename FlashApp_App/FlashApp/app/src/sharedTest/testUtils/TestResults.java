@@ -3,6 +3,10 @@ package testUtils;
 import com.flashapp.jamescollerton.flashapp.enumerators.DistanceUnit;
 import com.flashapp.jamescollerton.flashapp.enumerators.Power;
 
+/**
+ * This class is used to hold all of the test results. Each of these represents a different test
+ * case and can be used in both the unit and integration tests.
+ */
 public enum TestResults {
 
     GN33ISO100Power0Distance5Aperture6Metres("33", "100", Power.ZERO, "5.0", "6.6", DistanceUnit.METRES),
@@ -14,7 +18,7 @@ public enum TestResults {
     GN33ISO200Power0Distance10Aperture4Metres("33", "200", Power.ZERO, "10.0", "4.666905", DistanceUnit.METRES),
     GN33ISO400Power0Distance10Aperture6Metres("33", "400", Power.ZERO, "10.0", "6.6", DistanceUnit.METRES),
     GN33ISO1600Power0Distance10Aperture13Metres("33", "1600", Power.ZERO, "10.0", "13.2", DistanceUnit.METRES),
-    GN33ISO100Power0Distance5Aperture21Feet("33", "100", Power.ZERO, "5.0", "21.653543", DistanceUnit.FEET), // TODO Rename all of these
+    GN33ISO100Power0Distance5Aperture21Feet("33", "100", Power.ZERO, "5.0", "21.653543", DistanceUnit.FEET),
     GN33ISO100Power0Distance10Aperture3Feet("33", "100", Power.ZERO, "10.0", "10.826772", DistanceUnit.FEET),
     GN33ISO100Power0Distance15Aperture2Feet("33", "100", Power.ZERO, "15.0", "7.217848", DistanceUnit.FEET),
     GN66ISO100Power0Distance10Aperture6Feet("66", "100", Power.ZERO, "10.0", "21.653543", DistanceUnit.FEET),

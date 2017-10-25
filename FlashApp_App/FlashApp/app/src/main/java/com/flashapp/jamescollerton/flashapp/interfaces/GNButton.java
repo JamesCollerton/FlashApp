@@ -1,7 +1,8 @@
 package com.flashapp.jamescollerton.flashapp.interfaces;
 
 /**
- * Created by JamesCollerton on 26/09/2017.
+ * This is used so buttons can be declared separately to fields. Buttons will always need a view
+ * but may not need methods like set or get.
  */
 public interface GNButton<ViewType> {
 

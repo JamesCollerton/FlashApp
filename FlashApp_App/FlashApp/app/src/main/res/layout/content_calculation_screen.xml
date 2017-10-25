@@ -13,12 +13,14 @@
     tools:context=".activities.GNCalculationScreen"
     tools:showIn="@layout/activity_calculation_screen">
 
+    <!-- Guide Number -->
     <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.GuideNumberFragment"
               android:id="@+id/guideNumberFragment"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               layout="@layout/fragment_guide_number" />
 
+    <!-- ISO -->
     <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.ISOFragment"
               android:id="@+id/ISOFragment"
               android:layout_width="match_parent"
@@ -26,6 +28,7 @@
               android:layout_below="@+id/guideNumberFragment"
               layout="@layout/fragment_iso" />
 
+    <!-- Power -->
     <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.PowerFragment"
               android:id="@+id/powerFragment"
               android:layout_width="match_parent"
@@ -33,6 +36,7 @@
               android:layout_below="@+id/ISOFragment"
               layout="@layout/fragment_power" />
 
+    <!-- Distance -->
     <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.DistanceFragment"
               android:id="@+id/distanceFragment"
               android:layout_width="match_parent"
@@ -40,6 +44,7 @@
               android:layout_below="@+id/powerFragment"
               layout="@layout/fragment_distance" />
 
+    <!-- Aperture -->
     <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.ApertureFragment"
               android:id="@+id/apertureFragment"
               android:layout_width="match_parent"
@@ -47,6 +52,7 @@
               android:layout_below="@+id/distanceFragment"
               layout="@layout/fragment_aperture" />
 
+    <!-- Calculation Buttons -->
     <fragment android:name="com.flashapp.jamescollerton.flashapp.fragments.CalculationButtonsFragment"
               android:id="@+id/calculationButtonsFragment"
               android:layout_width="match_parent"

@@ -1,9 +1,8 @@
 package com.flashapp.jamescollerton.flashapp.interfaces;
 
-import java.util.Objects;
-
 /**
- * Created by JamesCollerton on 16/09/2017.
+ * This provides a number of methods that need to be overriden in order to be able to set and get
+ * values from fieldss
  */
 public interface GNField<ValueType, ViewType, ViewValueType> extends GNButton<ViewType> {
 

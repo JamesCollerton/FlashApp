@@ -1,5 +1,9 @@
 package com.flashapp.jamescollerton.flashapp.models;
 
+/**
+ * This is essentially a model which has values for each of the different things we can enter in
+ * the UI. It is used to store the inputs on a screen whenever we press one of the buttons.
+ */
 public class Inputs {
 
     private Integer guideNumber;
