@@ -237,6 +237,22 @@ public class CalculationFormulaTest {
         calculationFormulaApertureTest(TestResults.GN33ISO1600Power0Distance10Aperture13Feet);
     }
 
+    @Test
+    public void testGN33ISO100Power2Distance10Aperture13MetresApertureTest(){
+        calculationFormulaApertureTest(TestResults.GN33ISO100Power2Distance10Aperture13Metres);
+    }
+
+    @Test
+    public void testGN33ISO100Power4Distance10Aperture13MetresApertureTest(){
+        calculationFormulaApertureTest(TestResults.GN33ISO100Power4Distance10Aperture13Metres);
+    }
+
+    @Test
+    public void testGN33ISO100Power7Distance10Aperture13MetresApertureTest(){
+        calculationFormulaApertureTest(TestResults.GN33ISO100Power7Distance10Aperture13Metres);
+    }
+
+
     /*
     Distance
      */
@@ -284,5 +300,21 @@ public class CalculationFormulaTest {
     public void testDistanceGN33ISO1600Power0Distance10Aperture13Feet(){
         calculationFormulaDistanceTest(TestResults.GN33ISO1600Power0Distance10Aperture13Feet);
     }
+
+    @Test
+    public void testGN33ISO100Power2Distance10Aperture13MetresDistanceTest(){
+        calculationFormulaDistanceTest(TestResults.GN33ISO100Power2Distance10Aperture13Metres);
+    }
+
+    @Test
+    public void testGN33ISO100Power4Distance10Aperture13MetresDistanceTest(){
+        calculationFormulaDistanceTest(TestResults.GN33ISO100Power4Distance10Aperture13Metres);
+    }
+
+    @Test
+    public void testGN33ISO100Power7Distance10Aperture13MetresDistanceTest(){
+        calculationFormulaDistanceTest(TestResults.GN33ISO100Power7Distance10Aperture13Metres);
+    }
+
 
 }

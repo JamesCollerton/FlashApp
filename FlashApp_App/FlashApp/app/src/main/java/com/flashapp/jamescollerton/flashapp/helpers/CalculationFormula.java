@@ -17,13 +17,15 @@ public class CalculationFormula {
      */
     public static Float calculateAperture(Inputs inputs) throws IllegalArgumentException {
 
-        Float apertureAdjustment = new Float(inputs.getPower());
+        Double guideNumberAdjustment = Math.sqrt(1 / Math.pow(2, -new Double(inputs.getPower())));
 
         checkApertureInputs(inputs);
 
         Double ISOFactor = Math.sqrt(new Double(inputs.getISO()) / new Double(100));
-        Float apertureRawValue = (new Float(inputs.getGuideNumber()) * new Float(ISOFactor)) / inputs.getDistance();
-        return apertureRawValue + apertureAdjustment;
+        Float apertureRawValue = (new Float(inputs.getGuideNumber()) *
+                                  new Float(ISOFactor) *
+                                  new Float(guideNumberAdjustment)/ inputs.getDistance());
+        return apertureRawValue;
     }
 
     /**
@@ -65,12 +67,14 @@ public class CalculationFormula {
      */
     public static Float calculateDistance(Inputs inputs){
 
-        Float apertureAdjustment = new Float(inputs.getPower());
+        Double guideNumberAdjustment = Math.sqrt(1 / Math.pow(2, -new Double(inputs.getPower())));
 
-        checkDistanceInputs(inputs, apertureAdjustment);
+        checkDistanceInputs(inputs, new Float(guideNumberAdjustment));
 
         double ISOFactor = Math.sqrt(new Double(inputs.getISO()) / new Double(100));
-        Float distance = (new Float(inputs.getGuideNumber()) * new Float(ISOFactor)) / (inputs.getAperture() + apertureAdjustment);
+        Float distance = (new Float(inputs.getGuideNumber()) *
+                          new Float(ISOFactor) *
+                          new Float(guideNumberAdjustment)) / inputs.getAperture();
         return distance;
     }
 
