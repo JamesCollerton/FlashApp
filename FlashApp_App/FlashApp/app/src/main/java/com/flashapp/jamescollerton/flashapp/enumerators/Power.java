@@ -23,7 +23,7 @@ public enum Power {
 
     Power(int power){
         this.fraction = "1/" + ((Double) (Math.pow(2, power))).intValue();
-        this.value = -power;
+        this.value = power;
     }
 
     public Integer getValue(){

@@ -29,37 +29,37 @@ public class PowerUnitTest {
 
     @Test
     public void testPowerOne(){
-        powerTest(Power.MINUS_ONE, -1, "1/2");
+        powerTest(Power.MINUS_ONE, 1, "1/2");
     }
 
     @Test
     public void testPowerTwo(){
-        powerTest(Power.MINUS_TWO, -2, "1/4");
+        powerTest(Power.MINUS_TWO, 2, "1/4");
     }
 
     @Test
     public void testPowerThree(){
-        powerTest(Power.MINUS_THREE, -3, "1/8");
+        powerTest(Power.MINUS_THREE, 3, "1/8");
     }
 
     @Test
     public void testPowerFour(){
-        powerTest(Power.MINUS_FOUR, -4, "1/16");
+        powerTest(Power.MINUS_FOUR, 4, "1/16");
     }
 
     @Test
     public void testPowerFive(){
-        powerTest(Power.MINUS_FIVE, -5, "1/32");
+        powerTest(Power.MINUS_FIVE, 5, "1/32");
     }
 
     @Test
     public void testPowerSix(){
-        powerTest(Power.MINUS_SIX, -6, "1/64");
+        powerTest(Power.MINUS_SIX, 6, "1/64");
     }
 
     @Test
     public void testPowerSeven(){
-        powerTest(Power.MINUS_SEVEN, -7, "1/128");
+        powerTest(Power.MINUS_SEVEN, 7, "1/128");
     }
 
 }

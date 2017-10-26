@@ -8,6 +8,28 @@ import com.flashapp.jamescollerton.flashapp.models.Inputs;
 public class CalculationFormula {
 
     /**
+     * This is used to get the guide number adjusted for power changes. This is taken from the
+     * wikipedia article.
+     *
+     * @param inputs The inputs from the screen
+     * @return Guide number adjusted for power.
+     */
+    private static Float getGuideNumberAdjustment(Inputs inputs){
+        return  Double.valueOf(Math.sqrt(1 / Math.pow(2, Double.valueOf(inputs.getPower())))).floatValue();
+    }
+
+    /**
+     * This is used to return the ISO adjustment. We need this to calculate the exposure for
+     * different ISOs.
+     *
+     * @param inputs The inputs from the screen
+     * @return ISO factor for different ISOs
+     */
+    private static Float getISOFactor(Inputs inputs){
+        return Double.valueOf(Math.sqrt(Double.valueOf(inputs.getISO()) / Double.valueOf(100))).floatValue();
+    }
+
+    /**
      * If we have all of the inputs for a calculation then this takes them and turns them into
      * an aperture
      *
@@ -17,15 +39,10 @@ public class CalculationFormula {
      */
     public static Float calculateAperture(Inputs inputs) throws IllegalArgumentException {
 
-        Double guideNumberAdjustment = Math.sqrt(1 / Math.pow(2, -new Double(inputs.getPower())));
-
         checkApertureInputs(inputs);
 
-        Double ISOFactor = Math.sqrt(new Double(inputs.getISO()) / new Double(100));
-        Float apertureRawValue = (new Float(inputs.getGuideNumber()) *
-                                  new Float(ISOFactor) *
-                                  new Float(guideNumberAdjustment)/ inputs.getDistance());
-        return apertureRawValue;
+        return (inputs.getGuideNumber() * getISOFactor(inputs) * getGuideNumberAdjustment(inputs))/ inputs.getDistance();
+
     }
 
     /**
@@ -67,15 +84,9 @@ public class CalculationFormula {
      */
     public static Float calculateDistance(Inputs inputs){
 
-        Double guideNumberAdjustment = Math.sqrt(1 / Math.pow(2, -new Double(inputs.getPower())));
+        checkDistanceInputs(inputs);
 
-        checkDistanceInputs(inputs, new Float(guideNumberAdjustment));
-
-        double ISOFactor = Math.sqrt(new Double(inputs.getISO()) / new Double(100));
-        Float distance = (new Float(inputs.getGuideNumber()) *
-                          new Float(ISOFactor) *
-                          new Float(guideNumberAdjustment)) / inputs.getAperture();
-        return distance;
+        return (inputs.getGuideNumber() * getISOFactor(inputs) * getGuideNumberAdjustment(inputs)) / inputs.getAperture();
     }
 
     /**
@@ -83,13 +94,12 @@ public class CalculationFormula {
      * with a divide by zero error.
      *
      * @param inputs The inputs to the screen
-     * @param apertureAdjustment This is calculated from the power
      * @throws IllegalArgumentException
      */
-    private static void checkDistanceInputs(Inputs inputs, Float apertureAdjustment) throws IllegalArgumentException {
+    private static void checkDistanceInputs(Inputs inputs) throws IllegalArgumentException {
         checkSharedInputs(inputs);
         if(inputs.getAperture() == null ||
-           inputs.getAperture() + apertureAdjustment == 0){
+           inputs.getAperture() == 0){
             throw new IllegalArgumentException();
         }
     }
