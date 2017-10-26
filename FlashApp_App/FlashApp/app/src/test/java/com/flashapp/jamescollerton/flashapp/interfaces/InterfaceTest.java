@@ -97,8 +97,7 @@ public class InterfaceTest{
                     new Object[]{new DistanceFragment(),            GNField.class},
                     new Object[]{new GuideNumberFragment(),         GNField.class},
                     new Object[]{new ISOFragment(),                 GNField.class},
-                    new Object[]{new PowerFragment(),               GNField.class},
-                    new Object[]{new CalculationButtonsFragment(),  GNButton.class}
+                    new Object[]{new PowerFragment(),               GNField.class}
             );
         }
 
