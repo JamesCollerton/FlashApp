@@ -14,9 +14,19 @@ import testUtils.TestResults;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This is to test the calculation formula to ensure that it returns the correct results based
+ * on certain inputs. This covers both aperture and distance.
+ */
 public class CalculationFormulaTest {
 
-
+    /**
+     * This is usd to set up a mocked distance object. As the distance gets the distance unit from
+     * the UI we need to mock some methods in order to fake getting a distance unit from the UI.
+     *
+     * @param testResults The test inputs we want to test
+     * @return A mocked distance fragment for use.
+     */
     private DistanceFragment setUpDistanceMock(TestResults testResults){
 
         DistanceFragment distanceFragment = Mockito.mock(DistanceFragment.class);
@@ -27,6 +37,13 @@ public class CalculationFormulaTest {
         return distanceFragment;
     }
 
+    /**
+     * This is used to set up an aperture test. It takes a test we want to run, then creates an input
+     * object and passes it to the calculation. It then checks the result against the result in the
+     * test inputs
+     *
+     * @param testResults The set of values we want to test against
+     */
     private void calculationFormulaApertureTest(TestResults testResults){
 
         DistanceFragment distanceFragment = setUpDistanceMock(testResults);
@@ -42,6 +59,12 @@ public class CalculationFormulaTest {
         assertEquals(rawAperture.toString(), testResults.getAperture());
     }
 
+    /**
+     * This is used to test the distances. It works exactly the same as the aperture test in that it
+     * takes some test results, makes an input from them then runs the calculation
+     *
+     * @param testResults The test results we want to run
+     */
     private void calculationFormulaDistanceTest(TestResults testResults){
 
         DistanceFragment distanceFragment = setUpDistanceMock(testResults);

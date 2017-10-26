@@ -20,6 +20,11 @@ import java.util.*;
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.fail;
 
+/**
+ * This class is used to test all of the interfaces. It basically tests the contract between the
+ * interface and the class that says if the class implements the interface it must implement the
+ * methods.
+ */
 @RunWith(Enclosed.class)
 public class InterfaceTest{
 
@@ -34,6 +39,15 @@ public class InterfaceTest{
             this.implementedInterface = implementedInterface;
         }
 
+        /**
+         * This is used to recursively get all of the interfaces used by a class. It finds all
+         * interfaces implemented by a class, then goes onto the next class in the hierarchy, adding
+         * them all to a list.
+         *
+         * @param currentClass The class we are looking at at the moment
+         * @param interfaces The list of interfaces we are adding to
+         * @return The list of interfaces
+         */
         private ArrayList<Class<?>> getAllInterfaces(Class<?> currentClass, ArrayList<Class<?>> interfaces){
 
             for(Class<?> classInterface: currentClass.getInterfaces()){
@@ -49,12 +63,19 @@ public class InterfaceTest{
             return interfaces;
         }
 
+        /**
+         * This gets all interfaces, then checks to make sure the one we said has been implemented
+         * has been implemented.
+         */
         @Test
         public final void testImplementsInterface() {
             ArrayList<Class<?>> implementedClasss = getAllInterfaces(implementedClass.getClass(), new ArrayList<Class<?>>());
             assertTrue(implementedClasss.contains(implementedInterface));
         }
 
+        /**
+         * This is used to test that a class implements all of the methods in the interface
+         */
         @Test
         public final void testImplementsInterfaceMethods() {
             for (Method method : implementedInterface.getDeclaredMethods()) {
@@ -66,6 +87,9 @@ public class InterfaceTest{
             }
         }
 
+        /**
+         * @return List of interfaces we want to return
+         */
         @Parameterized.Parameters
         public static Collection<Object[]> instancesToTest(){
             return Arrays.asList(

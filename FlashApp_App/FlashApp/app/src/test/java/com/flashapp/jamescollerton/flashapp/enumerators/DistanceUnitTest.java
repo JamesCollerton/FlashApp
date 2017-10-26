@@ -5,13 +5,22 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by JamesCollerton on 26/10/2017.
+ * This is used to test all of the distance unit enumerations to make sure they return the right
+ * things
  */
 public class DistanceUnitTest {
 
-    private void distanceUnitTest(DistanceUnit power, Float conversionUnit, String string){
-        assertEquals(power.getConversionUnit(), conversionUnit);
-        assertEquals(power.toString(), string);
+    /**
+     * This sets up the distance unit tests. It is used to take a distance unit and make sure that
+     * it returns the right conversion unit and string value
+     *
+     * @param distanceUnit Unit we are testing
+     * @param conversionUnit The conversion unit we expect to have returned
+     * @param string The string we want to represent the unit
+     */
+    private void distanceUnitTest(DistanceUnit distanceUnit, Float conversionUnit, String string){
+        assertEquals(distanceUnit.getConversionUnit(), conversionUnit);
+        assertEquals(distanceUnit.toString(), string);
     }
 
     @Test

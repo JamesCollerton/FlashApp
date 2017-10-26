@@ -4,8 +4,19 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This is used to test the power enumeration. It ensures each power returns the string and value
+ * we expect it to.
+ */
 public class PowerUnitTest {
 
+    /**
+     * This is used to test the power.
+     *
+     * @param power Power we want to test
+     * @param value The value we think should be returned from the power
+     * @param string The string we think should be returned from the power
+     */
     private void powerTest(Power power, Integer value, String string){
         assertEquals(power.getValue(), value);
         assertEquals(power.toString(), string);

@@ -5,10 +5,21 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 
 /**
- * Created by JamesCollerton on 15/10/2017.
+ * This is used to check that the input object is initialised correctly and returns what we expect.
  */
 public class InputsTest {
 
+    /**
+     * This method is used to set up and test an input. We feed in values for the various values
+     * in the Input, then check they are returned. Finally we swap some values around using the
+     * setters and check they still return the correct thing.
+     *
+     * @param guideNumber
+     * @param ISO
+     * @param power
+     * @param distance
+     * @param aperture
+     */
     private void setUpInputTest(Integer guideNumber, Integer ISO, Integer power, Float distance, Float aperture){
         Inputs inputs = new Inputs(
                 guideNumber,
