@@ -345,26 +345,19 @@ public class GNCalculationScreenTest extends GNAndroidTest {
      */
 
     /**
-     * This is used to check the user is seeing an error message.
-     */
-//    private void checkMissingInfoDialogShowing() {
-//        onView(withText(R.string.alert_box_missing_info_title)).inRoot(isDialog()).check(matches(isDisplayed()));
-//    }
-
-    /**
      * This is used to check the user is seeing the error message if distance settings are incorrect.
      */
     private void checkMissingDistanceInfoDialogShowing(){
         AndroidTestUtils.checkTextDisplayed(R.string.alert_box_missing_info_title);
         AndroidTestUtils.checkTextDisplayed(R.string.alert_box_missing_distance_info_text);
-//        checkMissingInfoDialogShowing();
-//        onView(withText(R.string.alert_box_missing_distance_info_text)).inRoot(isDialog()).check(matches(isDisplayed()));
     }
 
+    /**
+     * This is used to check the user is seeing the error message if aperture settings are incorrect.
+     */
     private void checkMissingApertureInfoDialogShowing(){
         AndroidTestUtils.checkTextDisplayed(R.string.alert_box_missing_info_title);
         AndroidTestUtils.checkTextDisplayed(R.string.alert_box_missing_aperture_info_text);
-//        checkMissingInfoDialogShowing();
 
     }
 
@@ -386,7 +379,6 @@ public class GNCalculationScreenTest extends GNAndroidTest {
         AndroidTestUtils.closeKeyboard();
         clickApertureButton();
         checkMissingApertureInfoDialogShowing();
-//        checkMissingInfoDialogShowing();
     }
 
     /**
@@ -396,7 +388,6 @@ public class GNCalculationScreenTest extends GNAndroidTest {
     public void missingGuideNumberApertureDistanceTest(){
         clickDistanceButton();
         checkMissingDistanceInfoDialogShowing();
-//        checkMissingInfoDialogShowing();
     }
 
     /**
@@ -408,7 +399,6 @@ public class GNCalculationScreenTest extends GNAndroidTest {
         AndroidTestUtils.closeKeyboard();
         clickDistanceButton();
         checkMissingDistanceInfoDialogShowing();
-//        checkMissingInfoDialogShowing();
     }
 
 }
