@@ -97,7 +97,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
         } catch(Exception e){
             new AlertBox(this,
                     getResources().getString(R.string.alert_box_missing_info_title),
-                    getResources().getString(R.string.alert_box_missing_info_text),
+                    getResources().getString(R.string.alert_box_missing_aperture_info_text),
                     getResources().getString(R.string.alert_box_missing_info_ok)
             );
         }
@@ -114,7 +114,7 @@ public class GNCalculationScreen    extends     AppCompatActivity
         } catch(Exception e){
             new AlertBox(this,
                     getResources().getString(R.string.alert_box_missing_info_title),
-                    getResources().getString(R.string.alert_box_missing_info_text),
+                    getResources().getString(R.string.alert_box_missing_distance_info_text),
                     getResources().getString(R.string.alert_box_missing_info_ok)
             );
         }

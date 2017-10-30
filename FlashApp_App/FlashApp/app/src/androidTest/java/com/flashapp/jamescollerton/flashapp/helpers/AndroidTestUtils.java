@@ -2,6 +2,8 @@ package com.flashapp.jamescollerton.flashapp.helpers;
 
 import android.support.test.espresso.Espresso;
 
+import com.flashapp.jamescollerton.flashapp.R;
+
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.clearText;
@@ -9,6 +11,8 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.scrollTo;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.RootMatchers.isDialog;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withSpinnerText;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
@@ -31,6 +35,13 @@ public class AndroidTestUtils {
      */
     public static void closeKeyboard(){
         Espresso.closeSoftKeyboard();
+    }
+
+    /**
+     * This is a wrapper for checking if some text is displayed on screen.
+     */
+    public static void checkTextDisplayed(int stringId){
+        onView(withText(stringId)).inRoot(isDialog()).check(matches(isDisplayed()));
     }
 
     /*

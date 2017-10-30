@@ -6,7 +6,8 @@
 
     <!-- Alert Box Strings -->
     <string name="alert_box_missing_info_title">Missing Information</string>
-    <string name="alert_box_missing_info_text">Please check ISO, guide number and distance are all populated and have valid values</string>
+    <string name="alert_box_missing_aperture_info_text">Please check ISO, guide number, power and distance are all populated and have valid values</string>
+    <string name="alert_box_missing_distance_info_text">Please check ISO, guide number, power and aperture are all populated and have valid values</string>
     <string name="alert_box_missing_info_ok">OK</string>
 
     <!-- Label Text -->

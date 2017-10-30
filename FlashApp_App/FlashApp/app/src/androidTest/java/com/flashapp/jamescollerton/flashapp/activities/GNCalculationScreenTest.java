@@ -347,8 +347,25 @@ public class GNCalculationScreenTest extends GNAndroidTest {
     /**
      * This is used to check the user is seeing an error message.
      */
-    private void checkMissingInfoDialogShowing() {
-        onView(withText(R.string.alert_box_missing_info_title)).inRoot(isDialog()).check(matches(isDisplayed()));
+//    private void checkMissingInfoDialogShowing() {
+//        onView(withText(R.string.alert_box_missing_info_title)).inRoot(isDialog()).check(matches(isDisplayed()));
+//    }
+
+    /**
+     * This is used to check the user is seeing the error message if distance settings are incorrect.
+     */
+    private void checkMissingDistanceInfoDialogShowing(){
+        AndroidTestUtils.checkTextDisplayed(R.string.alert_box_missing_info_title);
+        AndroidTestUtils.checkTextDisplayed(R.string.alert_box_missing_distance_info_text);
+//        checkMissingInfoDialogShowing();
+//        onView(withText(R.string.alert_box_missing_distance_info_text)).inRoot(isDialog()).check(matches(isDisplayed()));
+    }
+
+    private void checkMissingApertureInfoDialogShowing(){
+        AndroidTestUtils.checkTextDisplayed(R.string.alert_box_missing_info_title);
+        AndroidTestUtils.checkTextDisplayed(R.string.alert_box_missing_aperture_info_text);
+//        checkMissingInfoDialogShowing();
+
     }
 
     /**
@@ -357,7 +374,7 @@ public class GNCalculationScreenTest extends GNAndroidTest {
     @Test
     public void missingGuideNumberDistanceApertureTest(){
         clickApertureButton();
-        checkMissingInfoDialogShowing();
+        checkMissingApertureInfoDialogShowing();
     }
 
     /**
@@ -368,7 +385,8 @@ public class GNCalculationScreenTest extends GNAndroidTest {
         DistanceFragmentTest.setDistance("10", "10");
         AndroidTestUtils.closeKeyboard();
         clickApertureButton();
-        checkMissingInfoDialogShowing();
+        checkMissingApertureInfoDialogShowing();
+//        checkMissingInfoDialogShowing();
     }
 
     /**
@@ -377,7 +395,8 @@ public class GNCalculationScreenTest extends GNAndroidTest {
     @Test
     public void missingGuideNumberApertureDistanceTest(){
         clickDistanceButton();
-        checkMissingInfoDialogShowing();
+        checkMissingDistanceInfoDialogShowing();
+//        checkMissingInfoDialogShowing();
     }
 
     /**
@@ -388,7 +407,8 @@ public class GNCalculationScreenTest extends GNAndroidTest {
         ApertureFragmentTest.setAperture("10", "10");
         AndroidTestUtils.closeKeyboard();
         clickDistanceButton();
-        checkMissingInfoDialogShowing();
+        checkMissingDistanceInfoDialogShowing();
+//        checkMissingInfoDialogShowing();
     }
 
 }
